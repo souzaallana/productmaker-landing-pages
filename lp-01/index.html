@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>70 Prompts Essenciais para PMs | Product Maker</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -9,14 +14,9 @@
     })(window,document,'script','dataLayer','GTM-M4Z6F3VW');</script>
     <!-- End Google Tag Manager -->
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca Completa: 300+ Prompts para Product Managers | Product Maker</title>
-    <meta name="description" content="Pare de perder tempo criando prompts do zero. Use a biblioteca que PMs de unicórnios usam para 10x sua produtividade com IA.">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="shortcut icon" type="image/png" href="/favicon.png">
-    
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -24,10 +24,11 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0f1419;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a2332 0%, #0f1419 100%);
             color: #ffffff;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         .container {
@@ -36,494 +37,715 @@
             padding: 0 20px;
         }
         
-        .container-narrow {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
         /* Header */
         .header {
-            background: linear-gradient(135deg, #1a2332 0%, #0f1419 100%);
-            padding: 60px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
+            background: rgba(26, 35, 50, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(0, 245, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 107, 157, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(0, 212, 170, 0.15) 0%, transparent 50%);
-            pointer-events: none;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 245, 255, 0.2);
         }
         
         .header-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .social-proof-badge {
-            background: linear-gradient(45deg, #ff6b9d, #00f5ff);
-            padding: 3px;
-            border-radius: 25px;
-            display: inline-block;
-            margin-bottom: 40px;
-        }
-        
-        .social-proof-inner {
-            background: #1a2332;
-            padding: 12px 30px;
-            border-radius: 22px;
-            color: #00f5ff;
-            font-weight: 700;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-        }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 30px;
-            letter-spacing: -1px;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-            opacity: 0.95;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 400;
-        }
-        
-        .hero-features {
-            background: rgba(0, 245, 255, 0.1);
-            border: 2px solid rgba(0, 245, 255, 0.3);
-            border-radius: 15px;
-            padding: 25px;
-            margin: 40px 0;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hero-cta {
-            margin-top: 50px;
-        }
-        
-        /* Sections */
-        .section {
-            padding: 100px 0;
-        }
-        
-        .section-alt {
-            background: linear-gradient(135deg, #1a2332 0%, #0f1419 100%);
-        }
-        
-        .section-title {
-            font-size: 2.8rem;
-            text-align: center;
-            margin-bottom: 70px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-        
-        /* Time Savings Section */
-        .time-savings {
-            background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
-            padding: 80px 0;
-        }
-        
-        .time-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            margin-top: 50px;
         }
         
-        .time-item h3 {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            font-weight: 700;
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #00f5ff;
         }
         
-        .time-item ul {
-            list-style: none;
-            font-size: 1.15rem;
-            line-height: 2.2;
-        }
-        
-        .time-item li {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-        }
-        
-        .time-item li:before {
-            content: "⏱️";
-            position: absolute;
-            left: 0;
-            font-size: 1.2rem;
-        }
-        
-        .productivity-highlight {
-            text-align: center;
-            margin-top: 60px;
-            padding: 40px;
-            background: rgba(0, 245, 255, 0.1);
+        .community-badge {
+            background: linear-gradient(45deg, #00f5ff, #00d4aa);
+            color: #1a2332;
+            padding: 8px 16px;
             border-radius: 20px;
-            border: 2px solid rgba(0, 245, 255, 0.3);
+            font-size: 14px;
+            font-weight: 600;
+            animation: pulse 2s infinite;
         }
         
-        /* Categories Grid */
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 35px;
-            margin-top: 60px;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
         
-        .category-card {
-            background: linear-gradient(135deg, rgba(0, 245, 255, 0.12), rgba(255, 107, 157, 0.12));
-            border: 2px solid rgba(0, 245, 255, 0.25);
-            border-radius: 20px;
-            padding: 35px;
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
             text-align: center;
-            transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 212, 170, 0.1) 0%, transparent 50%);
         }
         
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s;
-        }
-        
-        .category-card:hover::before {
-            transform: translateX(100%);
-        }
-        
-        .category-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 245, 255, 0.5);
-            box-shadow: 0 20px 40px rgba(0, 245, 255, 0.2);
-        }
-        
-        .category-card:nth-child(2n) {
-            background: linear-gradient(135deg, rgba(0, 212, 170, 0.12), rgba(255, 107, 157, 0.12));
-            border-color: rgba(0, 212, 170, 0.25);
-        }
-        
-        .category-card:nth-child(2n):hover {
-            border-color: rgba(0, 212, 170, 0.5);
-            box-shadow: 0 20px 40px rgba(0, 212, 170, 0.2);
-        }
-        
-        .category-card:nth-child(3n) {
-            background: linear-gradient(135deg, rgba(255, 107, 157, 0.12), rgba(0, 245, 255, 0.12));
-            border-color: rgba(255, 107, 157, 0.25);
-        }
-        
-        .category-card:nth-child(3n):hover {
-            border-color: rgba(255, 107, 157, 0.5);
-            box-shadow: 0 20px 40px rgba(255, 107, 157, 0.2);
-        }
-        
-        .category-icon {
-            font-size: 3rem;
-            margin-bottom: 25px;
-            display: block;
-        }
-        
-        .category-title {
-            font-size: 1.4rem;
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
             margin-bottom: 20px;
-            font-weight: 700;
+            background: linear-gradient(45deg, #00f5ff, #00d4aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        .category-description {
-            opacity: 0.85;
-            line-height: 1.6;
-            font-size: 1.05rem;
-        }
-        
-        /* Offer Section */
-        .offer-section {
-            background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
-            padding: 100px 0;
-        }
-        
-        .offer-container {
-            background: linear-gradient(135deg, rgba(0, 245, 255, 0.15), rgba(255, 107, 157, 0.15));
-            border: 3px solid #00f5ff;
-            border-radius: 25px;
-            padding: 60px;
-            text-align: center;
-            margin: 50px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .offer-container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
-            animation: shimmer 3s infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-        
-        .offer-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .price-container {
-            margin-bottom: 50px;
-        }
-        
-        .old-price {
-            color: rgba(255,255,255,0.6);
-            font-size: 1.4rem;
-            text-decoration: line-through;
-            font-weight: 500;
-        }
-        
-        .current-price {
-            font-size: 4rem;
-            font-weight: 900;
-            margin: 20px 0;
-            color: #ffffff;
-            text-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
-        }
-        
-        .installments {
-            color: #00d4aa;
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-        
-        .features-list {
-            text-align: left;
-            margin: 50px 0;
-            max-width: 600px;
+        .subtitle {
+            font-size: 1.3rem;
+            color: #b0c4de;
+            margin-bottom: 40px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
         
-        .features-list h4 {
-            font-size: 1.4rem;
-            margin-bottom: 25px;
-            text-align: center;
+        .social-proof-header {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .proof-badge {
+            background: rgba(0, 245, 255, 0.1);
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #00f5ff;
+        }
+        
+        /* Community Seal */
+        .community-seal {
+            background: linear-gradient(45deg, #00f5ff, #00d4aa);
+            color: #1a2332;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
             font-weight: 700;
-        }
-        
-        .features-list ul {
-            list-style: none;
-            font-size: 1.15rem;
-            line-height: 2.2;
-        }
-        
-        .features-list li {
-            margin-bottom: 12px;
-            padding-left: 35px;
+            display: inline-block;
+            margin: 30px 0;
             position: relative;
         }
         
-        .features-list li:before {
-            content: "✅";
-            position: absolute;
-            left: 0;
-            font-size: 1.2rem;
+        .community-seal::before {
+            content: "🏆";
+            margin-right: 10px;
         }
         
-        /* CTA Button */
+        /* CTA Buttons */
         .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b9d, #00f5ff);
-            color: #ffffff;
-            font-size: 1.4rem;
-            font-weight: 800;
-            padding: 25px 60px;
-            border-radius: 50px;
-            text-decoration: none;
-            margin: 40px 0;
-            transition: all 0.3s ease;
+            background: linear-gradient(45deg, #00f5ff, #00d4aa);
+            color: #1a2332;
+            padding: 20px 40px;
             border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
             cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
         }
         
         .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 245, 255, 0.4);
+        }
+        
+        .cta-secondary {
+            background: rgba(0, 245, 255, 0.1);
+            border: 2px solid #00f5ff;
+            color: #00f5ff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 10px;
+        }
+        
+        .cta-secondary:hover {
+            background: rgba(0, 245, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: rgba(0, 245, 255, 0.05);
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #00f5ff;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: rgba(26, 35, 50, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            position: relative;
+            text-align: left;
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            font-size: 4rem;
+            color: #00f5ff;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            color: #b0c4de;
+            padding-left: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00f5ff, #00d4aa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1a2332;
+            font-size: 1.2rem;
+        }
+        
+        .author-info h4 {
+            color: #00f5ff;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .author-info p {
+            color: #b0c4de;
+            font-size: 0.9rem;
+        }
+        
+        /* Practical Examples */
+        .examples {
+            padding: 80px 0;
+        }
+        
+        .examples h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #00f5ff;
+        }
+        
+        .examples-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #b0c4de;
+            margin-bottom: 60px;
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+        }
+        
+        .example-card {
+            background: rgba(26, 35, 50, 0.8);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .example-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 50px rgba(0, 245, 255, 0.5);
-            background: linear-gradient(45deg, #ff6b9d, #00f5ff, #00d4aa);
-            background-size: 200% 200%;
-            animation: gradient 2s ease infinite;
+            border-color: rgba(0, 245, 255, 0.6);
         }
         
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .example-header {
+            background: linear-gradient(45deg, #00f5ff, #00d4aa);
+            color: #1a2332;
+            padding: 25px;
+            font-weight: 700;
+            font-size: 1.2rem;
         }
         
+        .example-content {
+            padding: 30px;
+        }
+        
+        .prompt-box {
+            background: rgba(0, 245, 255, 0.1);
+            border: 2px solid rgba(0, 245, 255, 0.4);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            font-family: 'Courier New', monospace;
+            color: #00f5ff;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .prompt-box::before {
+            content: "💡 PROMPT REAL:";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #1a2332;
+            padding: 5px 15px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 245, 255, 0.4);
+        }
+        
+        .result-box {
+            background: rgba(0, 212, 170, 0.1);
+            border: 2px solid rgba(0, 212, 170, 0.4);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            color: #00d4aa;
+        }
+        
+        .result-box strong {
+            color: #00f5ff;
+        }
+        
+        /* Before vs After */
+        .before-after {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1) 0%, rgba(0, 212, 170, 0.1) 100%);
+        }
+        
+        .before-after h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #00f5ff;
+        }
+        
+        .before-after-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #b0c4de;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 50px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .comparison-card {
+            background: rgba(26, 35, 50, 0.9);
+            padding: 50px;
+            border-radius: 25px;
+            text-align: center;
+            position: relative;
+            border: 3px solid;
+        }
+        
+        .comparison-card.before {
+            border-color: #ff6b9d;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(26, 35, 50, 0.9));
+        }
+        
+        .comparison-card.after {
+            border-color: #00d4aa;
+            background: linear-gradient(135deg, rgba(0, 212, 170, 0.1), rgba(26, 35, 50, 0.9));
+        }
+        
+        .comparison-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .comparison-card.before h3 {
+            color: #ff6b9d;
+        }
+        
+        .comparison-card.after h3 {
+            color: #00d4aa;
+        }
+        
+        .comparison-list {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .comparison-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: #b0c4de;
+            font-size: 1.1rem;
+        }
+        
+        .comparison-card.before .comparison-list li::before {
+            content: "❌";
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+        
+        .comparison-card.after .comparison-list li::before {
+            content: "✅";
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+        
+        /* Benefits */
+        .benefits {
+            padding: 80px 0;
+        }
+        
+        .benefits h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #00f5ff;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background: rgba(26, 35, 50, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 245, 255, 0.5);
+        }
+        
+        .benefit-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+        }
+        
+        .benefit-card h3 {
+            color: #00f5ff;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .benefit-card p {
+            color: #b0c4de;
+            font-size: 1.1rem;
+        }
+        
+        /* Categories */
+        .categories {
+            padding: 80px 0;
+            background: rgba(0, 245, 255, 0.05);
+        }
+        
+        .categories h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #00f5ff;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .category-card {
+            background: rgba(26, 35, 50, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 245, 255, 0.5);
+        }
+        
+        .category-card h3 {
+            color: #00f5ff;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .count {
+            color: #00d4aa;
+            font-weight: 600;
+        }
+        
+        /* Offer */
+        .offer {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1) 0%, rgba(0, 212, 170, 0.1) 100%);
+        }
+        
+        .offer-container {
+            background: rgba(26, 35, 50, 0.9);
+            padding: 60px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .offer h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #00f5ff;
+        }
+        
+        .price-container {
+            margin: 40px 0;
+        }
+        
+        .old-price {
+            font-size: 1.2rem;
+            color: #ff6b9d;
+            text-decoration: line-through;
+            margin-bottom: 10px;
+        }
+        
+        .new-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #00d4aa;
+            margin-bottom: 10px;
+        }
+        
+        .installments {
+            font-size: 1.1rem;
+            color: #b0c4de;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            margin: 40px 0;
+            text-align: left;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #b0c4de;
+        }
+        
+        .benefits-list li::before {
+            content: "✓";
+            background: #00d4aa;
+            color: #1a2332;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        /* Bonus */
+        .bonus {
+            background: linear-gradient(45deg, #ff6b9d, #ff8a80);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bonus::before {
+            content: "🎁";
+            font-size: 3rem;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            opacity: 0.3;
+        }
+        
+        .bonus h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Guarantee */
+        .guarantee {
+            background: rgba(0, 212, 170, 0.1);
+            border: 2px solid rgba(0, 212, 170, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .guarantee h3 {
+            color: #00d4aa;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .guarantee-badge {
+            background: #00d4aa;
+            color: #1a2332;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        /* Security Badges */
         .security-badges {
-            color: rgba(255,255,255,0.8);
-            font-size: 1rem;
-            margin-top: 30px;
             display: flex;
             justify-content: center;
             gap: 30px;
+            margin: 40px 0;
             flex-wrap: wrap;
         }
         
         .security-badge {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 8px 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            font-weight: 600;
+            gap: 10px;
+            color: #b0c4de;
+            font-size: 0.9rem;
         }
         
-        /* Guarantee Section */
-        .guarantee-section {
-            background: rgba(0, 212, 170, 0.12);
-            border: 2px solid #00d4aa;
-            border-radius: 20px;
-            padding: 50px;
-            text-align: center;
-            margin: 80px 0;
-        }
-        
-        .guarantee-title {
-            color: #00d4aa;
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            font-weight: 800;
-        }
-        
-        .guarantee-text {
-            font-size: 1.3rem;
-            line-height: 1.7;
-            opacity: 0.95;
+        .security-badge .icon {
+            font-size: 1.2rem;
         }
         
         /* Footer */
         .footer {
-            background: #0a0f14;
+            background: rgba(26, 35, 50, 0.9);
             padding: 40px 0;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(0, 245, 255, 0.2);
         }
         
-        .footer-content {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
+        .footer p {
+            color: #b0c4de;
+            margin-bottom: 20px;
         }
         
-        /* Colors */
-        .text-cyan { color: #00f5ff; }
-        .text-teal { color: #00d4aa; }
-        .text-pink { color: #ff6b9d; }
-        .text-white { color: #ffffff; }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
         
-        /* Responsive */
+        .social-links a {
+            color: #00f5ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #00d4aa;
+        }
+        
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .hero-title {
+            .hero h1 {
                 font-size: 2.5rem;
             }
             
-            .hero-subtitle {
-                font-size: 1.2rem;
+            .subtitle {
+                font-size: 1.1rem;
             }
             
-            .section-title {
-                font-size: 2.2rem;
-            }
-            
-            .time-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
+            .testimonials-grid,
+            .examples-grid,
+            .benefits-grid,
             .categories-grid {
                 grid-template-columns: 1fr;
             }
             
             .offer-container {
-                padding: 40px 25px;
+                padding: 40px 20px;
             }
             
-            .current-price {
-                font-size: 3rem;
+            .comparison {
+                grid-template-columns: 1fr;
             }
             
-            .cta-button {
-                font-size: 1.2rem;
-                padding: 20px 40px;
+            .comparison-card {
+                padding: 30px;
             }
             
-            .security-badges {
-                flex-direction: column;
-                align-items: center;
+            .before-after h2 {
+                font-size: 2.2rem;
             }
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        /* Pulse animation for CTAs */
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 245, 255, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(0, 245, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 245, 255, 0); }
-        }
-        
-        .cta-button {
-            animation: pulse 2s infinite;
         }
     </style>
 </head>
@@ -532,302 +754,543 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4Z6F3VW"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    
+
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <div class="social-proof-badge">
-                    <div class="social-proof-inner">
-                        🚀 JUNTE-SE A +100 PMs QUE JÁ ACELERAM COM NOSSOS PROMPTS
-                    </div>
-                </div>
-                
-                <h1 class="hero-title">
-                    <span class="text-cyan">BIBLIOTECA COMPLETA</span><br>
-                    <span class="text-white">300+ PROMPTS</span><br>
-                    <span class="text-teal">PARA PRODUCT MANAGERS</span>
-                </h1>
-                
-                <p class="hero-subtitle">
-                    Pare de perder tempo criando prompts do zero. Use a biblioteca que <strong class="text-pink">PMs de unicórnios</strong> usam para 10x sua produtividade com IA.
-                </p>
-                
-                <div class="hero-features">
-                    <p class="text-cyan" style="margin: 0; font-weight: 700; font-size: 1.1rem;">
-                        <strong>PRDs • PESQUISAS • ANÁLISES • ROADMAPS • USER STORIES • MÉTRICAS • APRESENTAÇÕES</strong>
-                    </p>
-                </div>
-                
-                <div class="hero-cta">
-                    <a href="#oferta" class="cta-button">
-                        QUERO 10X MINHA PRODUTIVIDADE
-                    </a>
-                </div>
+                <div class="logo">PRODUCT MAKER</div>
+                <div class="community-badge">Recomendado por comunidades de PMs</div>
             </div>
         </div>
     </header>
 
-    <!-- Time Savings Section -->
-    <section class="time-savings">
+    <!-- Hero -->
+    <section class="hero">
         <div class="container">
-            <h2 class="section-title">
-                Economize <span class="text-pink">15+ horas por semana</span> com prompts profissionais
-            </h2>
+            <h1>70 Prompts Essenciais para PMs</h1>
+            <p class="subtitle">Pare de perder tempo criando prompts do zero. Use a biblioteca que PMs de unicórnios usam para 10x sua produtividade com IA.</p>
             
-            <div class="time-grid">
-                <div class="time-item">
-                    <h3 class="text-pink">⏰ Sem Nossa Biblioteca</h3>
-                    <ul style="color: rgba(255,255,255,0.85);">
-                        <li>2h criando cada PRD do zero</li>
-                        <li>1h formatando documentos</li>
-                        <li>3h pesquisando métricas certas</li>
-                        <li>2h criando apresentações</li>
-                        <li>4h reescrevendo prompts que não funcionam</li>
-                        <li>3h organizando user stories</li>
-                    </ul>
-                    <div style="margin-top: 30px; padding: 20px; background: rgba(255, 107, 157, 0.1); border-radius: 10px;">
-                        <strong class="text-pink" style="font-size: 1.3rem;">Total: 15+ horas/semana perdidas</strong>
-                    </div>
-                </div>
-                
-                <div class="time-item">
-                    <h3 class="text-teal">⚡ Com Nossa Biblioteca</h3>
-                    <ul style="color: rgba(255,255,255,0.85);">
-                        <li>15min adaptando template de PRD</li>
-                        <li>5min copiando formato pronto</li>
-                        <li>10min usando métricas testadas</li>
-                        <li>20min personalizando apresentação</li>
-                        <li>5min usando prompts que funcionam</li>
-                        <li>10min organizando com templates</li>
-                    </ul>
-                    <div style="margin-top: 30px; padding: 20px; background: rgba(0, 212, 170, 0.1); border-radius: 10px;">
-                        <strong class="text-teal" style="font-size: 1.3rem;">Total: 1h/semana investida</strong>
-                    </div>
-                </div>
+            <div class="community-seal">
+                Recomendado por comunidades de PMs
             </div>
             
-            <div class="productivity-highlight">
-                <h3 class="text-cyan" style="font-size: 2rem; margin-bottom: 20px; font-weight: 800;">
-                    Resultado: 14+ horas livres por semana
-                </h3>
-                <p style="font-size: 1.3rem; opacity: 0.9;">
-                    Tempo suficiente para focar na <strong class="text-white">estratégia</strong> ao invés de formatação
-                </p>
+            <div class="social-proof-header">
+                <div class="proof-badge">+200 PMs satisfeitos</div>
+                <div class="proof-badge">Testados em produção</div>
+                <div class="proof-badge">Resultados comprovados</div>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <a href="#" class="cta-button" onclick="goDirectToCheckout()">
+                    QUERO ECONOMIZAR TEMPO HOJE!
+                </a>
+                <br>
+                <a href="#offer" class="cta-secondary">Ver Detalhes da Oferta</a>
             </div>
         </div>
     </section>
 
-    <!-- Categories Section -->
-    <section class="section section-alt">
+    <!-- Testimonials -->
+    <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">
-                <span class="text-cyan">300+ Prompts</span> organizados para máxima produtividade
-            </h2>
+            <h2>O Que Dizem os PMs</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Economizei 12 horas na primeira semana usando os prompts para PRDs. Meu time aprovou tudo na primeira revisão e consegui focar em estratégia ao invés de ficar escrevendo documentação."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RC</div>
+                        <div class="author-info">
+                            <h4>Rafael Costa</h4>
+                            <p>Senior PM, Fintech (3 anos de experiência)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Os prompts de discovery me salvaram em um projeto crítico. Consegui estruturar uma pesquisa completa em 30 minutos que normalmente levaria 4 horas. A qualidade das perguntas impressionou até o Head de UX."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MS</div>
+                        <div class="author-info">
+                            <h4>Marina Silva</h4>
+                            <p>Product Manager, E-commerce (5 anos de experiência)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Examples -->
+    <section class="examples">
+        <div class="container">
+            <h2>Veja 3 Prompts Reais em Ação</h2>
+            <p class="examples-subtitle">Exemplos práticos de prompts que você vai usar no seu dia a dia</p>
+            
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-header">
+                        📋 Prompt para PRD Completo
+                    </div>
+                    <div class="example-content">
+                        <div class="prompt-box">
+Atue como um Product Manager sênior. Crie um PRD (Product Requirements Document) completo para [PRODUTO/FEATURE] que resolve [PROBLEMA ESPECÍFICO] para [PÚBLICO-ALVO].
+
+Estruture o documento com:
+1. Visão e objetivos do produto
+2. Contexto e justificativa de negócio
+3. Personas e casos de uso detalhados
+4. Requisitos funcionais priorizados
+5. Critérios de aceitação mensuráveis
+6. Métricas de sucesso e KPIs
+7. Roadmap de implementação (3 meses)
+8. Riscos e mitigações
+
+Seja específico, use dados quando possível e mantenha foco no valor para o usuário.
+                        </div>
+                        <div class="result-box">
+                            <strong>Resultado:</strong> PRD estruturado de 6-8 páginas em 15 minutos, com todos os elementos necessários para aprovação de stakeholders e início do desenvolvimento.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-header">
+                        🔍 Prompt para Discovery Estruturado
+                    </div>
+                    <div class="example-content">
+                        <div class="prompt-box">
+Desenvolva um plano de discovery completo para validar a hipótese: [SUA HIPÓTESE].
+
+Público-alvo: [DESCREVA O PÚBLICO]
+Contexto: [SITUAÇÃO ATUAL]
+
+Crie:
+1. Metodologia de pesquisa mais adequada
+2. 15 perguntas-chave para entrevistas
+3. Critérios de validação/invalidação
+4. Métricas quantitativas a coletar
+5. Cronograma de execução (2 semanas)
+6. Tamanho da amostra necessária
+7. Template de análise dos resultados
+
+Priorize perguntas abertas que revelem insights inesperados.
+                        </div>
+                        <div class="result-box">
+                            <strong>Resultado:</strong> Plano de research completo com metodologia validada, 15 perguntas testadas e cronograma executável em 20 minutos.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-header">
+                        📊 Prompt para Framework de Métricas
+                    </div>
+                    <div class="example-content">
+                        <div class="prompt-box">
+Crie um framework completo de métricas para [FEATURE/PRODUTO] considerando:
+
+Contexto do negócio: [DESCREVA]
+Objetivos: [LISTE OS OBJETIVOS]
+Público-alvo: [DEFINA O PÚBLICO]
+
+Desenvolva:
+1. Métricas HEART (Happiness, Engagement, Adoption, Retention, Task success)
+2. KPIs primários (3-5 métricas principais)
+3. KPIs secundários (métricas de suporte)
+4. Métricas de guardrail (o que não pode piorar)
+5. Frequência de medição para cada métrica
+6. Metas específicas e realistas
+7. Dashboard de acompanhamento
+8. Alertas para desvios críticos
+
+Inclua benchmarks da industria quando relevante.
+                        </div>
+                        <div class="result-box">
+                            <strong>Resultado:</strong> Framework completo com 12-15 métricas organizadas por prioridade, metas definidas e dashboard estruturado em 25 minutos.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#" class="cta-secondary" onclick="goDirectToCheckout()">
+                    QUERO TODOS OS 70 PROMPTS AGORA
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before vs After -->
+    <section class="before-after">
+        <div class="container">
+            <h2>Antes vs Depois dos 70 Prompts</h2>
+            <p class="before-after-subtitle">Veja a transformação real na sua rotina de trabalho</p>
+            <div class="comparison">
+                <div class="comparison-card before">
+                    <h3>❌ Sem os 70 Prompts</h3>
+                    <ul class="comparison-list">
+                        <li>2-4 horas criando prompts do zero para cada tarefa</li>
+                        <li>Resultados inconsistentes e genéricos da IA</li>
+                        <li>Retrabalho constante em documentos</li>
+                        <li>Prompts superficiais que não geram valor</li>
+                        <li>Perda de tempo com tentativa e erro</li>
+                        <li>Documentação incompleta e mal estruturada</li>
+                        <li>Stakeholders insatisfeitos com entregas</li>
+                        <li>Menos tempo para estratégia e inovação</li>
+                    </ul>
+                </div>
+                <div class="comparison-card after">
+                    <h3>✅ Com os 70 Prompts</h3>
+                    <ul class="comparison-list">
+                        <li>15-30 minutos para resultados profissionais</li>
+                        <li>Outputs consistentes e de alta qualidade</li>
+                        <li>Primeira tentativa já funciona perfeitamente</li>
+                        <li>Prompts específicos para cada contexto PM</li>
+                        <li>+15 horas livres por semana para estratégia</li>
+                        <li>Documentação completa e bem estruturada</li>
+                        <li>Aprovações mais rápidas dos stakeholders</li>
+                        <li>Mais tempo para inovação e crescimento</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Benefícios Práticos Imediatos</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Economize 15+ Horas/Semana</h3>
+                    <p>Acelere criação de PRDs, pesquisas, roadmaps e documentação com prompts testados em produção.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Qualidade Profissional Garantida</h3>
+                    <p>Outputs de nível sênior que impressionam stakeholders e aceleram aprovações de projetos.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📋</div>
+                    <h3>Organização Total por Categoria</h3>
+                    <p>70 prompts organizados em 7 categorias para encontrar exatamente o que precisa rapidamente.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Implementação Imediata</h3>
+                    <p>Copie, cole e adapte. Funciona com ChatGPT, Claude, Gemini e qualquer ferramenta de IA.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💡</div>
+                    <h3>Aprendizado Contínuo</h3>
+                    <p>Cada prompt ensina melhores práticas de Product Management e acelera seu crescimento.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔄</div>
+                    <h3>Atualizações Gratuitas</h3>
+                    <p>Novos prompts adicionados mensalmente baseados em feedback da comunidade, sem custo adicional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2>70 Prompts Organizados em 7 Categorias</h2>
             
             <div class="categories-grid">
                 <div class="category-card">
-                    <div class="category-icon text-cyan">📋</div>
-                    <h3 class="category-title">PRDs & Especificações</h3>
-                    <p class="category-description">40+ prompts para criar PRDs completos em 15 minutos ao invés de 2 horas. Especificações técnicas e documentação de features prontas.</p>
+                    <h3>📋 PRDs & Documentação <span class="count">(12 prompts)</span></h3>
+                    <p>Prompts para criar PRDs detalhados, especificações técnicas e documentação completa em minutos.</p>
                 </div>
-                
                 <div class="category-card">
-                    <div class="category-icon text-teal">🔍</div>
-                    <h3 class="category-title">Pesquisa & Discovery</h3>
-                    <p class="category-description">35+ prompts para pesquisa com usuários, análise de mercado e discovery de problemas. Economize 3+ horas por pesquisa.</p>
+                    <h3>🔍 Discovery & Research <span class="count">(10 prompts)</span></h3>
+                    <p>Estruture pesquisas de usuário, análise de mercado e discovery de produtos de forma sistemática.</p>
                 </div>
-                
                 <div class="category-card">
-                    <div class="category-icon text-pink">📊</div>
-                    <h3 class="category-title">Métricas & Analytics</h3>
-                    <p class="category-description">30+ prompts para definir KPIs, analisar dados e criar dashboards. Métricas testadas por PMs de unicórnios.</p>
+                    <h3>📊 Métricas & Analytics <span class="count">(8 prompts)</span></h3>
+                    <p>Defina KPIs, analise dados e crie dashboards que realmente importam para o negócio.</p>
                 </div>
-                
                 <div class="category-card">
-                    <div class="category-icon text-cyan">👥</div>
-                    <h3 class="category-title">User Stories & Personas</h3>
-                    <p class="category-description">25+ prompts para criar personas detalhadas e user stories acionáveis em minutos, não horas.</p>
+                    <h3>🗺️ Roadmap & Estratégia <span class="count">(10 prompts)</span></h3>
+                    <p>Construa roadmaps estratégicos, priorize features e alinhe stakeholders eficientemente.</p>
                 </div>
-                
                 <div class="category-card">
-                    <div class="category-icon text-pink">🗺️</div>
-                    <h3 class="category-title">Roadmaps & Estratégia</h3>
-                    <p class="category-description">30+ prompts para roadmaps, priorização e planejamento estratégico. Frameworks RICE, MoSCoW e outros.</p>
+                    <h3>👥 User Stories & Backlog <span class="count">(8 prompts)</span></h3>
+                    <p>Escreva user stories detalhadas e organize backlogs que aceleram o desenvolvimento.</p>
                 </div>
-                
                 <div class="category-card">
-                    <div class="category-icon text-teal">🚀</div>
-                    <h3 class="category-title">Go-to-Market</h3>
-                    <p class="category-description">20+ prompts para estratégias de lançamento e posicionamento. Acelere seus lançamentos em 80%.</p>
+                    <h3>🚀 Go-to-Market <span class="count">(12 prompts)</span></h3>
+                    <p>Planeje lançamentos, estratégias de marketing e comunicação para máximo impacto.</p>
+                </div>
+                <div class="category-card">
+                    <h3>🎯 Stakeholder Management <span class="count">(10 prompts)</span></h3>
+                    <p>Comunique-se efetivamente com stakeholders e alinhe expectativas em todos os níveis.</p>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 60px;">
-                <p style="font-size: 1.3rem; opacity: 0.8;">
-                    + Análise Competitiva + Apresentações + Processos + Ferramentas
-                </p>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#" class="cta-button" onclick="goDirectToCheckout()">
+                    QUERO ACESSO COMPLETO AGORA
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Offer Section -->
-    <section class="offer-section" id="oferta">
-        <div class="container-narrow">
-            <h2 class="section-title">
-                Acelere sua produtividade <span class="text-pink">hoje mesmo</span>
-            </h2>
-            
+    <!-- Offer -->
+    <section class="offer" id="offer">
+        <div class="container">
             <div class="offer-container">
-                <div class="offer-content">
-                    <div class="price-container">
-                        <div class="old-price">De R$ 247</div>
-                        <div class="current-price">R$ 147</div>
-                        <div class="installments">ou 12x de R$ 14,70</div>
+                <h2>Economize 15H com 70 Prompts</h2>
+                
+                <div class="price-container">
+                    <div class="old-price">De R$ 197</div>
+                    <div class="new-price">R$ 147</div>
+                    <div class="installments">ou 12x de R$ 14,70</div>
+                </div>
+
+                <ul class="benefits-list">
+                    <li>70 prompts testados e otimizados por PMs sêniores</li>
+                    <li>Organizados em 7 categorias essenciais do dia a dia</li>
+                    <li>Acesso vitalício à biblioteca completa</li>
+                    <li>Atualizações gratuitas mensais incluídas</li>
+                    <li>Guia de uso com exemplos práticos detalhados</li>
+                    <li>Compatível com ChatGPT, Claude, Gemini e outras IAs</li>
+                </ul>
+
+                <div class="bonus">
+                    <h3>🎁 OFERTA EXTRA LIMITADA</h3>
+                    <p><strong>Leve 5 prompts exclusivos para apresentações</strong><br>
+                    Crie slides profissionais que vendem suas ideias para qualquer audiência executiva.</p>
+                </div>
+
+                <a href="#" class="cta-button" onclick="goDirectToCheckout()">
+                    QUERO ECONOMIZAR TEMPO HOJE!
+                </a>
+
+                <div class="guarantee">
+                    <div class="guarantee-badge">7 DIAS SEM RISCOS</div>
+                    <h3>🛡️ Garantia Total</h3>
+                    <p><strong>7 dias sem riscos, reembolso total.</strong><br>
+                    Se não economizar tempo na primeira semana ou não gostar por qualquer motivo, devolvemos 100% do seu dinheiro sem perguntas.</p>
+                </div>
+
+                <div class="security-badges">
+                    <div class="security-badge">
+                        <span class="icon">🔒</span>
+                        <span>Pagamento 100% Seguro</span>
                     </div>
-                    
-                    <div class="features-list">
-                        <h4 class="text-white">🤖 Biblioteca Completa inclui:</h4>
-                        <ul>
-                            <li>📋 300+ Prompts organizados por categoria</li>
-                            <li>🎯 Prompts testados por PMs de unicórnios</li>
-                            <li>📚 Guia: "Como Organizar sua Biblioteca"</li>
-                            <li>🔄 Atualizações mensais gratuitas</li>
-                            <li>💎 Acesso vitalício</li>
-                            <li>🛡️ Garantia de 7 dias</li>
-                        </ul>
+                    <div class="security-badge">
+                        <span class="icon">✅</span>
+                        <span>Acesso Imediato</span>
                     </div>
-                    
-                    <a href="#" class="cta-button">
-                        QUERO A BIBLIOTECA COMPLETA
-                    </a>
-                    
-                    <div class="security-badges">
-                        <div class="security-badge">
-                            <span>🔒</span>
-                            <span>Pagamento 100% Seguro</span>
-                        </div>
-                        <div class="security-badge">
-                            <span>⚡</span>
-                            <span>Acesso Imediato</span>
-                        </div>
-                        <div class="security-badge">
-                            <span>💎</span>
-                            <span>Sem Mensalidades</span>
-                        </div>
+                    <div class="security-badge">
+                        <span class="icon">🏆</span>
+                        <span>Garantia Blindada</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Guarantee Section -->
-    <section class="section">
-        <div class="container-narrow">
-            <div class="guarantee-section">
-                <h3 class="guarantee-title">🛡️ Garantia de 7 dias</h3>
-                <p class="guarantee-text">
-                    Se em 7 dias você não economizar pelo menos 5 horas de trabalho ou não ficar 100% satisfeito, devolvemos seu investimento sem perguntas.
-                </p>
-                <p class="text-cyan" style="font-size: 1.2rem; margin-top: 25px; font-weight: bold;">
-                    Risco zero. Produtividade garantida.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="section section-alt">
-        <div class="container" style="text-align: center;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 40px; font-weight: 800;">
-                Pronto para <span class="text-teal">10x sua produtividade</span>?
-            </h2>
-            
-            <p style="font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9;">
-                Economize 15+ horas por semana e foque no que realmente importa
-            </p>
-            
-            <a href="#oferta" class="cta-button" style="font-size: 1.5rem; padding: 30px 70px;">
-                QUERO ACELERAR AGORA
-            </a>
-            
-            <p style="margin-top: 40px; opacity: 0.8; font-size: 1.1rem;">
-                Junte-se a +100 PMs que já aceleram com nossos prompts
-            </p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Product Maker. Todos os direitos reservados.</p>
+            <p>© 2025 Product Maker. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/product-maker-ai" target="_blank">LinkedIn</a>
+                <a href="https://www.instagram.com/productmaker.ai" target="_blank">Instagram</a>
             </div>
         </div>
     </footer>
 
+    <!-- Tracking Script -->
     <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+// Inicializar DataLayer
+window.dataLayer = window.dataLayer || [];
+
+// Configuração dos produtos e checkouts - LINKS ATUALIZADOS
+const productConfig = {
+  'prompt_pm_pro': {
+    checkoutUrl: 'https://pay.kiwify.com.br/aDjiojR',
+    price: 147
+  },
+  'pm_ai_pro': {
+    checkoutUrl: 'https://pay.kiwify.com.br/LfbaZOi',
+    price: 997
+  },
+  'automacao_n8n': {
+    checkoutUrl: 'https://pay.kiwify.com.br/51e9rxB',
+    price: 97
+  }
+};
+
+// Detectar produto atual pela URL
+function getCurrentProduct() {
+  const path = window.location.pathname.toLowerCase();
+  if (path.includes('pm-ai-pro')) return 'pm_ai_pro';
+  if (path.includes('prompt-pm')) return 'prompt_pm_pro';
+  if (path.includes('automacao-n8n')) return 'automacao_n8n';
+  return 'prompt_pm_pro'; // padrão
+}
+
+// Capturar UTMs da URL
+function getUTMParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return {
+    source: urlParams.get('utm_source') || 'direct',
+    medium: urlParams.get('utm_medium') || 'none',
+    campaign: urlParams.get('utm_campaign') || 'no-campaign',
+    content: urlParams.get('utm_content') || 'no-content',
+    term: urlParams.get('utm_term') || 'no-term'
+  };
+}
+
+// Salvar lead no Google Sheets
+async function saveToGoogleSheets(leadData) {
+  const scriptUrl = 'SUA_URL_GOOGLE_APPS_SCRIPT_AQUI';
+  
+  try {
+    await fetch(scriptUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(leadData)
+    });
+  } catch (error) {
+    console.log('Erro ao salvar lead:', error);
+  }
+}
+
+// Redirecionar para checkout preservando UTMs
+function redirectToCheckout(product, utmParams) {
+  const config = productConfig[product];
+  const baseUrl = config.checkoutUrl;
+  
+  // Construir query string com UTMs
+  const params = new URLSearchParams();
+  if (utmParams.source !== 'direct') params.append('utm_source', utmParams.source);
+  if (utmParams.medium !== 'none') params.append('utm_medium', utmParams.medium);
+  if (utmParams.campaign !== 'no-campaign') params.append('utm_campaign', utmParams.campaign);
+  if (utmParams.content !== 'no-content') params.append('utm_content', utmParams.content);
+  if (utmParams.term !== 'no-term') params.append('utm_term', utmParams.term);
+  
+  const finalUrl = baseUrl + (params.toString() ? '?' + params.toString() : '');
+  window.location.href = finalUrl;
+}
+
+// EVENT 1: Formulário enviado
+document.addEventListener('DOMContentLoaded', function() {
+  const leadForm = document.getElementById('lead-form');
+  
+  if (leadForm) {
+    leadForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      
+      submitBtn.textContent = 'Processando...';
+      submitBtn.disabled = true;
+      
+      const product = getCurrentProduct();
+      const utmParams = getUTMParams();
+      
+      const leadData = {
+        timestamp: new Date().toISOString(),
+        email: e.target.email.value,
+        whatsapp: e.target.whatsapp ? e.target.whatsapp.value : '',
+        product: product,
+        page_url: window.location.href,
+        utm_source: utmParams.source,
+        utm_campaign: utmParams.campaign
+      };
+      
+      // Evento para GTM
+      window.dataLayer.push({
+        'event': 'form_submit',
+        'product': product,
+        'utm_campaign': utmParams.campaign
+      });
+      
+      await saveToGoogleSheets(leadData);
+      
+      setTimeout(() => {
+        redirectToCheckout(product, utmParams);
+      }, 1500);
+    });
+  }
+});
+
+// EVENT 2: Checkout direto
+function goDirectToCheckout() {
+  const product = getCurrentProduct();
+  const utmParams = getUTMParams();
+  
+  window.dataLayer.push({
+    'event': 'checkout_click',
+    'product': product,
+    'utm_campaign': utmParams.campaign,
+    'variant': 'A'
+  });
+  
+  redirectToCheckout(product, utmParams);
+}
+
+// EVENT 3: Upsell view
+function trackUpsellView() {
+  window.dataLayer.push({
+    'event': 'upsell_view'
+  });
+}
+
+// Validação WhatsApp
+document.addEventListener('DOMContentLoaded', function() {
+  const whatsappInput = document.querySelector('input[name="whatsapp"]');
+  if (whatsappInput) {
+    whatsappInput.addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 11) value = value.slice(0, 11);
+      e.target.value = value;
+    });
+  }
+});
+
+// Track page view
+window.dataLayer.push({
+  'event': 'page_view',
+  'page_title': document.title,
+  'page_location': window.location.href,
+  'variant': 'A',
+  'product': getCurrentProduct()
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
-        });
-
-        // Add fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // CTA button click tracking
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                // Add your conversion tracking here
-                console.log('CTA clicked');
-                // Example: gtag('event', 'click', { 'event_category': 'CTA', 'event_label': 'Prompts Purchase' });
-            });
-        });
-
-        // Add dynamic counter animation
-        function animateCounter() {
-            const counter = document.querySelector('.social-proof-inner');
-            if (counter) {
-                let count = 100;
-                const target = 100 + Math.floor(Math.random() * 50);
-                const increment = () => {
-                    if (count < target) {
-                        count++;
-                        counter.innerHTML = `🚀 JUNTE-SE A +${count} PMs QUE JÁ ACELERAM COM NOSSOS PROMPTS`;
-                        setTimeout(increment, 50);
-                    }
-                };
-                setTimeout(increment, 2000);
-            }
         }
+    });
+});
 
-        // Start counter animation after page load
-        window.addEventListener('load', animateCounter);
+// Track A/B test assignment
+if (typeof gtag !== 'undefined') {
+    gtag('event', 'ab_test_assignment', {
+        'variant': 'A',
+        'page_location': window.location.href,
+        'product': getCurrentProduct()
+    });
+}
     </script>
 </body>
 </html>
