@@ -57,43 +57,39 @@
         
         .logo {
             font-size: 24px;
-            font-weight: 800;
+            font-weight: 700;
             color: #00f5ff;
+            text-transform: none;
         }
         
         .community-badge {
-            background: linear-gradient(45deg, #00f5ff, #00d4aa);
-            color: #1a2332;
-            padding: 8px 16px;
-            border-radius: 20px;
+            color: #00d4aa;
             font-size: 14px;
-            font-weight: 600;
-            animation: pulse 2s infinite;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: default;
         }
         
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
-        /* Countdown */
-        .countdown {
-            background: linear-gradient(45deg, #ff6b9d, #ff4757);
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 18px;
-            position: fixed;
-            top: 70px;
-            width: 100%;
-            z-index: 999;
-            box-shadow: 0 4px 20px rgba(255, 107, 157, 0.3);
+        .community-badge::before {
+            content: "✓";
+            background: #00d4aa;
+            color: #1a2332;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            flex-shrink: 0;
         }
         
         /* Hero Section */
         .hero {
-            padding: 180px 0 80px;
+            padding: 120px 0 80px;
             text-align: center;
             position: relative;
             background: 
@@ -199,59 +195,7 @@
             transform: translateY(-2px);
         }
         
-        /* Lead Magnet */
-        .lead-magnet {
-            background: linear-gradient(45deg, #ff6b9d, #ff8a80);
-            color: white;
-            padding: 40px;
-            border-radius: 20px;
-            margin: 40px 0;
-            text-align: center;
-            position: relative;
-        }
-        
-        .lead-magnet h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-        
-        .lead-magnet p {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-        }
-        
-        .lead-form {
-            display: flex;
-            gap: 15px;
-            max-width: 400px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-        }
-        
-        .lead-form input {
-            flex: 1;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            min-width: 250px;
-        }
-        
-        .lead-form button {
-            background: #1a2332;
-            color: white;
-            padding: 15px 25px;
-            border: none;
-            border-radius: 10px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .lead-form button:hover {
-            background: #0f1419;
-            transform: translateY(-2px);
-        }
+
         
         /* Testimonials */
         .testimonials {
@@ -318,6 +262,7 @@
             font-weight: bold;
             color: #1a2332;
             font-size: 1.2rem;
+            flex-shrink: 0;
         }
         
         .author-info h4 {
@@ -735,6 +680,13 @@
             margin-bottom: 15px;
         }
         
+        .bonus-details {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-align: left;
+        }
+        
         /* Guarantee */
         .guarantee {
             background: rgba(0, 212, 170, 0.1);
@@ -815,7 +767,7 @@
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .hero {
-                padding: 160px 0 60px;
+                padding: 120px 0 60px;
             }
             
             .hero h1 {
@@ -848,18 +800,7 @@
                 font-size: 2.2rem;
             }
             
-            .lead-form {
-                flex-direction: column;
-            }
-            
-            .lead-form input {
-                min-width: auto;
-            }
-            
-            .countdown {
-                font-size: 16px;
-                padding: 12px;
-            }
+
         }
     </style>
 </head>
@@ -873,16 +814,11 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <div class="logo">PRODUCT MAKER</div>
+                <div class="logo">Product Maker</div>
                 <div class="community-badge">Recomendado por comunidades de PMs</div>
             </div>
         </div>
     </header>
-
-    <!-- Countdown -->
-    <div class="countdown">
-        ⏰ OFERTA ESPECIAL EXPIRA EM: <span id="countdown-timer">47:59:32</span> | Últimas vagas disponíveis
-    </div>
 
     <!-- Hero -->
     <section class="hero">
@@ -896,7 +832,7 @@
             
             <div class="social-proof-header">
                 <div class="proof-badge">+200 PMs satisfeitos</div>
-                <div class="proof-badge">Testados em produção</div>
+                <div class="proof-badge">Testados por PMs de startups reconhecidas</div>
                 <div class="proof-badge">Resultados comprovados</div>
             </div>
             
@@ -908,15 +844,7 @@
                 <a href="#offer" class="cta-secondary">Ver Detalhes da Oferta</a>
             </div>
             
-            <!-- Lead Magnet -->
-            <div class="lead-magnet">
-                <h3>🎁 Baixe 5 prompts grátis</h3>
-                <p>Teste nossa qualidade antes de comprar. Receba 5 prompts essenciais no seu email agora!</p>
-                <form class="lead-form" id="lead-form">
-                    <input type="email" name="email" placeholder="Seu melhor email" required>
-                    <button type="submit">BAIXAR GRÁTIS</button>
-                </form>
-            </div>
+
         </div>
     </section>
 
@@ -1156,16 +1084,6 @@ Inclua benchmarks da industria quando relevante.
                 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Posso testar antes de comprar?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Sim, oferecemos 5 prompts gratuitos no formulário acima para você testar a qualidade. Além disso, você tem 7 dias de garantia total para experimentar todos os 70 prompts sem riscos.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
                         <span>Como funciona a garantia?</span>
                         <span class="faq-icon">▼</span>
                     </div>
@@ -1199,9 +1117,16 @@ Inclua benchmarks da industria quando relevante.
                 </ul>
 
                 <div class="bonus">
-                    <h3>🎁 OFERTA EXTRA LIMITADA</h3>
-                    <p><strong>Leve 5 prompts exclusivos para apresentações</strong><br>
-                    Crie slides profissionais que vendem suas ideias para qualquer audiência executiva.</p>
+                    <h3>🎁 BÔNUS EXCLUSIVO INCLUÍDO</h3>
+                    <p><strong>5 Prompts para Apresentações de Produto Fantásticas</strong><br>
+                    Crie slides que impressionam stakeholders, vendem suas ideias e aceleram aprovações. Transforme qualquer pitch em uma apresentação de impacto que gera resultados.</p>
+                    <div class="bonus-details">
+                        ✓ Estrutura de storytelling para produtos<br>
+                        ✓ Slides de roadmap que convencem<br>
+                        ✓ Apresentações de métricas que impressionam<br>
+                        ✓ Pitches de features que vendem<br>
+                        ✓ Demos que geram aprovação imediata
+                    </div>
                 </div>
 
                 <a href="#" class="cta-button" onclick="goDirectToCheckout()">
@@ -1252,7 +1177,7 @@ window.dataLayer = window.dataLayer || [];
 // Configuração dos produtos e checkouts - LINKS ATUALIZADOS
 const productConfig = {
   'prompt_pm_pro': {
-    checkoutUrl: 'https://pay.kiwify.com.br/aDjiojR',
+    checkoutUrl: 'https://pay.kiwify.com.br/LfbaZOi',
     price: 147
   },
   'pm_ai_pro': {
@@ -1321,59 +1246,9 @@ function redirectToCheckout(product, utmParams) {
   window.location.href = finalUrl;
 }
 
-// EVENT 1: Formulário enviado
-document.addEventListener('DOMContentLoaded', function() {
-  const leadForm = document.getElementById('lead-form');
-  
-  if (leadForm) {
-    leadForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      const submitBtn = e.target.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
-      
-      submitBtn.textContent = 'Processando...';
-      submitBtn.disabled = true;
-      
-      const product = getCurrentProduct();
-      const utmParams = getUTMParams();
-      
-      const leadData = {
-        timestamp: new Date().toISOString(),
-        email: e.target.email.value,
-        whatsapp: e.target.whatsapp ? e.target.whatsapp.value : '',
-        product: product,
-        page_url: window.location.href,
-        utm_source: utmParams.source,
-        utm_campaign: utmParams.campaign,
-        lead_magnet: '5_prompts_gratis'
-      };
-      
-      // Evento para GTM
-      window.dataLayer.push({
-        'event': 'form_submit',
-        'product': product,
-        'utm_campaign': utmParams.campaign,
-        'lead_type': 'lead_magnet'
-      });
-      
-      await saveToGoogleSheets(leadData);
-      
-      // Simular envio dos prompts gratuitos
-      submitBtn.textContent = 'Enviado! Confira seu email';
-      submitBtn.style.background = '#00d4aa';
-      
-      setTimeout(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        submitBtn.style.background = '';
-        e.target.reset();
-      }, 3000);
-    });
-  }
-});
 
-// EVENT 2: Checkout direto
+
+// EVENT 1: Checkout direto
 function goDirectToCheckout() {
   const product = getCurrentProduct();
   const utmParams = getUTMParams();
@@ -1388,7 +1263,7 @@ function goDirectToCheckout() {
   redirectToCheckout(product, utmParams);
 }
 
-// EVENT 3: Upsell view
+// EVENT 2: Upsell view
 function trackUpsellView() {
   window.dataLayer.push({
     'event': 'upsell_view'
@@ -1417,33 +1292,6 @@ function toggleFAQ(element) {
     'action': isActive ? 'close' : 'open'
   });
 }
-
-// Countdown Timer
-function updateCountdown() {
-  const now = new Date().getTime();
-  const endTime = now + (48 * 60 * 60 * 1000); // 48 hours from now
-  
-  const timer = setInterval(function() {
-    const currentTime = new Date().getTime();
-    const timeLeft = endTime - currentTime;
-    
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-    
-    document.getElementById('countdown-timer').innerHTML = 
-      String(hours).padStart(2, '0') + ':' + 
-      String(minutes).padStart(2, '0') + ':' + 
-      String(seconds).padStart(2, '0');
-    
-    if (timeLeft < 0) {
-      clearInterval(timer);
-      document.getElementById('countdown-timer').innerHTML = "00:00:00";
-    }
-  }, 1000);
-}
-
-updateCountdown();
 
 // Validação WhatsApp
 document.addEventListener('DOMContentLoaded', function() {
