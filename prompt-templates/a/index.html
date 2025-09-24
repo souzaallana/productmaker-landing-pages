@@ -57,23 +57,34 @@
         
         .logo {
             font-size: 24px;
-            font-weight: 800;
+            font-weight: 700;
             color: #00f5ff;
+            text-transform: none;
         }
         
         .community-badge {
-            background: linear-gradient(45deg, #00f5ff, #00d4aa);
-            color: #1a2332;
-            padding: 8px 16px;
-            border-radius: 20px;
+            color: #00d4aa;
             font-size: 14px;
-            font-weight: 600;
-            animation: pulse 2s infinite;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: default;
         }
         
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        .community-badge::before {
+            content: "✓";
+            background: #00d4aa;
+            color: #1a2332;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            flex-shrink: 0;
         }
         
         /* Hero Section */
@@ -184,6 +195,8 @@
             transform: translateY(-2px);
         }
         
+
+        
         /* Testimonials */
         .testimonials {
             padding: 80px 0;
@@ -249,6 +262,7 @@
             font-weight: bold;
             color: #1a2332;
             font-size: 1.2rem;
+            flex-shrink: 0;
         }
         
         .author-info h4 {
@@ -637,6 +651,13 @@
             margin-bottom: 15px;
         }
         
+        .bonus-details {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-align: left;
+        }
+        
         /* Guarantee */
         .guarantee {
             background: rgba(0, 212, 170, 0.1);
@@ -746,6 +767,8 @@
             .before-after h2 {
                 font-size: 2.2rem;
             }
+            
+
         }
     </style>
 </head>
@@ -759,7 +782,7 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <div class="logo">PRODUCT MAKER</div>
+                <div class="logo">Product Maker</div>
                 <div class="community-badge">Recomendado por comunidades de PMs</div>
             </div>
         </div>
@@ -777,7 +800,7 @@
             
             <div class="social-proof-header">
                 <div class="proof-badge">+200 PMs satisfeitos</div>
-                <div class="proof-badge">Testados em produção</div>
+                <div class="proof-badge">Testados por PMs de startups reconhecidas</div>
                 <div class="proof-badge">Resultados comprovados</div>
             </div>
             
@@ -788,6 +811,8 @@
                 <br>
                 <a href="#offer" class="cta-secondary">Ver Detalhes da Oferta</a>
             </div>
+            
+
         </div>
     </section>
 
@@ -1061,9 +1086,16 @@ Inclua benchmarks da industria quando relevante.
                 </ul>
 
                 <div class="bonus">
-                    <h3>🎁 OFERTA EXTRA LIMITADA</h3>
-                    <p><strong>Leve 5 prompts exclusivos para apresentações</strong><br>
-                    Crie slides profissionais que vendem suas ideias para qualquer audiência executiva.</p>
+                    <h3>🎁 BÔNUS EXCLUSIVO INCLUÍDO</h3>
+                    <p><strong>5 Prompts para Apresentações de Produto Fantásticas</strong><br>
+                    Crie slides que impressionam stakeholders, vendem suas ideias e aceleram aprovações. Transforme qualquer pitch em uma apresentação de impacto que gera resultados.</p>
+                    <div class="bonus-details">
+                        ✓ Estrutura de storytelling para produtos<br>
+                        ✓ Slides de roadmap que convencem<br>
+                        ✓ Apresentações de métricas que impressionam<br>
+                        ✓ Pitches de features que vendem<br>
+                        ✓ Demos que geram aprovação imediata
+                    </div>
                 </div>
 
                 <a href="#" class="cta-button" onclick="goDirectToCheckout()">
@@ -1114,7 +1146,7 @@ window.dataLayer = window.dataLayer || [];
 // Configuração dos produtos e checkouts - LINKS ATUALIZADOS
 const productConfig = {
   'prompt_pm_pro': {
-    checkoutUrl: 'https://pay.kiwify.com.br/aDjiojR',
+    checkoutUrl: 'https://pay.kiwify.com.br/LfbaZOi',
     price: 147
   },
   'pm_ai_pro': {
@@ -1183,50 +1215,9 @@ function redirectToCheckout(product, utmParams) {
   window.location.href = finalUrl;
 }
 
-// EVENT 1: Formulário enviado
-document.addEventListener('DOMContentLoaded', function() {
-  const leadForm = document.getElementById('lead-form');
-  
-  if (leadForm) {
-    leadForm.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      const submitBtn = e.target.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
-      
-      submitBtn.textContent = 'Processando...';
-      submitBtn.disabled = true;
-      
-      const product = getCurrentProduct();
-      const utmParams = getUTMParams();
-      
-      const leadData = {
-        timestamp: new Date().toISOString(),
-        email: e.target.email.value,
-        whatsapp: e.target.whatsapp ? e.target.whatsapp.value : '',
-        product: product,
-        page_url: window.location.href,
-        utm_source: utmParams.source,
-        utm_campaign: utmParams.campaign
-      };
-      
-      // Evento para GTM
-      window.dataLayer.push({
-        'event': 'form_submit',
-        'product': product,
-        'utm_campaign': utmParams.campaign
-      });
-      
-      await saveToGoogleSheets(leadData);
-      
-      setTimeout(() => {
-        redirectToCheckout(product, utmParams);
-      }, 1500);
-    });
-  }
-});
 
-// EVENT 2: Checkout direto
+
+// EVENT 1: Checkout direto
 function goDirectToCheckout() {
   const product = getCurrentProduct();
   const utmParams = getUTMParams();
@@ -1241,7 +1232,7 @@ function goDirectToCheckout() {
   redirectToCheckout(product, utmParams);
 }
 
-// EVENT 3: Upsell view
+// EVENT 2: Upsell view
 function trackUpsellView() {
   window.dataLayer.push({
     'event': 'upsell_view'
