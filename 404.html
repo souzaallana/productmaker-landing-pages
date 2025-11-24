@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Redirecionando...</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M4Z6F3VW');</script>
+    <!-- End Google Tag Manager -->
+    <script>
+        // This script is a common workaround for GitHub Pages 404 errors with nested paths.
+        // It redirects the user to the correct path by appending the path to the base URL.
+        var path = window.location.pathname;
+        var base = 'https://lp.productmaker.com.br';
+        
+        // Check if the path is one of our expected landing pages
+        if (path.includes('/prompts-pm/lp-01/') || path.includes('/prompts-pm/lp-02/')) {
+            // The path is already correct, but the 404 page is being served.
+            // We need to force the correct file to be loaded.
+            // Since we cannot directly access the file, we will try to redirect to the path with a trailing slash, 
+            // which sometimes forces the index.html to load.
+            if (!path.endsWith('/')) {
+                window.location.replace(base + path + '/');
+            } else {
+                // If it already has a trailing slash, we redirect to the path without the custom domain
+                // which should be handled by the root index.html, but since we are here, 
+                // we will try to load the path directly.
+                // This is a fallback, the main fix is the root index.html and the CNAME.
+                // The 404 trick is usually for SPAs, but we can use it to force the path.
+                // A simpler fix is to redirect to the root index.html, which will then redirect to lp-01.
+                window.location.replace(base + '/');
+            }
+        } else {
+            // If it's not one of our expected paths, redirect to the root index which will go to lp-01
+            window.location.replace(base + '/');
+        }
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4Z6F3VW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <p>Se você não for redirecionado automaticamente, clique <a href="/">aqui</a>.</p>
+</body>
+</html>
