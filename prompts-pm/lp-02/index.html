@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Prompts para PMs | Product Maker - LP 02</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M4Z6F3VW');</script>
+    <!-- End Google Tag Manager -->
+    <style>
+        :root {
+            --bg-color: #1a2332;
+            --cyan: #00f5ff;
+            --teal: #00d4aa;
+            --pink: #ff6b9d;
+            --text-color: #ffffff;
+            --font-family: 'Inter', sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        h1 {
+            font-size: 2.5em;
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        h1 span {
+            background: linear-gradient(90deg, var(--pink), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+        .cta-section {
+            text-align: center;
+            padding: 40px 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--teal), var(--pink));
+            color: var(--bg-color);
+            padding: 15px 30px;
+            font-size: 1.5em;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 212, 170, 0.5);
+            animation: pulse 2s infinite;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 212, 170, 0.8);
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px rgba(0, 212, 170, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(0, 212, 170, 0.8); }
+            100% { box-shadow: 0 0 20px rgba(0, 212, 170, 0.5); }
+        }
+        .price {
+            font-size: 1.8em;
+            margin-top: 15px;
+            font-weight: 600;
+            color: var(--cyan);
+        }
+        .price small {
+            font-size: 0.6em;
+            color: #aaa;
+            text-decoration: line-through;
+            margin-right: 10px;
+        }
+        .social-proof {
+            margin-top: 20px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--pink);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        .social-proof .seal {
+            border: 2px solid var(--cyan);
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: rgba(0, 245, 255, 0.1);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        .feature-item {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid var(--pink);
+        }
+        .feature-item h3 {
+            color: var(--teal);
+            margin-top: 0;
+        }
+        .guarantee-section {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border: 2px dashed var(--cyan);
+            border-radius: 10px;
+            background-color: rgba(0, 245, 255, 0.05);
+        }
+        .guarantee-section h2 {
+            color: var(--cyan);
+            margin-top: 0;
+        }
+        .guarantee-seal {
+            font-size: 3em;
+            color: var(--cyan);
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8em;
+            color: #888;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .cta-button {
+                font-size: 1.2em;
+                padding: 12px 25px;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4Z6F3VW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="container">
+        <header>
+            <p style="color: var(--teal); font-weight: 600; margin-bottom: 5px;">O SALTO DE CARREIRA QUE VOCÊ PRECISA</p>
+            <h1>Transforme sua <span>Carreira de PM</span> com a Inteligência Artificial.</h1>
+            <p class="subtitle">Pare de ser um PM júnior. Use a **Biblioteca de 70 Prompts** para se posicionar como um especialista em estratégia e execução.</p>
+        </header>
+
+        <section class="cta-section">
+            <p style="font-size: 1.1em; margin-bottom: 10px;">**OFERTA EXCLUSIVA: Acesso vitalício por tempo limitado!**</p>
+            <a href="https://pay.kiwify.com.br/..." class="cta-button" target="_blank">
+                QUERO ME TORNAR UM PM DE ELITE AGORA!
+            </a>
+            <p class="price"><small>De R$ 99,90</small> Por Apenas R$ 49,90</p>
+            <div class="social-proof">
+                <span class="seal">⭐ +200 PMs Satisfeitos</span>
+                <span>|</span>
+                <span>Acesso Imediato e Vitalício</span>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 style="text-align: center; color: var(--pink);">O que está impedindo seu crescimento:</h2>
+            <div class="features">
+                <div class="feature-item">
+                    <h3>❌ Falta de Profundidade</h3>
+                    <p>Seus artefatos (PRDs, OKRs) parecem superficiais e não impressionam a liderança.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>❌ Excesso de Operacional</h3>
+                    <p>Você gasta muito tempo em tarefas repetitivas e pouco em visão e estratégia.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>❌ Dificuldade em Inovar</h3>
+                    <p>Seus concorrentes estão usando IA para gerar ideias e você ainda está na fase de testes.</p>
+                </div>
+            </div>
+
+            <h2 style="text-align: center; color: var(--pink); margin-top: 50px;">O que a Biblioteca de Prompts fará por você:</h2>
+            <div class="features">
+                <div class="feature-item">
+                    <h3>✅ Entregas de Sênior</h3>
+                    <p>Use prompts que forçam a IA a entregar análises complexas e documentos com a profundidade de um PM experiente.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>✅ Foco Estratégico</h3>
+                    <p>Automatize a criação de rascunhos e documentos de rotina, liberando 80% do seu tempo para pensar no futuro do produto.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>✅ Posicionamento de Liderança</h3>
+                    <p>Apresente artefatos de altíssima qualidade e mostre que você domina as ferramentas mais modernas do mercado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="guarantee-section">
+            <div class="guarantee-seal">🛡️</div>
+            <h2>Sua Satisfação é 100% Garantida</h2>
+            <p style="font-size: 1.1em;">
+                Você tem **7 dias de garantia incondicional**. Se por qualquer motivo você não sentir que a Biblioteca de Prompts elevou o nível da sua carreira, basta nos enviar um e-mail e devolveremos 100% do seu investimento. **Risco Zero para você.**
+            </p>
+        </section>
+
+        <section class="cta-section" style="margin-top: 50px;">
+            <p style="font-size: 1.2em; margin-bottom: 20px; color: var(--pink);">Seu próximo nível de carreira começa com um clique.</p>
+            <a href="https://pay.kiwify.com.br/..." class="cta-button" target="_blank">
+                SIM, EU QUERO OS 70 PROMPTS AGORA!
+            </a>
+            <p class="price"><small>De R$ 99,90</small> Por Apenas R$ 49,90</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Product Maker. Todos os direitos reservados.</p>
+            <p>CNPJ: 00.000.000/0001-00 | <a href="#" style="color: var(--teal);">Termos de Uso</a> | <a href="#" style="color: var(--teal);">Política de Privacidade</a></p>
+        </footer>
+    </div>
+</body>
+</html>
