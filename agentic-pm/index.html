@@ -1070,28 +1070,28 @@
 <body>
 <script>
 
-document.addEventListener('DOMContentLoaded', function() {
-    const leadForm = document.getElementById('leadForm');
-    const formMessage = document.getElementById('formMessage');
+document.addEventListener(\'DOMContentLoaded\', function() {
+    const leadForm = document.getElementById(\'leadForm\');
+    const formMessage = document.getElementById(\'formMessage\');
 
     if (leadForm) {
-        console.log('Form found, attaching event listener.');
-        leadForm.addEventListener('submit', async function(event) {
-            console.log('Form submit event triggered.');
+        console.log(\'Form found, attaching event listener.\');
+        leadForm.addEventListener(\'submit\', async function(event) {
+            console.log(\'Form submit event triggered.\');
             event.preventDefault();
-            console.log('Default form submission prevented.');
+            console.log(\'Default form submission prevented.\');
 
-            const name = leadForm.querySelector('input[placeholder="Seu nome completo"]').value;
-            const email = leadForm.querySelector('input[placeholder="Seu melhor e-mail"]').value;
-            const whatsapp = leadForm.querySelector('input[placeholder="Seu WhatsApp (com DDD)"]').value;
+            const name = leadForm.querySelector(\'input[placeholder="Seu nome completo"]\').value;
+            const email = leadForm.querySelector(\'input[placeholder="Seu melhor e-mail"]\').value;
+            const whatsapp = leadForm.querySelector(\'input[placeholder="Seu WhatsApp (com DDD)"]\').value;
 
-            console.log('Form Data:', { name, email, whatsapp });
+            console.log(\'Form Data:\', { name, email, whatsapp });
 
             if (!name || !email || !whatsapp) {
                 formMessage.innerHTML = "Por favor, preencha todos os campos.";
                 formMessage.style.color = "red";
                 formMessage.style.display = "block";
-                console.log('Validation failed: missing fields.');
+                console.log(\'Validation failed: missing fields.\');
                 return;
             }
 
@@ -1108,26 +1108,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             };
 
-            console.log('Contact Data:', contactData);
+            console.log(\'Contact Data:\', contactData);
 
             try {
                 // Create or update contact
                 const contactResponse = await fetch(`https://diasallana1990.api-us1.com/api/3/contacts`, {
-                    method: 'POST',
+                    method: \'POST\',
                     headers: {
-                        'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe',
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
+                        \'Api-Token\': \'1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe\',
+                        \'Content-Type\': \'application/json\',
+                        \'Accept\': \'application/json\'
                     },
                     body: JSON.stringify(contactData)
                 });
 
                 const contactResult = await contactResponse.json();
-                console.log('Contact API Response:', contactResponse);
-                console.log('Contact API Result:', contactResult);
+                console.log(\'Contact API Response:\', contactResponse);
+                console.log(\'Contact API Result:\', contactResult);
 
                 if (!contactResponse.ok) {
-                    console.error('ActiveCampaign Contact Error:', contactResult);
+                    console.error(\'ActiveCampaign Contact Error:\', contactResult);
                     formMessage.innerHTML = "Ocorreu um erro ao enviar o formulário. Tente novamente.";
                     formMessage.style.color = "red";
                     formMessage.style.display = "block";
@@ -1135,7 +1135,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 const contactId = contactResult.contact.id;
-                console.log('Contact ID:', contactId);
+                console.log(\'Contact ID:\', contactId);
 
                 // Add contact to list
                 const listContactData = {
@@ -1146,24 +1146,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 };
 
-                console.log('List Contact Data:', listContactData);
+                console.log(\'List Contact Data:\', listContactData);
 
                 const listResponse = await fetch(`https://diasallana1990.api-us1.com/api/3/contactLists`, {
-                    method: 'POST',
+                    method: \'POST\',
                     headers: {
-                        'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe',
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
+                        \'Api-Token\': \'1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe\',
+                        \'Content-Type\': \'application/json\',
+                        \'Accept\': \'application/json\'
                     },
                     body: JSON.stringify(listContactData)
                 });
 
                 const listResult = await listResponse.json();
-                console.log('List API Response:', listResponse);
-                console.log('List API Result:', listResult);
+                console.log(\'List API Response:\', listResponse);
+                console.log(\'List API Result:\', listResult);
 
                 if (!listResponse.ok) {
-                    console.error('ActiveCampaign List Error:', listResult);
+                    console.error(\'ActiveCampaign List Error:\', listResult);
                     formMessage.innerHTML = "Ocorreu um erro ao enviar o formulário. Tente novamente.";
                     formMessage.style.color = "red";
                     formMessage.style.display = "block";
@@ -1173,13 +1173,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Add tags to contact
                 const tags = ["lead", "agentic-pm", "lançamento-2026"];
                 for (const tagName of tags) {
-                    console.log('Processing tag:', tagName);
+                    console.log(\'Processing tag:\', tagName);
                     // First, get the tag ID
                     const tagSearchResponse = await fetch(`https://diasallana1990.api-us1.com/api/3/tags?search=${tagName}`, {
-                        method: 'GET',
+                        method: \'GET\',
                         headers: {
-                            'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe',
-                            'Accept': 'application/json'
+                            \'Api-Token\': \'1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe\',
+                            \'Accept\': \'application/json\'
                         }
                     });
                     const tagSearchResult = await tagSearchResponse.json();
@@ -1188,34 +1188,34 @@ document.addEventListener('DOMContentLoaded', function() {
                     let tagId;
                     if (tagSearchResult.tags && tagSearchResult.tags.length > 0) {
                         tagId = tagSearchResult.tags[0].id;
-                        console.log(`Tag ID for ${tagName}:', tagId);
+                        console.log(`Tag ID for ${tagName}:\', tagId);
                     } else {
-                        // If tag doesn't exist, create it
+                        // If tag doesn\'t exist, create it
                         console.log(`Tag ${tagName} not found, creating...`);
                         const createTagResponse = await fetch(`https://diasallana1990.api-us1.com/api/3/tags`, {
-                            method: 'POST',
+                            method: \'POST\',
                             headers: {
-                                'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe',
-                                'Content-Type': 'application/json',
-                                'Accept': 'application/json'
+                                \'Api-Token\': \'1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe\',
+                                \'Content-Type\': \'application/json\',
+                                \'Accept\': \'application/json\'
                             },
                             body: JSON.stringify({
                                 tag: {
                                     tag: tagName,
-                                    tagType: 'contact'
+                                    tagType: \'contact\'
                                 }
                             })
                         });
                         const createTagResult = await createTagResponse.json();
-                        console.log(`Create Tag API Response for ${tagName}:', createTagResponse);
-                        console.log(`Create Tag API Result for ${tagName}:', createTagResult);
+                        console.log(`Create Tag API Response for ${tagName}:\', createTagResponse);
+                        console.log(`Create Tag API Result for ${tagName}:\', createTagResult);
 
                         if (!createTagResponse.ok) {
-                            console.error('ActiveCampaign Create Tag Error:', createTagResult);
+                            console.error(\'ActiveCampaign Create Tag Error:\', createTagResult);
                             continue; // Skip to next tag
                         }
                         tagId = createTagResult.tag.id;
-                        console.log(`New Tag ID for ${tagName}:', tagId);
+                        console.log(`New Tag ID for ${tagName}:\', tagId);
                     }
 
                     // Add tag to contact
@@ -1225,21 +1225,21 @@ document.addEventListener('DOMContentLoaded', function() {
                             tag: tagId
                         }
                     };
-                    console.log('Contact Tag Data:', contactTagData);
+                    console.log(\'Contact Tag Data:\', contactTagData);
 
                     const contactTagResponse = await fetch(`https://diasallana1990.api-us1.com/api/3/contactTags`, {
-                        method: 'POST',
+                        method: \'POST\',
                         headers: {
-                            'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe',
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
+                            \'Api-Token\': \'1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe\',
+                            \'Content-Type\': \'application/json\',
+                            \'Accept\': \'application/json\'
                         },
                         body: JSON.stringify(contactTagData)
                     });
 
                     const contactTagResult = await contactTagResponse.json();
-                    console.log(`Contact Tag API Response for ${tagName}:', contactTagResponse);
-                    console.log(`Contact Tag API Result for ${tagName}:', contactTagResult);
+                    console.log(`Contact Tag API Response for ${tagName}:\', contactTagResponse);
+                    console.log(`Contact Tag API Result for ${tagName}:\', contactTagResult);
 
                     if (!contactTagResponse.ok) {
                         console.error(`ActiveCampaign Add Tag ${tagName} Error:`, contactTagResult);
@@ -1252,7 +1252,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 leadForm.reset(); // Clear the form
 
             } catch (error) {
-                console.error('ActiveCampaign Integration Error:', error);
+                console.error(\'ActiveCampaign Integration Error:\', error);
                 formMessage.innerHTML = "Ocorreu um erro ao enviar o formulário. Tente novamente.";
                 formMessage.style.color = "red";
                 formMessage.style.display = "block";
