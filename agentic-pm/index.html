@@ -1075,8 +1075,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const formMessage = document.getElementById('formMessage');
 
     if (leadForm) {
+        console.log('Form found, attaching event listener.');
         leadForm.addEventListener('submit', async function(event) {
+            console.log('Form submit event triggered.');
             event.preventDefault();
+            console.log('Default form submission prevented.');
 
             const name = leadForm.querySelector('input[placeholder="Seu nome completo"]').value;
             const email = leadForm.querySelector('input[placeholder="Seu melhor e-mail"]').value;
@@ -1088,6 +1091,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 formMessage.innerHTML = "Por favor, preencha todos os campos.";
                 formMessage.style.color = "red";
                 formMessage.style.display = "block";
+                console.log('Validation failed: missing fields.');
                 return;
             }
 
