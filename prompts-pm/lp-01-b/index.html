@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumente sua produtividade com 70 prompts profissionais para PMs | Product Maker</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M4Z6F3VW');</script>
+    <!-- End Google Tag Manager -->
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a2332 0%, #0f1419 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(26, 35, 50, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 245, 255, 0.2);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #00f5ff;
+        }
+        
+        .community-badge {
+            background: linear-gradient(45deg, #00f5ff, #00d4aa);
+            color: #1a2332;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Countdown */
+        .countdown {
+            background: linear-gradient(45deg, #ff6b9d, #ff4757);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 18px;
+            position: fixed;
+            top: 70px;
+            width: 100%;
+            z-index: 999;
+            box-shadow: 0 4px 20px rgba(255, 107, 157, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 80px;
+            text-align: center;
+            position: relative;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 212, 170, 0.1) 0%, transparent 50%);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #00f5ff, #00d4aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #b0c4de;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .social-proof-header {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .proof-badge {
+            background: rgba(0, 245, 255, 0.1) !important;
+            border: 1px solid rgba(0, 245, 255, 0.3) !important;
+            padding: 8px 16px !important;
+            border-radius: 20px !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            color: #00f5ff !important;
+        }
+        
+        /* Community Seal */
+        .community-seal {
+            background: linear-gradient(45deg, #00f5ff, #00d4aa);
+            color: #1a2332;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: inline-block;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .community-seal::before {
+            content: "🏆";
+            margin-right: 10px;
+        }
+        
+        /* CTA Buttons */
+        .cta-button {
+            background: linear-gradient(45deg, #00f5ff, #00d4aa);
+            color: #1a2332;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 245, 255, 0.4);
+        }
+        
+        .cta-secondary {
+            background: rgba(0, 245, 255, 0.1);
+            border: 2px solid #00f5ff;
+            color: #00f5ff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 10px;
+        }
+        
+        .cta-secondary:hover {
+            background: rgba(0, 245, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Lead Magnet */
+        .lead-magnet {
+            background: linear-gradient(45deg, #ff6b9d, #ff8a80);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .lead-magnet h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .lead-magnet p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        
+        .lead-form {
+            display: flex;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        
+        .lead-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            min-width: 250px;
+        }
+        
+        .lead-form button {
+            background: #1a2332;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lead-form button:hover {
+            background: #0f1419;
+            transform: translateY(-2px);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: rgba(0, 245, 255, 0.05);
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #00f5ff;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: rgba(26, 35, 50, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            font-size: 4rem;
+            color: #00f5ff;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #b0c4de;
+            padding-left: 30px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00f5ff, #00d4aa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1a2332;
+        }
+        
+        .author-info h4 {
+            color: #00f5ff;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #b0c4de;
+            font-size: 0.9rem;
+        }
+        
+        /* Practical Examples */
+        .examples {
+            padding: 80px 0;
+        }
+        
+        .examples h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #00f5ff;
+        }
+        
+        .examples-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #b0c4de;
+            margin-bottom: 60px;
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .example-card {
+            background: rgba(26, 35, 50, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+        }
+        
+        .example-header {
+            background: linear-gradient(45deg, #00f5ff, #00d4aa);
+            color: #1a2332;
+            padding: 20px;
+            font-weight: 700;
+        }
+        
+        .example-content {
+            padding: 25px;
+        }
+        
+        .prompt-box {
+            background: rgba(0, 245, 255, 0.1);
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            color: #00f5ff;
+            position: relative;
+        }
+        
+        .prompt-box::before {
+            content: "💡 PROMPT:";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: #1a2332;
+            padding: 0 10px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .result-box {
+            background: rgba(0, 212, 170, 0.1);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            color: #00d4aa;
+        }
+        
+        /* Before vs After */
+        .before-after {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1) 0%, rgba(0, 212, 170, 0.1) 100%);
+        }
+        
+        .before-after h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #00f5ff;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .comparison-card {
+            background: rgba(26, 35, 50, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .comparison-card.before {
+            border: 2px solid #ff6b9d;
+        }
+        
+        .comparison-card.after {
+            border: 2px solid #00d4aa;
+        }
+        
+        .comparison-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .comparison-card.before h3 {
+            color: #ff6b9d;
+        }
+        
+        .comparison-card.after h3 {
+            color: #00d4aa;
+        }
+        
+        .comparison-list {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .comparison-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #b0c4de;
+        }
+        
+        .comparison-card.before .comparison-list li::before {
+            content: "❌";
+            flex-shrink: 0;
+        }
+        
+        .comparison-card.after .comparison-list li::before {
+            content: "✅";
+            flex-shrink: 0;
+        }
+        
+        /* Categories */
+        .categories {
+            padding: 80px 0;
+            background: rgba(0, 245, 255, 0.05);
+        }
+        
+        .categories h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #00f5ff;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .category-card {
+            background: rgba(26, 35, 50, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 245, 255, 0.5);
+        }
+        
+        .category-card h3 {
+            color: #00f5ff;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .count {
+            background: none !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            font-weight: 600;
+            color: #00d4aa;
+        }
+        
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #00f5ff;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: rgba(26, 35, 50, 0.8);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #00f5ff;
+            transition: background 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: rgba(0, 245, 255, 0.1);
+        }
+        
+        .faq-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: #b0c4de;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 25px 25px;
+            max-height: 200px;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* Offer */
+        .offer {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1) 0%, rgba(0, 212, 170, 0.1) 100%);
+        }
+        
+        .offer-container {
+            background: rgba(26, 35, 50, 0.9);
+            padding: 60px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .offer h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #00f5ff;
+        }
+        
+        .price-container {
+            margin: 40px 0;
+        }
+        
+        .old-price {
+            font-size: 1.2rem;
+            color: #ff6b9d;
+            text-decoration: line-through;
+            margin-bottom: 10px;
+        }
+        
+        .new-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #00d4aa;
+            margin-bottom: 10px;
+        }
+        
+        .installments {
+            font-size: 1.3rem;
+            color: #00f5ff;
+            font-weight: 600;
+            background: rgba(0, 245, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            margin: 40px 0;
+            text-align: left;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #b0c4de;
+        }
+        
+        .benefits-list li::before {
+            content: "✓";
+            background: #00d4aa;
+            color: #1a2332;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        /* Bonus */
+        .bonus {
+            background: linear-gradient(45deg, #ff6b9d, #ff8a80);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bonus::before {
+            content: "🎁";
+            font-size: 3rem;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            opacity: 0.3;
+        }
+        
+        .bonus h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Guarantee */
+        .guarantee {
+            background: rgba(0, 212, 170, 0.1);
+            border: 2px solid rgba(0, 212, 170, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .guarantee h3 {
+            color: #00d4aa;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .guarantee-badge {
+            background: #00d4aa;
+            color: #1a2332;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        /* Security Badges */
+        .security-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #b0c4de;
+            font-size: 0.9rem;
+        }
+        
+        .security-badge .icon {
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(26, 35, 50, 0.9);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 245, 255, 0.2);
+        }
+        
+        .footer p {
+            color: #b0c4de;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .social-links a {
+            color: #00f5ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #00d4aa;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 160px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .testimonials-grid,
+            .examples-grid,
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .offer-container {
+                padding: 40px 20px;
+            }
+            
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .lead-form {
+                flex-direction: column;
+            }
+            
+            .lead-form input {
+                min-width: auto;
+            }
+            
+            .countdown {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4Z6F3VW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">PRODUCT MAKER</div>
+                <div class="community-badge">Recomendado por pessoas de produto</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Countdown -->
+    <div class="countdown">
+        ⏰ OFERTA ESPECIAL EXPIRA EM: <span id="countdown-timer">23:59:45</span> | Últimas vagas disponíveis
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Aumente sua produtividade com 70 prompts profissionais para PMs</h1>
+            <p class="subtitle">Economize 15+ horas por semana com prompts testados e otimizados que transformam sua forma de trabalhar com IA.</p>
+            
+            <div class="community-seal">
+                Recomendado por pessoas de produto
+            </div>
+            
+            <div class="social-proof-header">
+                <div class="proof-badge">+200 PMs satisfeitos</div>
+                <div class="proof-badge">Used by Top Tech PMs</div>
+                <div class="proof-badge">Testados em produção</div>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <a href="https://pay.kiwify.com.br/LfbaZOi" class="cta-button" target="_blank" onclick="goDirectToCheckout()">
+                    COMECE A ECONOMIZAR 15H POR SEMANA!
+                </a>
+                <br>
+                <a href="#offer" class="cta-secondary">Ver Detalhes da Oferta</a>
+            </div>
+            
+            <!-- Lead Magnet -->
+            <div class="lead-magnet">
+                <h3>🎁 Baixe 5 prompts grátis</h3>
+                <p>Teste nossa qualidade antes de comprar. Receba 5 prompts essenciais no seu email agora!</p>
+                <form class="lead-form" id="lead-form">
+                    <input type="email" name="email" placeholder="Seu melhor email" required>
+                    <button type="submit">BAIXAR GRÁTIS</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>O Que Dizem os PMs</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Economizei 12 horas na primeira semana. Os prompts para PRDs são incríveis, meu time aprovou tudo na primeira revisão."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RC</div>
+                        <div class="author-info">
+                            <h4>Rafael Costa</h4>
+                            <p>Senior PM, Fintech</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Finalmente prompts que funcionam de verdade. Minha produtividade em discovery aumentou 300%. Recomendo para qualquer PM."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MS</div>
+                        <div class="author-info">
+                            <h4>Marina Silva</h4>
+                            <p>Product Manager, E-commerce</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Os prompts de métricas me salvaram. Consegui criar dashboards que impressionaram a diretoria em 30 minutos."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LF</div>
+                        <div class="author-info">
+                            <h4>Lucas Ferreira</h4>
+                            <p>Lead PM, Marketplace</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Examples -->
+    <section class="examples">
+        <div class="container">
+            <h2>Veja 3 Prompts em Ação</h2>
+            <p class="examples-subtitle">Exemplos reais de como os prompts aceleram seu trabalho diário</p>
+            
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-header">
+                        📋 Criação de PRD
+                    </div>
+                    <div class="example-content">
+                        <div class="prompt-box">
+                            Crie um PRD para [PRODUTO] que resolve [PROBLEMA] para [PÚBLICO]. Inclua: objetivos, métricas de sucesso, requisitos funcionais, critérios de aceitação e roadmap de 3 meses.
+                        </div>
+                        <div class="result-box">
+                            <strong>Resultado:</strong> PRD completo de 8 páginas em 15 minutos, com todos os elementos necessários para aprovação dos stakeholders.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-header">
+                        🔍 Research de Usuário
+                    </div>
+                    <div class="example-content">
+                        <div class="prompt-box">
+                            Desenvolva um plano de research para validar [HIPÓTESE] com [PÚBLICO-ALVO]. Inclua: metodologia, perguntas-chave, métricas, cronograma e critérios de validação.
+                        </div>
+                        <div class="result-box">
+                            <strong>Resultado:</strong> Plano de research estruturado com 15 perguntas validadas e metodologia clara para execução imediata.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-card">
+                    <div class="example-header">
+                        📊 Definição de Métricas
+                    </div>
+                    <div class="example-content">
+                        <div class="prompt-box">
+                            Defina métricas para [FEATURE] considerando: objetivos de negócio, comportamento do usuário, impacto técnico. Inclua KPIs primários, secundários e métricas de guardrail.
+                        </div>
+                        <div class="result-box">
+                            <strong>Resultado:</strong> Framework completo de métricas com 12 KPIs organizados por prioridade e impacto no negócio.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://pay.kiwify.com.br/LfbaZOi" class="cta-secondary" target="_blank" onclick="goDirectToCheckout()">
+                    QUERO TODOS OS 70 PROMPTS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before vs After -->
+    <section class="before-after">
+        <div class="container">
+            <h2>Antes vs Depois dos 70 Prompts</h2>
+            <div class="comparison">
+                <div class="comparison-card before">
+                    <h3>❌ Sem os 70 Prompts</h3>
+                    <ul class="comparison-list">
+                        <li>2+ horas criando prompts do zero</li>
+                        <li>Resultados inconsistentes da IA</li>
+                        <li>Retrabalho constante</li>
+                        <li>Prompts genéricos e superficiais</li>
+                        <li>Perda de tempo com tentativa e erro</li>
+                        <li>Documentos incompletos</li>
+                        <li>Stakeholders insatisfeitos</li>
+                    </ul>
+                </div>
+                <div class="comparison-card after">
+                    <h3>✅ Com os 70 Prompts</h3>
+                    <ul class="comparison-list">
+                        <li>15 minutos para resultados profissionais</li>
+                        <li>Outputs consistentes e de qualidade</li>
+                        <li>Primeira tentativa já funciona</li>
+                        <li>Prompts específicos para cada contexto</li>
+                        <li>+15 horas livres por semana</li>
+                        <li>Documentação completa e estruturada</li>
+                        <li>Aprovações mais rápidas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2>70 Prompts Organizados em 7 Categorias</h2>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <h3>📋 PRDs & Documentação <span class="count">12 prompts</span></h3>
+                    <p>Prompts para criar PRDs detalhados, especificações técnicas e documentação completa em minutos.</p>
+                </div>
+                <div class="category-card">
+                    <h3>🔍 Discovery & Research <span class="count">10 prompts</span></h3>
+                    <p>Estruture pesquisas de usuário, análise de mercado e discovery de produtos de forma sistemática.</p>
+                </div>
+                <div class="category-card">
+                    <h3>📊 Métricas & Analytics <span class="count">8 prompts</span></h3>
+                    <p>Defina KPIs, analise dados e crie dashboards que realmente importam para o negócio.</p>
+                </div>
+                <div class="category-card">
+                    <h3>🗺️ Roadmap & Estratégia <span class="count">10 prompts</span></h3>
+                    <p>Construa roadmaps estratégicos, priorize features e alinhe stakeholders eficientemente.</p>
+                </div>
+                <div class="category-card">
+                    <h3>👥 User Stories & Backlog <span class="count">8 prompts</span></h3>
+                    <p>Escreva user stories detalhadas e organize backlogs que aceleram o desenvolvimento.</p>
+                </div>
+                <div class="category-card">
+                    <h3>🚀 Go-to-Market <span class="count">12 prompts</span></h3>
+                    <p>Planeje lançamentos, estratégias de marketing e comunicação para máximo impacto.</p>
+                </div>
+                <div class="category-card">
+                    <h3>🎯 Stakeholder Management <span class="count">10 prompts</span></h3>
+                    <p>Comunique-se efetivamente com stakeholders e alinhe expectativas em todos os níveis.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://pay.kiwify.com.br/LfbaZOi" class="cta-button" target="_blank" onclick="goDirectToCheckout()">
+                    COMECE A ECONOMIZAR 15H POR SEMANA!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Como recebo os prompts após a compra?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Acesso imediato via e-mail após pagamento. Você receberá um link para download da biblioteca completa com os 70 prompts organizados por categoria.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Preciso de conhecimentos avançados em IA para usar?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não. Basta copiar, colar e adaptar. Os prompts são plug-and-play e funcionam com qualquer ferramenta de IA como ChatGPT, Claude ou Gemini.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Posso testar antes de comprar?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, oferecemos 5 prompts gratuitos no formulário acima. Além disso, você tem 7 dias de garantia total para testar todos os 70 prompts.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Como funciona a garantia?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>7 dias para pedir reembolso completo se não satisfeito. Sem perguntas, sem complicação. Basta enviar um email e devolvemos 100% do valor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer -->
+    <section class="offer" id="offer">
+        <div class="container">
+            <div class="offer-container">
+                <h2>Economize 15H com 70 Prompts</h2>
+                
+                <div class="price-container">
+                    <div class="old-price">De R$ 147</div>
+                    <div class="new-price">R$ 97</div>
+                    <div class="installments">12x de R$ 9,70</div>
+                </div>
+
+                <ul class="benefits-list">
+                    <li>70 prompts testados e otimizados</li>
+                    <li>Organizados em 7 categorias essenciais</li>
+                    <li>Acesso vitalício à biblioteca</li>
+                    <li>Atualizações gratuitas incluídas</li>
+                    <li>Guia de uso com exemplos práticos</li>
+                    <li>Compatível com ChatGPT, Claude e Gemini</li>
+                </ul>
+
+                <div class="bonus">
+                    <h3>🎁 BÔNUS EXCLUSIVO</h3>
+                    <p><strong>Leve 5 prompts extras para apresentações</strong><br>
+                    Crie slides profissionais que vendem suas ideias para qualquer audiência.</p>
+                </div>
+
+                <a href="https://pay.kiwify.com.br/LfbaZOi" class="cta-button" target="_blank" onclick="goDirectToCheckout()">
+                    COMECE A ECONOMIZAR 15H POR SEMANA!
+                </a>
+
+                <div class="guarantee">
+                    <div class="guarantee-badge">7 DIAS SEM RISCOS</div>
+                    <h3>🛡️ Garantia Total</h3>
+                    <p><strong>7 dias sem riscos, reembolso total.</strong><br>
+                    Se não economizar tempo na primeira semana, devolvemos 100% do seu dinheiro.</p>
+                </div>
+
+                <div class="security-badges">
+                    <div class="security-badge">
+                        <span class="icon">🔒</span>
+                        <span>Pagamento Seguro</span>
+                    </div>
+                    <div class="security-badge">
+                        <span class="icon">✅</span>
+                        <span>Acesso Imediato</span>
+                    </div>
+                    <div class="security-badge">
+                        <span class="icon">🏆</span>
+                        <span>Garantia Total</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Product Maker. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/product-maker-ai" target="_blank">LinkedIn</a>
+                <a href="https://www.instagram.com/productmaker.ai" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lead Capture System -->
+    <script src="/lead-capture.js"></script>
+    
+    <!-- Tracking Script -->
+    <script>
+// Inicializar DataLayer
+window.dataLayer = window.dataLayer || [];
+
+// Configuração dos produtos e checkouts
+const productConfig = {
+  'prompt_pm_pro': {
+    checkoutUrl: 'https://pay.kiwify.com.br/LfbaZOi',
+    price: 97
+  }
+};
+
+// Detectar produto atual pela URL
+function getCurrentProduct() {
+  return 'prompt_pm_pro'; // padrão para esta página
+}
+
+// Capturar UTMs da URL
+function getUTMParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return {
+    source: urlParams.get('utm_source') || 'direct',
+    medium: urlParams.get('utm_medium') || 'none',
+    campaign: urlParams.get('utm_campaign') || 'no-campaign',
+    content: urlParams.get('utm_content') || 'no-content',
+    term: urlParams.get('utm_term') || 'no-term'
+  };
+}
+
+// Salvar lead no Google Sheets
+async function saveToGoogleSheets(leadData) {
+  const scriptUrl = 'SUA_URL_GOOGLE_APPS_SCRIPT_AQUI';
+  
+  try {
+    await fetch(scriptUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(leadData)
+    });
+  } catch (error) {
+    console.log('Erro ao salvar lead:', error);
+  }
+}
+
+// Redirecionar para checkout preservando UTMs
+function redirectToCheckout(product, utmParams) {
+  const config = productConfig[product];
+  const baseUrl = config.checkoutUrl;
+  
+  // Construir query string com UTMs
+  const params = new URLSearchParams();
+  if (utmParams.source !== 'direct') params.append('utm_source', utmParams.source);
+  if (utmParams.medium !== 'none') params.append('utm_medium', utmParams.medium);
+  if (utmParams.campaign !== 'no-campaign') params.append('utm_campaign', utmParams.campaign);
+  if (utmParams.content !== 'no-content') params.append('utm_content', utmParams.content);
+  if (utmParams.term !== 'no-term') params.append('utm_term', utmParams.term);
+  
+  const finalUrl = baseUrl + (params.toString() ? '?' + params.toString() : '');
+  window.location.href = finalUrl;
+}
+
+// EVENT 1: Formulário enviado
+document.addEventListener('DOMContentLoaded', function() {
+  const leadForm = document.getElementById('lead-form');
+  
+  if (leadForm) {
+    leadForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      
+      submitBtn.textContent = 'Processando...';
+      submitBtn.disabled = true;
+      
+      const product = getCurrentProduct();
+      const utmParams = getUTMParams();
+      
+      const leadData = {
+        timestamp: new Date().toISOString(),
+        email: e.target.email.value,
+        product: product,
+        page_url: window.location.href,
+        utm_source: utmParams.source,
+        utm_campaign: utmParams.campaign,
+        lead_magnet: '5_prompts_gratis'
+      };
+      
+      // Evento para GTM
+      window.dataLayer.push({
+        'event': 'form_submit',
+        'product': product,
+        'utm_campaign': utmParams.campaign,
+        'lead_type': 'lead_magnet'
+      });
+      
+      await saveToGoogleSheets(leadData);
+      
+      // Simular envio dos prompts gratuitos
+      submitBtn.textContent = 'Enviado! Confira seu email';
+      submitBtn.style.background = '#00d4aa';
+      
+      setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        submitBtn.style.background = '';
+        e.target.reset();
+      }, 3000);
+    });
+  }
+});
+
+// EVENT 2: Checkout direto
+function goDirectToCheckout() {
+  const product = getCurrentProduct();
+  const utmParams = getUTMParams();
+  
+  window.dataLayer.push({
+    'event': 'checkout_click',
+    'product': product,
+    'utm_campaign': utmParams.campaign,
+    'variant': 'B'
+  });
+  
+  redirectToCheckout(product, utmParams);
+}
+
+// FAQ Toggle
+function toggleFAQ(element) {
+  const faqItem = element.parentElement;
+  const isActive = faqItem.classList.contains('active');
+  
+  // Fechar todas as outras FAQs
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.classList.remove('active');
+  });
+  
+  // Abrir/fechar a FAQ clicada
+  if (!isActive) {
+    faqItem.classList.add('active');
+  }
+  
+  // Track FAQ interaction
+  window.dataLayer.push({
+    'event': 'faq_interaction',
+    'faq_question': element.querySelector('span').textContent,
+    'action': isActive ? 'close' : 'open'
+  });
+}
+
+// Countdown Timer
+function updateCountdown() {
+  const now = new Date().getTime();
+  const endTime = now + (24 * 60 * 60 * 1000); // 24 hours from now
+  
+  const timer = setInterval(function() {
+    const currentTime = new Date().getTime();
+    const timeLeft = endTime - currentTime;
+    
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    
+    document.getElementById('countdown-timer').innerHTML = 
+      String(hours).padStart(2, '0') + ':' + 
+      String(minutes).padStart(2, '0') + ':' + 
+      String(seconds).padStart(2, '0');
+    
+    if (timeLeft < 0) {
+      clearInterval(timer);
+      document.getElementById('countdown-timer').innerHTML = "00:00:00";
+    }
+  }, 1000);
+}
+
+updateCountdown();
+
+// Track page view
+window.dataLayer.push({
+  'event': 'page_view',
+  'page_title': document.title,
+  'page_location': window.location.href,
+  'variant': 'B'
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Track A/B test assignment
+if (typeof gtag !== 'undefined') {
+    gtag('event', 'ab_test_assignment', {
+        'variant': 'B',
+        'page_location': window.location.href
+    });
+}
+    </script>
+</body>
+</html>

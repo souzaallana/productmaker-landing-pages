@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>70 Prompts Secretos de Unicórnios | Product Maker</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M4Z6F3VW');</script>
+    <!-- End Google Tag Manager -->
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a2332 0%, #0f1419 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(26, 35, 50, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 107, 157, 0.3);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ff6b9d;
+        }
+        
+        .urgency-badge {
+            background: linear-gradient(45deg, #ff6b9d, #ff8a80);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Countdown */
+        .countdown {
+            background: linear-gradient(45deg, #ff6b9d, #ff4757);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 18px;
+            position: fixed;
+            top: 70px;
+            width: 100%;
+            z-index: 999;
+            box-shadow: 0 4px 20px rgba(255, 107, 157, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 80px;
+            text-align: center;
+            position: relative;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 107, 157, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 71, 87, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 138, 128, 0.15) 0%, transparent 50%);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff6b9d, #ff4757);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #b0c4de;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .exclusive-badge {
+            background: linear-gradient(45deg, #ff6b9d, #ff4757);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 30px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 20px rgba(255, 107, 157, 0.5); }
+            to { box-shadow: 0 0 30px rgba(255, 107, 157, 0.8); }
+        }
+        
+        .social-proof-header {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .proof-badge {
+            background: rgba(255, 107, 157, 0.1) !important;
+            border: 1px solid rgba(255, 107, 157, 0.3) !important;
+            padding: 8px 16px !important;
+            border-radius: 20px !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            color: #ff6b9d !important;
+        }
+        
+        /* CTA Buttons */
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b9d, #ff4757);
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 107, 157, 0.4);
+        }
+        
+        .cta-secondary {
+            background: rgba(255, 107, 157, 0.1);
+            border: 2px solid #ff6b9d;
+            color: #ff6b9d;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 10px;
+        }
+        
+        .cta-secondary:hover {
+            background: rgba(255, 107, 157, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 0;
+            background: rgba(255, 107, 157, 0.05);
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #ff6b9d;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: rgba(26, 35, 50, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 107, 157, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 107, 157, 0.5);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            color: #ff6b9d;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        /* Secret Prompts Section */
+        .secret-prompts {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, rgba(255, 71, 87, 0.1) 100%);
+        }
+        
+        .secret-prompts h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff6b9d;
+        }
+        
+        .secret-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #b0c4de;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .company-card {
+            background: rgba(26, 35, 50, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 107, 157, 0.3);
+        }
+        
+        .company-card h4 {
+            color: #ff6b9d;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .company-card p {
+            color: #b0c4de;
+            font-size: 0.9rem;
+        }
+        
+        /* Categories */
+        .categories {
+            padding: 80px 0;
+        }
+        
+        .categories h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #ff6b9d;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .category-card {
+            background: rgba(26, 35, 50, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 157, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 107, 157, 0.5);
+        }
+        
+        .category-card h3 {
+            color: #ff6b9d;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .count {
+            background: none !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            font-weight: 600;
+            color: #ff4757;
+        }
+        
+        /* Offer */
+        .offer {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, rgba(255, 71, 87, 0.1) 100%);
+        }
+        
+        .offer-container {
+            background: rgba(26, 35, 50, 0.9);
+            padding: 60px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid rgba(255, 107, 157, 0.3);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .offer h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #ff6b9d;
+        }
+        
+        .price-container {
+            margin: 40px 0;
+        }
+        
+        .old-price {
+            font-size: 1.2rem;
+            color: #ff6b9d;
+            text-decoration: line-through;
+            margin-bottom: 10px;
+        }
+        
+        .new-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #ff4757;
+            margin-bottom: 10px;
+        }
+        
+        .installments {
+            font-size: 1.1rem;
+            color: #b0c4de;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            margin: 40px 0;
+            text-align: left;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #b0c4de;
+        }
+        
+        .benefits-list li::before {
+            content: "✓";
+            background: #ff4757;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .urgency {
+            background: rgba(255, 107, 157, 0.1);
+            border: 1px solid rgba(255, 107, 157, 0.3);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .urgency h3 {
+            color: #ff6b9d;
+            margin-bottom: 10px;
+        }
+        
+        .guarantee {
+            background: rgba(255, 107, 157, 0.1);
+            border: 2px solid rgba(255, 107, 157, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .guarantee h3 {
+            color: #ff6b9d;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .guarantee-badge {
+            background: #ff4757;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .security-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #b0c4de;
+            font-size: 0.9rem;
+        }
+        
+        .security-badge .icon {
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: rgba(26, 35, 50, 0.9);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 107, 157, 0.2);
+        }
+        
+        .footer p {
+            color: #b0c4de;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .social-links a {
+            color: #ff6b9d;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #ff4757;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .features-grid,
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .offer-container {
+                padding: 40px 20px;
+            }
+            
+            .companies-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .countdown {
+                font-size: 16px;
+                padding: 12px;
+            }
+            
+            .hero {
+                padding: 160px 0 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4Z6F3VW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">PRODUCT MAKER</div>
+                <div class="urgency-badge">🔥 Oferta Exclusiva</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Countdown -->
+    <div class="countdown">
+        ⏰ OFERTA EXPIRA EM: <span id="countdown-timer">47:59:32</span> | Apenas 23 vagas restantes
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="exclusive-badge">🔒 ACESSO EXCLUSIVO</div>
+            <h1>70 Prompts Secretos de Unicórnios</h1>
+            <p class="subtitle">Os mesmos prompts que PMs de Nubank, Stone e iFood usam para acelerar 10x sua produtividade. Primeira vez disponível publicamente.</p>
+            
+            <div class="social-proof-header">
+                <div class="proof-badge">Usados em Unicórnios</div>
+                <div class="proof-badge">Primeira Vez Público</div>
+                <div class="proof-badge">Acesso Limitado</div>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <a href="https://pay.kiwify.com.br/LfbaZOi" class="cta-button" target="_blank">
+                    QUERO ACESSO EXCLUSIVO
+                </a>
+                <br>
+                <a href="#offer" class="cta-secondary">Ver Oferta Completa</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2>Por Que Estes Prompts São Diferentes?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Prompts Secretos</h3>
+                    <p>Desenvolvidos internamente por PMs de unicórnios brasileiros. Nunca compartilhados publicamente antes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Resultados Instantâneos</h3>
+                    <p>Testados em produção por meses. Cada prompt gera outputs de qualidade profissional na primeira tentativa.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Vantagem Competitiva</h3>
+                    <p>Acelere como os melhores PMs do mercado. Tenha acesso às mesmas ferramentas dos top performers.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://pay.kiwify.com.br/LfbaZOi" class="cta-secondary" target="_blank">
+                    ACELERAR COMO OS MELHORES
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secret Prompts -->
+    <section class="secret-prompts">
+        <div class="container">
+            <h2>Prompts Usados Nestas Empresas</h2>
+            <p class="secret-subtitle">Pela primeira vez, você terá acesso aos prompts que aceleram PMs em algumas das maiores empresas do Brasil</p>
+            
+            <div class="companies-grid">
+                <div class="company-card">
+                    <h4>🏦 Nubank</h4>
+                    <p>Prompts para PRDs de produtos financeiros</p>
+                </div>
+                <div class="company-card">
+                    <h4>💳 Stone</h4>
+                    <p>Discovery e research de fintechs</p>
+                </div>
+                <div class="company-card">
+                    <h4>🍔 iFood</h4>
+                    <p>Métricas e analytics de marketplace</p>
+                </div>
+                <div class="company-card">
+                    <h4>🛒 Mercado Livre</h4>
+                    <p>Roadmaps de e-commerce</p>
+                </div>
+                <div class="company-card">
+                    <h4>🚗 Rappi</h4>
+                    <p>Go-to-market de delivery</p>
+                </div>
+                <div class="company-card">
+                    <h4>💪 Gympass</h4>
+                    <p>User stories de wellness</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2>70 Prompts Organizados em 7 Categorias</h2>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <h3>📋 PRDs & Documentação <span class="count">12 prompts</span></h3>
+                    <p>Prompts secretos para criar PRDs que impressionam stakeholders e aceleram aprovações.</p>
+                </div>
+                <div class="category-card">
+                    <h3>🔍 Discovery & Research <span class="count">10 prompts</span></h3>
+                    <p>Metodologias de discovery usadas em unicórnios para validar hipóteses rapidamente.</p>
+                </div>
+                <div class="category-card">
+                    <h3>📊 Métricas & Analytics <span class="count">8 prompts</span></h3>
+                    <p>Frameworks de métricas que realmente movem o negócio, testados em escala.</p>
+                </div>
+                <div class="category-card">
+                    <h3>🗺️ Roadmap & Estratégia <span class="count">10 prompts</span></h3>
+                    <p>Estratégias de roadmap que alinham times e aceleram entregas em empresas bilionárias.</p>
+                </div>
+                <div class="category-card">
+                    <h3>👥 User Stories & Backlog <span class="count">8 prompts</span></h3>
+                    <p>Templates de user stories que reduzem retrabalho e aceleram desenvolvimento.</p>
+                </div>
+                <div class="category-card">
+                    <h3>🚀 Go-to-Market <span class="count">12 prompts</span></h3>
+                    <p>Estratégias de lançamento que garantem adoção e crescimento sustentável.</p>
+                </div>
+                <div class="category-card">
+                    <h3>🎯 Stakeholder Management <span class="count">10 prompts</span></h3>
+                    <p>Comunicação executiva que convence C-level e acelera decisões estratégicas.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://pay.kiwify.com.br/LfbaZOi" class="cta-button" target="_blank">
+                    QUERO TODOS OS 70 PROMPTS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer -->
+    <section class="offer" id="offer">
+        <div class="container">
+            <div class="offer-container">
+                <h2>Acesso Exclusivo aos 70 Prompts</h2>
+                
+                <div class="price-container">
+                    <div class="old-price">De R$ 147</div>
+                    <div class="new-price">R$ 97</div>
+                    <div class="installments">ou 12x de R$ 9,70</div>
+                </div>
+
+                <ul class="benefits-list">
+                    <li>70 prompts secretos de unicórnios</li>
+                    <li>Organizados em 7 categorias estratégicas</li>
+                    <li>Acesso vitalício à biblioteca</li>
+                    <li>Atualizações exclusivas incluídas</li>
+                    <li>Guia de implementação detalhado</li>
+                    <li>Compatível com ChatGPT, Claude e Gemini</li>
+                </ul>
+
+                <div class="urgency">
+                    <h3>🔥 Oferta Expira em 48 Horas</h3>
+                    <p>Apenas 23 vagas restantes para este acesso exclusivo</p>
+                </div>
+
+                <a href="https://pay.kiwify.com.br/LfbaZOi" class="cta-button" target="_blank">
+                    GARANTIR ACESSO EXCLUSIVO
+                </a>
+
+                <div class="guarantee">
+                    <div class="guarantee-badge">30 DIAS DE GARANTIA BLINDADA</div>
+                    <h3>🛡️ Garantia Sem Risco</h3>
+                    <p><strong>Se não acelerar sua produtividade em 10x, reembolso de 100%.</strong><br>
+                    Sem perguntas, sem complicação. Garantia blindada.</p>
+                </div>
+
+                <div class="security-badges">
+                    <div class="security-badge">
+                        <span class="icon">🔒</span>
+                        <span>Pagamento Seguro</span>
+                    </div>
+                    <div class="security-badge">
+                        <span class="icon">⚡</span>
+                        <span>Acesso Imediato</span>
+                    </div>
+                    <div class="security-badge">
+                        <span class="icon">🏆</span>
+                        <span>Garantia Blindada</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Product Maker. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/company/product-maker-ai" target="_blank">LinkedIn</a>
+                <a href="https://www.instagram.com/productmaker.ai" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lead Capture System -->
+    <script src="/lead-capture.js"></script>
+    
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const endTime = now + (48 * 60 * 60 * 1000); // 48 hours from now
+            
+            const timer = setInterval(function() {
+                const currentTime = new Date().getTime();
+                const timeLeft = endTime - currentTime;
+                
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                document.getElementById('countdown-timer').innerHTML = 
+                    String(hours).padStart(2, '0') + ':' + 
+                    String(minutes).padStart(2, '0') + ':' + 
+                    String(seconds).padStart(2, '0');
+                
+                if (timeLeft < 0) {
+                    clearInterval(timer);
+                    document.getElementById('countdown-timer').innerHTML = "00:00:00";
+                }
+            }, 1000);
+        }
+        
+        updateCountdown();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Track A/B test assignment
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'ab_test_assignment', {
+                'variant': 'B',
+                'page_location': window.location.href
+            });
+        }
+    </script>
+</body>
+</html>
