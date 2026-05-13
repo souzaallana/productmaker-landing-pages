@@ -1068,7 +1068,6 @@
 </div>
 </footer>
 <body>
-
 <script>
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -1082,6 +1081,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const name = leadForm.querySelector('input[placeholder="Seu nome completo"]').value;
             const email = leadForm.querySelector('input[placeholder="Seu melhor e-mail"]').value;
             const whatsapp = leadForm.querySelector('input[placeholder="Seu WhatsApp (com DDD)"]').value;
+
+            console.log('Form Data:', { name, email, whatsapp });
 
             if (!name || !email || !whatsapp) {
                 formMessage.innerHTML = "Por favor, preencha todos os campos.";
@@ -1103,6 +1104,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             };
 
+            console.log('Contact Data:', contactData);
+
             try {
                 // Create or update contact
                 const contactResponse = await fetch(`https://diasallana1990.api-us1.com/api/3/contacts`, {
@@ -1116,6 +1119,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
 
                 const contactResult = await contactResponse.json();
+                console.log('Contact API Response:', contactResponse);
+                console.log('Contact API Result:', contactResult);
 
                 if (!contactResponse.ok) {
                     console.error('ActiveCampaign Contact Error:', contactResult);
@@ -1126,6 +1131,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 const contactId = contactResult.contact.id;
+                console.log('Contact ID:', contactId);
 
                 // Add contact to list
                 const listContactData = {
@@ -1135,6 +1141,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         status: 1 // 1 for active
                     }
                 };
+
+                console.log('List Contact Data:', listContactData);
 
                 const listResponse = await fetch(`https://diasallana1990.api-us1.com/api/3/contactLists`, {
                     method: 'POST',
@@ -1147,6 +1155,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
 
                 const listResult = await listResponse.json();
+                console.log('List API Response:', listResponse);
+                console.log('List API Result:', listResult);
 
                 if (!listResponse.ok) {
                     console.error('ActiveCampaign List Error:', listResult);
@@ -1159,6 +1169,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Add tags to contact
                 const tags = ["lead", "agentic-pm", "lançamento-2026"];
                 for (const tagName of tags) {
+                    console.log('Processing tag:', tagName);
                     // First, get the tag ID
                     const tagSearchResponse = await fetch(`https://diasallana1990.api-us1.com/api/3/tags?search=${tagName}`, {
                         method: 'GET',
@@ -1168,12 +1179,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     });
                     const tagSearchResult = await tagSearchResponse.json();
+                    console.log(`Tag Search Result for ${tagName}:\`, tagSearchResult);
 
                     let tagId;
                     if (tagSearchResult.tags && tagSearchResult.tags.length > 0) {
                         tagId = tagSearchResult.tags[0].id;
+                        console.log(`Tag ID for ${tagName}:', tagId);
                     } else {
                         // If tag doesn't exist, create it
+                        console.log(`Tag ${tagName} not found, creating...`);
                         const createTagResponse = await fetch(`https://diasallana1990.api-us1.com/api/3/tags`, {
                             method: 'POST',
                             headers: {
@@ -1189,11 +1203,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             })
                         });
                         const createTagResult = await createTagResponse.json();
+                        console.log(`Create Tag API Response for ${tagName}:', createTagResponse);
+                        console.log(`Create Tag API Result for ${tagName}:', createTagResult);
+
                         if (!createTagResponse.ok) {
                             console.error('ActiveCampaign Create Tag Error:', createTagResult);
                             continue; // Skip to next tag
                         }
                         tagId = createTagResult.tag.id;
+                        console.log(`New Tag ID for ${tagName}:', tagId);
                     }
 
                     // Add tag to contact
@@ -1203,6 +1221,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             tag: tagId
                         }
                     };
+                    console.log('Contact Tag Data:', contactTagData);
 
                     const contactTagResponse = await fetch(`https://diasallana1990.api-us1.com/api/3/contactTags`, {
                         method: 'POST',
@@ -1215,6 +1234,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
 
                     const contactTagResult = await contactTagResponse.json();
+                    console.log(`Contact Tag API Response for ${tagName}:', contactTagResponse);
+                    console.log(`Contact Tag API Result for ${tagName}:', contactTagResult);
+
                     if (!contactTagResponse.ok) {
                         console.error(`ActiveCampaign Add Tag ${tagName} Error:`, contactTagResult);
                     }
