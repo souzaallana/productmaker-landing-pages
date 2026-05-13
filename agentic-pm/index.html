@@ -1069,153 +1069,170 @@
 </footer>
 <body>
 
-
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const leadForm = document.getElementById('leadForm');
-        const formMessage = document.getElementById('formMessage');
 
-        if (leadForm) {
-            leadForm.addEventListener('submit', async function(event) {
-                event.preventDefault(); // Prevent default form submission
+document.addEventListener('DOMContentLoaded', function() {
+    const leadForm = document.getElementById('leadForm');
+    const formMessage = document.getElementById('formMessage');
 
-                const name = leadForm.querySelector('input[name="name"]').value;
-                const email = leadForm.querySelector('input[name="email"]').value;
-                const whatsapp = leadForm.querySelector('input[name="whatsapp"]').value;
+    if (leadForm) {
+        leadForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
 
-                const API_URL = "https://diasallana1990.api-us1.com";
-                const API_KEY = "1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe";
+            const name = leadForm.querySelector('input[placeholder="Seu nome completo"]').value;
+            const email = leadForm.querySelector('input[placeholder="Seu melhor e-mail"]').value;
+            const whatsapp = leadForm.querySelector('input[placeholder="Seu WhatsApp (com DDD)"]').value;
 
-                try {
-                    // Create or update contact
-                    const contactResponse = await fetch(`${API_URL}/api/3/contacts`, {
-                        method: "POST",
-                        headers: {
-                            "Api-Token": API_KEY,
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            contact: {
-                                email: email,
-                                firstName: name,
-                                fieldValues: [
-                                    {
-                                        field: "1", // Custom field ID for WhatsApp (needs to be verified)
-                                        value: whatsapp
-                                    }
-                                ]
-                            }
-                        })
-                    });
-                    const contactData = await contactResponse.json();
-                    if (contactData.contact && contactData.contact.id) {
-                        const contactId = contactData.contact.id;
-
-                        // Add tags
-                        const tags = ["lead", "agentic-pm", "lançamento-2026"];
-                        for (const tagName of tags) {
-                            let tagId;
-                            const searchTagResponse = await fetch(`${API_URL}/api/3/tags?search=${tagName}`, {
-                                method: "GET",
-                                headers: {
-                                    "Api-Token": API_KEY,
-                                    "Content-Type": "application/json"
-                                }
-                            });
-                            const searchTagData = await searchTagResponse.json();
-                            if (searchTagData.tags && searchTagData.tags.length > 0) {
-                                tagId = searchTagData.tags[0].id;
-                            } else {
-                                const createTagResponse = await fetch(`${API_URL}/api/3/tags`, {
-                                    method: "POST",
-                                    headers: {
-                                        "Api-Token": API_KEY,
-                                        "Content-Type": "application/json"
-                                    },
-                                    body: JSON.stringify({ tag: { tag: tagName } })
-                                });
-                                const newTagData = await createTagResponse.json();
-                                tagId = newTagData.tag.id;
-                            }
-                            await fetch(`${API_URL}/api/3/contactTags`, {
-                                method: "POST",
-                                headers: {
-                                    "Api-Token": API_KEY,
-                                    "Content-Type": "application/json"
-                                },
-                                body: JSON.stringify({
-                                    contactTag: {
-                                        contact: contactId,
-                                        tag: tagId
-                                    }
-                                })
-                            });
-                        }
-
-                        // Find list ID for "Agentic PM — Leads"
-                        let listId;
-                        const searchListResponse = await fetch(`${API_URL}/api/3/lists?search=Agentic PM — Leads`, {
-                            method: "GET",
-                            headers: {
-                                "Api-Token": API_KEY,
-                                "Content-Type": "application/json"
-                            }
-                        });
-                        const searchListData = await searchListResponse.json();
-                        if (searchListData.lists && searchListData.lists.length > 0) {
-                            listId = searchListData.lists[0].id;
-                        } else {
-                            // Handle case where list is not found, or create it if API allows
-                            console.warn("ActiveCampaign list 'Agentic PM — Leads' not found.");
-                            // Optionally, create the list here if your API key has permissions
-                        }
-
-                        if (listId) {
-                            await fetch(`${API_URL}/api/3/contactLists`, {
-                                method: "POST",
-                                headers: {
-                                    "Api-Token": API_KEY,
-                                    "Content-Type": "application/json"
-                                },
-                                body: JSON.stringify({
-                                    contactList: {
-                                        list: listId,
-                                        contact: contactId,
-                                        status: 1 // 1 for active
-                                    }
-                                })
-                            });
-                        }
-
-                        formMessage.innerHTML = "Recebido! Em breve você receberá as informações no seu email e WhatsApp.";
-                        formMessage.style.color = "var(--primary)";
-                        formMessage.style.display = "block";
-                        leadForm.reset();
-                    } else {
-                        formMessage.innerHTML = "Ocorreu um erro ao enviar o formulário. Tente novamente.";
-                        formMessage.style.color = "var(--secondary)";
-                        formMessage.style.display = "block";
-                    }
-                } catch (error) {
-                    console.error("Erro:", error);
-                    formMessage.innerHTML = "Ocorreu um erro ao enviar o formulário. Tente novamente.";
-                    formMessage.style.color = "var(--secondary)";
-                    formMessage.style.display = "block";
-                }
-            });
-        }
-
-        // FAQ Toggle
-        window.toggleFAQ = function(element) {
-            const answer = element.nextElementSibling;
-            if (answer.style.maxHeight) {
-                answer.style.maxHeight = null;
-                element.querySelector("span:last-child").textContent = "▼";
-            } else {
-                answer.style.maxHeight = answer.scrollHeight + "px";
-                element.querySelector("span:last-child").textContent = "▲";
+            if (!name || !email || !whatsapp) {
+                formMessage.innerHTML = "Por favor, preencha todos os campos.";
+                formMessage.style.color = "red";
+                formMessage.style.display = "block";
+                return;
             }
-        };
-    });
-</script>
-</body></html>
+
+            const contactData = {
+                contact: {
+                    email: email,
+                    firstName: name,
+                    fieldValues: [
+                        {
+                            field: 1,
+                            value: whatsapp
+                        }
+                    ]
+                }
+            };
+
+            try {
+                // Create or update contact
+                const contactResponse = await fetch(`https://diasallana1990.api-us1.com/api/3/contacts`, {
+                    method: 'POST',
+                    headers: {
+                        'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe',
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(contactData)
+                });
+
+                const contactResult = await contactResponse.json();
+
+                if (!contactResponse.ok) {
+                    console.error('ActiveCampaign Contact Error:', contactResult);
+                    formMessage.innerHTML = "Ocorreu um erro ao enviar o formulário. Tente novamente.";
+                    formMessage.style.color = "red";
+                    formMessage.style.display = "block";
+                    return;
+                }
+
+                const contactId = contactResult.contact.id;
+
+                // Add contact to list
+                const listContactData = {
+                    contactList: {
+                        list: 1,
+                        contact: contactId,
+                        status: 1 // 1 for active
+                    }
+                };
+
+                const listResponse = await fetch(`https://diasallana1990.api-us1.com/api/3/contactLists`, {
+                    method: 'POST',
+                    headers: {
+                        'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe',
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(listContactData)
+                });
+
+                const listResult = await listResponse.json();
+
+                if (!listResponse.ok) {
+                    console.error('ActiveCampaign List Error:', listResult);
+                    formMessage.innerHTML = "Ocorreu um erro ao enviar o formulário. Tente novamente.";
+                    formMessage.style.color = "red";
+                    formMessage.style.display = "block";
+                    return;
+                }
+
+                // Add tags to contact
+                const tags = ["lead", "agentic-pm", "lançamento-2026"];
+                for (const tagName of tags) {
+                    // First, get the tag ID
+                    const tagSearchResponse = await fetch(`https://diasallana1990.api-us1.com/api/3/tags?search=${tagName}`, {
+                        method: 'GET',
+                        headers: {
+                            'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe',
+                            'Accept': 'application/json'
+                        }
+                    });
+                    const tagSearchResult = await tagSearchResponse.json();
+
+                    let tagId;
+                    if (tagSearchResult.tags && tagSearchResult.tags.length > 0) {
+                        tagId = tagSearchResult.tags[0].id;
+                    } else {
+                        // If tag doesn't exist, create it
+                        const createTagResponse = await fetch(`https://diasallana1990.api-us1.com/api/3/tags`, {
+                            method: 'POST',
+                            headers: {
+                                'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe',
+                                'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                tag: {
+                                    tag: tagName,
+                                    tagType: 'contact'
+                                }
+                            })
+                        });
+                        const createTagResult = await createTagResponse.json();
+                        if (!createTagResponse.ok) {
+                            console.error('ActiveCampaign Create Tag Error:', createTagResult);
+                            continue; // Skip to next tag
+                        }
+                        tagId = createTagResult.tag.id;
+                    }
+
+                    // Add tag to contact
+                    const contactTagData = {
+                        contactTag: {
+                            contact: contactId,
+                            tag: tagId
+                        }
+                    };
+
+                    const contactTagResponse = await fetch(`https://diasallana1990.api-us1.com/api/3/contactTags`, {
+                        method: 'POST',
+                        headers: {
+                            'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe',
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify(contactTagData)
+                    });
+
+                    const contactTagResult = await contactTagResponse.json();
+                    if (!contactTagResponse.ok) {
+                        console.error(`ActiveCampaign Add Tag ${tagName} Error:`, contactTagResult);
+                    }
+                }
+
+                formMessage.innerHTML = "Recebido! Em breve você receberá as informações no seu email e WhatsApp.";
+                formMessage.style.color = "green"; // Changed to green for success
+                formMessage.style.display = "block";
+                leadForm.reset(); // Clear the form
+
+            } catch (error) {
+                console.error('ActiveCampaign Integration Error:', error);
+                formMessage.innerHTML = "Ocorreu um erro ao enviar o formulário. Tente novamente.";
+                formMessage.style.color = "red";
+                formMessage.style.display = "block";
+            }
+        });
+    }
+});
+
+</script></body></html>
