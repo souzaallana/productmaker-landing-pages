@@ -1,0 +1,152 @@
+<script>
+// Inicializar DataLayer
+window.dataLayer = window.dataLayer || [];
+
+// Configuração dos produtos e checkouts - LINKS ATUALIZADOS
+const productConfig = {
+  'prompt_pm_pro': {
+    checkoutUrl: 'https://pay.kiwify.com.br/aDjiojR',
+    price: 147
+  },
+  'pm_ai_pro': {
+    checkoutUrl: 'https://pay.kiwify.com.br/LfbaZOi',
+    price: 997
+  },
+  'automacao_n8n': {
+    checkoutUrl: 'https://pay.kiwify.com.br/51e9rxB',
+    price: 97
+  }
+};
+
+// Detectar produto atual pela URL
+function getCurrentProduct() {
+  const path = window.location.pathname.toLowerCase();
+  if (path.includes('pm-ai-pro')) return 'pm_ai_pro';
+  if (path.includes('prompt-pm')) return 'prompt_pm_pro';
+  if (path.includes('automacao-n8n')) return 'automacao_n8n';
+  return 'prompt_pm_pro'; // padrão
+}
+
+// Capturar UTMs da URL
+function getUTMParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return {
+    source: urlParams.get('utm_source') || 'direct',
+    medium: urlParams.get('utm_medium') || 'none',
+    campaign: urlParams.get('utm_campaign') || 'no-campaign',
+    content: urlParams.get('utm_content') || 'no-content',
+    term: urlParams.get('utm_term') || 'no-term'
+  };
+}
+
+// Salvar lead no Google Sheets
+async function saveToGoogleSheets(leadData) {
+  const scriptUrl = 'SUA_URL_GOOGLE_APPS_SCRIPT_AQUI';
+  
+  try {
+    await fetch(scriptUrl, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(leadData)
+    });
+  } catch (error) {
+    console.log('Erro ao salvar lead:', error);
+  }
+}
+
+// Redirecionar para checkout preservando UTMs
+function redirectToCheckout(product, utmParams) {
+  const config = productConfig[product];
+  const baseUrl = config.checkoutUrl;
+  
+  // Construir query string com UTMs
+  const params = new URLSearchParams();
+  if (utmParams.source !== 'direct') params.append('utm_source', utmParams.source);
+  if (utmParams.medium !== 'none') params.append('utm_medium', utmParams.medium);
+  if (utmParams.campaign !== 'no-campaign') params.append('utm_campaign', utmParams.campaign);
+  if (utmParams.content !== 'no-content') params.append('utm_content', utmParams.content);
+  if (utmParams.term !== 'no-term') params.append('utm_term', utmParams.term);
+  
+  const finalUrl = baseUrl + (params.toString() ? '?' + params.toString() : '');
+  window.location.href = finalUrl;
+}
+
+// EVENT 1: Formulário enviado
+document.addEventListener('DOMContentLoaded', function() {
+  const leadForm = document.getElementById('lead-form');
+  
+  if (leadForm) {
+    leadForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      
+      submitBtn.textContent = 'Processando...';
+      submitBtn.disabled = true;
+      
+      const product = getCurrentProduct();
+      const utmParams = getUTMParams();
+      
+      const leadData = {
+        timestamp: new Date().toISOString(),
+        email: e.target.email.value,
+        whatsapp: e.target.whatsapp ? e.target.whatsapp.value : '',
+        product: product,
+        page_url: window.location.href,
+        utm_source: utmParams.source,
+        utm_campaign: utmParams.campaign
+      };
+      
+      // Evento para GTM
+      window.dataLayer.push({
+        'event': 'form_submit',
+        'product': product,
+        'utm_campaign': utmParams.campaign
+      });
+      
+      await saveToGoogleSheets(leadData);
+      
+      setTimeout(() => {
+        redirectToCheckout(product, utmParams);
+      }, 1500);
+    });
+  }
+});
+
+// EVENT 2: Checkout direto
+function goDirectToCheckout() {
+  const product = getCurrentProduct();
+  const utmParams = getUTMParams();
+  
+  window.dataLayer.push({
+    'event': 'checkout_click',
+    'product': product,
+    'utm_campaign': utmParams.campaign
+  });
+  
+  redirectToCheckout(product, utmParams);
+}
+
+// EVENT 3: Upsell view
+function trackUpsellView() {
+  window.dataLayer.push({
+    'event': 'upsell_view'
+  });
+}
+
+// Validação WhatsApp
+document.addEventListener('DOMContentLoaded', function() {
+  const whatsappInput = document.querySelector('input[name="whatsapp"]');
+  if (whatsappInput) {
+    whatsappInput.addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 11) value = value.slice(0, 11);
+      e.target.value = value;
+    });
+  }
+});
+</script>
