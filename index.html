@@ -375,75 +375,6 @@
             font-weight: 800;
             margin: 40px 0;
         }
-
-        /* ===== SEÇÃO CENÁRIOS REAIS ===== */
-        .scenarios-section {
-            background: #0D1117;
-            padding: 100px 0;
-            color: var(--white);
-        }
-
-        .scenarios-section h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--primary);
-        }
-
-        .scenarios-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-        }
-
-        .scenario-card {
-            background: var(--bg-card);
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s;
-        }
-
-        .scenario-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-        }
-
-        .scenario-sponsor {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .sponsor-wurth { background: #E30613; color: white; }
-        .sponsor-fortbras { background: #004A99; color: white; }
-        .sponsor-cws { background: #7c3aed; color: white; }
-
-        .scenario-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--white);
-        }
-
-        .scenario-card p {
-            font-size: 0.95rem;
-            color: #B0B0B0;
-            margin-bottom: 15px;
-        }
-
-        .scenario-meta {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 15px;
-        }
-
-        .meta-item strong { color: var(--primary); }
         
         /* ===== SEÇÃO 5: MÓDULOS ===== */
         .modules-section {
@@ -907,76 +838,6 @@
 <button class="btn btn-primary" onclick="window.location.href='https://pay.kiwify.com.br/NSAhP7F'" style="margin-top: 40px;">QUERO ME TORNAR UM AGENTIC PM →</button>
 </div>
 </section>
-
-<!-- SEÇÃO CENÁRIOS REAIS -->
-<section class="scenarios-section">
-    <div class="container">
-        <h2>Cenários Reais: O que um Agentic PM resolve</h2>
-        <div class="scenarios-grid">
-            <!-- Wurth 1 -->
-            <div class="scenario-card">
-                <span class="scenario-sponsor sponsor-wurth">Wurth</span>
-                <h4>Correção de Layout Crítico</h4>
-                <p>Resolução de quebra de layout no app durante cadastro de clientes. Orquestração de correção rápida para não impactar a força de vendas.</p>
-                <div class="scenario-meta">
-                    <div class="meta-item">Esforço: <strong>40h</strong></div>
-                    <div class="meta-item">Status: <strong>STAGE</strong></div>
-                </div>
-            </div>
-            <!-- Fortbras 1 -->
-            <div class="scenario-card">
-                <span class="scenario-sponsor sponsor-fortbras">Fortbras</span>
-                <h4>Integração API WS/Webhook</h4>
-                <p>Sincronização em tempo real para validar se itens vendidos estão vinculados a regras de preço ou estoque.</p>
-                <div class="scenario-meta">
-                    <div class="meta-item">Esforço: <strong>27h</strong></div>
-                    <div class="meta-item">Status: <strong>PROD</strong></div>
-                </div>
-            </div>
-            <!-- Wurth 2 -->
-            <div class="scenario-card">
-                <span class="scenario-sponsor sponsor-wurth">Wurth</span>
-                <h4>Priorização de Grade Inteligente</h4>
-                <p>Algoritmo para priorizar grade de produtos no resultado da busca, garantindo visibilidade para itens com estoque.</p>
-                <div class="scenario-meta">
-                    <div class="meta-item">Esforço: <strong>60h</strong></div>
-                    <div class="meta-item">Status: <strong>BACKLOG</strong></div>
-                </div>
-            </div>
-            <!-- Fortbras 2 -->
-            <div class="scenario-card">
-                <span class="scenario-sponsor sponsor-fortbras">Fortbras</span>
-                <h4>UX Checkout - Limite de Crédito</h4>
-                <p>Melhoria na jornada de checkout para exibição e validação dinâmica de limite de crédito do cliente.</p>
-                <div class="scenario-meta">
-                    <div class="meta-item">Esforço: <strong>16h</strong></div>
-                    <div class="meta-item">Status: <strong>PROD</strong></div>
-                </div>
-            </div>
-            <!-- CWS -->
-            <div class="scenario-card">
-                <span class="scenario-sponsor sponsor-cws">CWS</span>
-                <h4>CNPJ Alfanumérico</h4>
-                <p>Adaptação de sistemas legados para suporte ao novo padrão de CNPJ alfanumérico, garantindo conformidade fiscal.</p>
-                <div class="scenario-meta">
-                    <div class="meta-item">Esforço: <strong>80h</strong></div>
-                    <div class="meta-item">Status: <strong>STAGE</strong></div>
-                </div>
-            </div>
-            <!-- Wurth 3 -->
-            <div class="scenario-card">
-                <span class="scenario-sponsor sponsor-wurth">Wurth</span>
-                <h4>Filtro de Veículo por Categoria</h4>
-                <p>Implementação de filtros avançados para busca de peças automotivas por categoria e modelo de veículo.</p>
-                <div class="scenario-meta">
-                    <div class="meta-item">Esforço: <strong>80h</strong></div>
-                    <div class="meta-item">Status: <strong>PROD</strong></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- SEÇÃO 5: MÓDULOS -->
 <section class="modules-section">
 <div class="container">
@@ -985,7 +846,7 @@
 <div class="module-card">
 <span class="module-label">Módulo 1</span>
 <h3>O Fim do PM Tradicional</h3>
-<p><strong>Consciência:</strong> Entenda o que está acontecendo no mercado de verdade — sem eufemismo. Quem some, quem resta e por quê. Sai com um autodiagnóstico claro do seu momento atual e do arquétipo que vai definir seu próximo passo.</p>
+<p><strong>Consciência:</strong> Entenda o que está acontecendo no mercado de verdade — sem eufemismo. Quem some, quem resta e por quê. Sai com um autodiagnóstico claro do seu moment atual e do arquétipo que vai definir seu próximo passo.</p>
 </div>
 <div class="module-card">
 <span class="module-label">Módulo 2</span>
