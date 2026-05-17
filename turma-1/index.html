@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Agentic PM — Turma Fundadora 2026</title>
+    <link href="/favicon.png" rel="icon" type="image/png"/>
+    
+    <!-- Google Analytics (Placeholder) -->
+    <!-- [GA4_CODE_HERE] -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --bg-dark: #0D1117;
+            --bg-card: #1A2332;
+            --primary: #00E5CC;
+            --secondary: #FF2D78;
+            --accent: #FBBF24;
+            --text: #E8E8E8;
+            --white: #FFFFFF;
+            --green: #10B981;
+            --text-light-gray: #D0D0D0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .badge-community {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0D1117 0%, #1A0F2E 50%, #0D1117 100%);
+            padding: 140px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .hero-subheadline {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+        
+        .contrast-box {
+            background: rgba(251, 191, 36, 0.1);
+            border-left: 5px solid var(--accent);
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 8px;
+        }
+        
+        .lead-form {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+        }
+        
+        .form-button {
+            width: 100%;
+            padding: 18px;
+            background: var(--primary);
+            color: var(--bg-dark);
+            border: none;
+            border-radius: 8px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 36px;
+            border-radius: 8px;
+            font-weight: 800;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--bg-dark);
+        }
+
+        .countdown-container {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .countdown-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--text-light-gray);
+        }
+
+        /* FAQ Styles */
+        .faq-section { padding: 100px 0; background: var(--bg-dark); }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 20px 0; }
+        .faq-question { font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; color: var(--white); }
+        .faq-answer { display: none; padding-top: 15px; color: var(--text-light-gray); }
+        .faq-item.active .faq-answer { display: block; }
+
+        .instructor-section { background: #f8f7ff; padding: 100px 0; color: var(--bg-dark); }
+        .instructor-content { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; align-items: center; }
+        .instructor-image { border-radius: 16px; overflow: hidden; }
+        .instructor-image img { width: 100%; display: block; }
+
+        @media (max-width: 768px) {
+            .hero-content, .instructor-content { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Product Maker</div>
+            <div class="badge-community">✓ Recomendado por comunidades de PMs</div>
+        </header>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Agentic PM · Turma Fundadora 2026</span>
+                    <h1>Enquanto a IA devora o PM tradicional, você vira <strong>insubstituível</strong>.</h1>
+                    <p class="hero-subheadline">Deixe de ser um executor de tarefas. Comece a orquestrar sistemas inteligentes.</p>
+                    
+                    <div class="contrast-box">
+                        <p style="font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 15px;">Oferta Exclusiva - Turma Fundadora 2026:</p>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+                            <li>✓ <strong>Preço:</strong> R$ 1.497 ou 12x de R$ 149,70</li>
+                            <li>✓ <strong>Condição:</strong> Vagas limitadas</li>
+                            <li>✓ <strong>Garantia:</strong> 30 dias</li>
+                        </ul>
+                        <a href="https://pay.kiwify.com.br/NSAhP7F" class="btn btn-accent" style="width: 100%;" onclick="trackCtaClick('Hero Offer')">QUERO GARANTIR MINHA VAGA →</a>
+                        
+                        <div class="countdown-container" id="countdown">
+                            <div class="countdown-item"><span class="countdown-value" id="days">00</span><span class="countdown-label">Dias</span></div>
+                            <div class="countdown-item"><span class="countdown-value" id="hours">00</span><span class="countdown-label">Horas</span></div>
+                            <div class="countdown-item"><span class="countdown-value" id="minutes">00</span><span class="countdown-label">Min</span></div>
+                            <div class="countdown-item"><span class="countdown-value" id="seconds">00</span><span class="countdown-label">Seg</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="lead-form" id="leadForm">
+                    <div id="formMessage" style="display: none; text-align: center; margin-bottom: 15px; font-weight: 600;"></div>
+                    <h3 style="color: var(--white); margin-bottom: 20px;">Entre na lista Agentic PM</h3>
+                    <div class="form-group">
+                        <input name="name" placeholder="Seu nome completo" required type="text"/>
+                    </div>
+                    <div class="form-group">
+                        <input name="email" placeholder="Seu melhor e-mail" required type="email"/>
+                    </div>
+                    <div class="form-group">
+                        <input name="whatsapp" placeholder="Seu WhatsApp (com DDD)" type="tel"/>
+                    </div>
+                    <button class="form-button" type="submit">QUERO ENTRAR NA LISTA AGENTIC PM →</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="instructor-section">
+        <div class="container">
+            <div class="instructor-content">
+                <div class="instructor-image">
+                    <img src="souzaallana_github_i_2026-05-13_07-00-23_4945.webp" alt="Allana">
+                </div>
+                <div class="instructor-text">
+                    <h2>Quem vai te guiar</h2>
+                    <p>Allana é especialista em Product Management e Inteligência Artificial, ajudando centenas de profissionais a se posicionarem na nova economia agêntica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-container">
+                <h2 style="color: var(--white); text-align: center; margin-bottom: 40px;">Perguntas Frequentes</h2>
+                <div class="faq-item">
+                    <div class="faq-question">Preciso saber programar? <span>+</span></div>
+                    <div class="faq-answer"><p>Não. O foco é orquestração e estratégia.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Quanto tempo de acesso? <span>+</span></div>
+                    <div class="faq-answer"><p>Acesso vitalício à turma fundadora.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+                q.querySelector('span').textContent = item.classList.contains('active') ? '-' : '+';
+            });
+        });
+
+        // Countdown Timer
+        const targetDate = new Date("June 15, 2026 23:59:00 GMT-0300").getTime();
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "OFERTA ENCERRADA";
+                return;
+            }
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        }, 1000);
+
+        // ActiveCampaign Integration
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const msg = document.getElementById('formMessage');
+            btn.disabled = true;
+            btn.innerText = 'Enviando...';
+
+            const formData = new FormData(this);
+            const data = {
+                contact: {
+                    email: formData.get('email'),
+                    firstName: formData.get('name'),
+                    fieldValues: [
+                        { field: 'PHONE', value: formData.get('whatsapp') }
+                    ]
+                }
+            };
+
+            try {
+                const response = await fetch('https://diasallana1990.api-us1.com/api/3/contacts', {
+                    method: 'POST',
+                    headers: {
+                        'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    const contact = await response.json();
+                    // Add Tags and List
+                    await fetch('https://diasallana1990.api-us1.com/api/3/contactLists', {
+                        method: 'POST',
+                        headers: { 'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe', 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ contactList: { list: 4, contact: contact.contact.id, status: 1 } })
+                    });
+                    
+                    msg.innerText = 'Recebido! Verifique seu email em breve.';
+                    msg.style.color = 'var(--primary)';
+                    msg.style.display = 'block';
+                    this.reset();
+                    if (typeof gtag === 'function') gtag('event', 'form_submit');
+                } else {
+                    throw new Error('Erro na submissão');
+                }
+            } catch (error) {
+                msg.innerText = 'Ocorreu um erro. Tente novamente.';
+                msg.style.color = 'var(--secondary)';
+                msg.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.innerText = 'QUERO ENTRAR NA LISTA AGENTIC PM →';
+            }
+        });
+
+        // GA4 Event Tracking Helpers
+        function trackCtaClick(label) {
+            if (typeof gtag === 'function') gtag('event', 'cta_click', { 'event_label': label });
+        }
+
+        // Scroll Tracking
+        let scroll50 = false, scroll90 = false;
+        window.addEventListener('scroll', function() {
+            const h = document.documentElement, b = document.body, st = 'scrollTop', sh = 'scrollHeight';
+            const percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+            if (percent >= 50 && !scroll50) {
+                if (typeof gtag === 'function') gtag('event', 'scroll_50');
+                scroll50 = true;
+            }
+            if (percent >= 90 && !scroll90) {
+                if (typeof gtag === 'function') gtag('event', 'scroll_90');
+                scroll90 = true;
+            }
+        });
+    </script>
+</body>
+</html>
