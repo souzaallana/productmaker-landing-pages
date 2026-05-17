@@ -327,7 +327,7 @@
                     email: formData.get('email'),
                     firstName: formData.get('name'),
                     fieldValues: [
-                        { field: 'PHONE', value: formData.get('whatsapp') }
+                        { field: '2', value: formData.get('whatsapp') } // ID 2 para WhatsApp
                     ]
                 }
             };
@@ -343,13 +343,25 @@
                 });
 
                 if (response.ok) {
-                    const contact = await response.json();
-                    // Add Tags and List
+                    const contactData = await response.json();
+                    const contactId = contactData.contact.id;
+
+                    // Add to List (ID 4)
                     await fetch('https://diasallana1990.api-us1.com/api/3/contactLists', {
                         method: 'POST',
                         headers: { 'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe', 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ contactList: { list: 4, contact: contact.contact.id, status: 1 } })
+                        body: JSON.stringify({ contactList: { list: 4, contact: contactId, status: 1 } })
                     });
+
+                    // Add Tags (lead: 1, agentic-pm: 2, lançamento-2026: 3)
+                    const tags = [1, 2, 3];
+                    for (const tagId of tags) {
+                        await fetch('https://diasallana1990.api-us1.com/api/3/contactTags', {
+                            method: 'POST',
+                            headers: { 'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe', 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ contactTag: { contact: contactId, tag: tagId } })
+                        });
+                    }
                     
                     msg.innerText = 'Recebido! Verifique seu email em breve.';
                     msg.style.color = 'var(--primary)';
