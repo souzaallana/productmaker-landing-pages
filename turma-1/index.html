@@ -160,6 +160,11 @@
             text-align: center;
         }
 
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, #2DD4BF 100%);
+            color: var(--bg-dark);
+        }
+
         .btn-accent {
             background: var(--accent);
             color: var(--bg-dark);
@@ -193,7 +198,17 @@
             color: var(--text-light-gray);
         }
 
-        /* FAQ Styles */
+        .pain-section { background: var(--white); padding: 100px 0; color: #1A1A1A; }
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .pain-item { border-left: 4px solid var(--secondary); padding: 20px; }
+        
+        .agitation-section { background: var(--bg-dark); padding: 100px 0; }
+        .data-box { background: rgba(26, 35, 50, 0.6); padding: 60px; border-radius: 24px; border: 1px solid rgba(0, 229, 204, 0.1); }
+        
+        .method-section { background: #f8f7ff; padding: 100px 0; color: var(--bg-dark); }
+        .method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .method-card { background: #fff; padding: 30px; border-radius: 16px; border-left: 3px solid #7c3aed; }
+
         .faq-section { padding: 100px 0; background: var(--bg-dark); }
         .faq-container { max-width: 800px; margin: 0 auto; }
         .faq-item { border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding: 20px 0; }
@@ -225,7 +240,7 @@
                 <div class="hero-text">
                     <span style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Agentic PM · Turma Fundadora 2026</span>
                     <h1>Enquanto a IA devora o PM tradicional, você vira <strong>insubstituível</strong>.</h1>
-                    <p class="hero-subheadline">Deixe de ser um executor de tarefas. Comece a orquestrar sistemas inteligentes.</p>
+                    <p class="hero-subheadline">Deixe de ser um executor de tarefas. Comece a orquestrar sistemas inteligentes. Ganhe 2-3x mais impacto ao dominar o Método Agentic PM.</p>
                     
                     <div class="contrast-box">
                         <p style="font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 15px;">Oferta Exclusiva - Turma Fundadora 2026:</p>
@@ -248,6 +263,7 @@
                 <form class="lead-form" id="leadForm">
                     <div id="formMessage" style="display: none; text-align: center; margin-bottom: 15px; font-weight: 600;"></div>
                     <h3 style="color: var(--white); margin-bottom: 20px;">Entre na lista Agentic PM</h3>
+                    <p style="color: var(--text-light-gray); font-size: 0.9rem; margin-bottom: 20px;">Preencha para entrar na lista de espera e receber conteúdos exclusivos, bastidores e avisos da próxima turma.</p>
                     <div class="form-group">
                         <input name="name" placeholder="Seu nome completo" required type="text"/>
                     </div>
@@ -259,6 +275,49 @@
                     </div>
                     <button class="form-button" type="submit">QUERO ENTRAR NA LISTA AGENTIC PM →</button>
                 </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="pain-section">
+        <div class="container">
+            <h2>Você reconhece essa sensação?</h2>
+            <div class="pain-grid">
+                <div class="pain-item">
+                    <h4>O Medo da Substituição</h4>
+                    <p>Você vê a IA fazendo PRDs e análises em segundos e se pergunta: "O que sobra para mim?"</p>
+                </div>
+                <div class="pain-item">
+                    <h4>A Síndrome do Executor</h4>
+                    <p>Você passa o dia gerenciando processos que parecem cada vez mais mecânicos.</p>
+                </div>
+                <div class="pain-item">
+                    <h4>A Estagnação Salarial</h4>
+                    <p>Quem não domina a orquestração agêntica está começando a ganhar menos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="agitation-section">
+        <div class="container">
+            <div class="data-box">
+                <h3 style="color: var(--primary);">O mercado está se reorganizando. Agora.</h3>
+                <p>As vagas que exigem conhecimento em IA quadruplicaram. Empresas já contratam "Orchestration PM" — um cargo que não existia 2 anos atrás.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="method-section">
+        <div class="container">
+            <h2>O Método Agentic PM em 6 Fases</h2>
+            <div class="method-grid">
+                <div class="method-card"><h3>1. Despertar</h3><p>Entenda quem some e quem resta no mercado de IA.</p></div>
+                <div class="method-card"><h3>2. Copilot</h3><p>IA como extensão do seu trabalho operacional.</p></div>
+                <div class="method-card"><h3>3. Builder</h3><p>Crie seus próprios agents e automações.</p></div>
+                <div class="method-card"><h3>4. Architect</h3><p>Desenhe produtos que já nascem agênticos.</p></div>
+                <div class="method-card"><h3>5. Orchestrator</h3><p>Gerencie ecossistemas de IA autônomos.</p></div>
+                <div class="method-card"><h3>6. Leader</h3><p>Lidere a transformação agêntica na sua empresa.</p></div>
             </div>
         </div>
     </section>
@@ -288,6 +347,10 @@
                 <div class="faq-item">
                     <div class="faq-question">Quanto tempo de acesso? <span>+</span></div>
                     <div class="faq-answer"><p>Acesso vitalício à turma fundadora.</p></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Tem certificado? <span>+</span></div>
+                    <div class="faq-answer"><p>Sim, certificado de conclusão do Método Agentic PM.</p></div>
                 </div>
             </div>
         </div>
@@ -333,7 +396,7 @@
                     email: formData.get('email'),
                     firstName: formData.get('name'),
                     fieldValues: [
-                        { field: '2', value: formData.get('whatsapp') } // ID 2 para WhatsApp
+                        { field: '2', value: formData.get('whatsapp') }
                     ]
                 }
             };
@@ -352,14 +415,12 @@
                     const contactData = await response.json();
                     const contactId = contactData.contact.id;
 
-                    // Add to List (ID 4)
                     await fetch('https://diasallana1990.api-us1.com/api/3/contactLists', {
                         method: 'POST',
                         headers: { 'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe', 'Content-Type': 'application/json' },
                         body: JSON.stringify({ contactList: { list: 4, contact: contactId, status: 1 } })
                     });
 
-                    // Add Tags (lead: 1, agentic-pm: 2, lançamento-2026: 3)
                     const tags = [1, 2, 3];
                     for (const tagId of tags) {
                         await fetch('https://diasallana1990.api-us1.com/api/3/contactTags', {
@@ -387,12 +448,10 @@
             }
         });
 
-        // GA4 Event Tracking Helpers
         function trackCtaClick(label) {
             if (typeof gtag === 'function') gtag('event', 'cta_click', { 'event_label': label });
         }
 
-        // Scroll Tracking
         let scroll50 = false, scroll90 = false;
         window.addEventListener('scroll', function() {
             const h = document.documentElement, b = document.body, st = 'scrollTop', sh = 'scrollHeight';
