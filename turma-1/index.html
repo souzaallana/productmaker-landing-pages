@@ -832,7 +832,7 @@
                     ._form_1 h2, ._form_1 p { display: none !important; }
                     </style>
                     <script>
-                    function customizeACForm() {
+                                        function customizeACForm() {
                         var form = document.querySelector('._form_1');
                         if (form) {
                             var labels = form.querySelectorAll('._form-label');
@@ -840,26 +840,42 @@
                             var button = form.querySelector('._submit');
                             
                             if (labels.length >= 3) {
-                                labels[0].innerHTML = 'Nome Completo <span class="field-required">*</span>';
-                                labels[1].innerHTML = 'E-mail <span class="field-required">*</span>';
-                                labels[2].innerHTML = 'WhatsApp <span class="field-required">*</span>';
+                                labels[0].textContent = 'Nome Completo *';
+                                labels[1].textContent = 'E-mail *';
+                                labels[2].textContent = 'WhatsApp *';
                             }
                             
                             if (inputs.length >= 3) {
-                                inputs[0].placeholder = 'Seu nome completo';
-                                inputs[1].placeholder = 'Seu melhor e-mail';
-                                inputs[2].placeholder = 'Seu WhatsApp (com DDD)';
+                                inputs[0].setAttribute('placeholder', 'Seu nome completo');
+                                inputs[1].setAttribute('placeholder', 'Seu melhor e-mail');
+                                inputs[2].setAttribute('placeholder', 'Seu WhatsApp (com DDD)');
                             }
                             
                             if (button) {
-                                button.textContent = 'QUERO SER UM AGENTIC PM \u2192';
+                                button.textContent = 'QUERO SER UM AGENTIC PM →';
                             }
                         }
                     }
-                    // Tenta customizar em diferentes intervalos para garantir que o embed carregou
+                    
+                    var formContainer = document.querySelector('._form_1');
+                    if (formContainer) {
+                        var observer = new MutationObserver(function(mutations) {
+                            customizeACForm();
+                        });
+                        
+                        observer.observe(formContainer, {
+                            childList: true,
+                            subtree: true,
+                            attributes: true,
+                            characterData: true
+                        });
+                    }
+                    
                     setTimeout(customizeACForm, 500);
+                    setTimeout(customizeACForm, 1000);
                     setTimeout(customizeACForm, 1500);
-                    setTimeout(customizeACForm, 3000);
+                    setTimeout(customizeACForm, 2500);
+                    setTimeout(customizeACForm, 4000);
                     </script>
                 </div>
             </div>
