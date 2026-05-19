@@ -825,7 +825,32 @@
                     ._form_1 ._button-wrapper ._submit:hover { background: #3cc49a !important; transform: translateY(-1px) !important; }
                     ._form_1 ._form_element { margin-bottom: 16px !important; padding: 0 !important; }
                     ._form_1 ._error-inner { color: #F36B9D !important; font-size: 12px !important; margin-top: 4px !important; }
+                    ._form_1 ._field-wrapper { margin: 0 !important; padding: 0 !important; }
+                    ._form_1 ._field-wrapper input { font-family: 'Inter', sans-serif !important; }
+                    ._form_1 ._button-wrapper { margin-top: 10px !important; }
+                    ._form_1 ._button-wrapper ._submit { font-family: 'Inter', sans-serif !important; }
+                    ._form_1 h2, ._form_1 p { display: none !important; }
                     </style>
+                    <script>
+                    setTimeout(function() {
+                        var form = document.querySelector('._form_1');
+                        if (form) {
+                            var labels = form.querySelectorAll('._form-label');
+                            var inputs = form.querySelectorAll('._field-wrapper input');
+                            var button = form.querySelector('._submit');
+                            
+                            if (labels[0]) labels[0].textContent = 'Full Name *';
+                            if (labels[1]) labels[1].textContent = 'Email *';
+                            if (labels[2]) labels[2].textContent = 'WhatsApp *';
+                            
+                            if (inputs[0]) inputs[0].placeholder = 'Seu nome completo';
+                            if (inputs[1]) inputs[1].placeholder = 'Seu melhor e-mail';
+                            if (inputs[2]) inputs[2].placeholder = 'Seu WhatsApp (com DDD)';
+                            
+                            if (button) button.textContent = 'QUERO SER UM AGENTIC PM \u2192';
+                        }
+                    }, 500);
+                    </script>
                 </div>
             </div>
         </div>
