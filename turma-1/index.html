@@ -443,6 +443,28 @@
             color: #7c3aed;
         }
 
+        .diagnosis-section {
+            background: linear-gradient(135deg, #1A0F2E 0%, #0D1117 100%);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .diagnosis-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            font-weight: 800;
+        }
+
+        .diagnosis-section p {
+            font-size: 1.2rem;
+            color: #B0B0B0;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .target-section {
             background: var(--bg-dark);
             padding: 100px 0;
@@ -869,6 +891,14 @@
                     <p>Governança, identidade e o mapa para continuar subindo.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="diagnosis-section">
+        <div class="container">
+            <h2>Descubra onde você está na Escada</h2>
+            <p>Faça o diagnóstico gratuito e descubra seu nível e arquétipo como PM Agêntico.</p>
+            <button class="btn btn-primary" onclick="window.location.href='/diagnostico'" onmouseover="trackCtaClick('Diagnosis CTA')">FAZER MEU DIAGNÓSTICO →</button>
         </div>
     </section>
 
