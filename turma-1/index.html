@@ -832,24 +832,34 @@
                     ._form_1 h2, ._form_1 p { display: none !important; }
                     </style>
                     <script>
-                    setTimeout(function() {
+                    function customizeACForm() {
                         var form = document.querySelector('._form_1');
                         if (form) {
                             var labels = form.querySelectorAll('._form-label');
                             var inputs = form.querySelectorAll('._field-wrapper input');
                             var button = form.querySelector('._submit');
                             
-                            if (labels[0]) labels[0].textContent = 'Full Name *';
-                            if (labels[1]) labels[1].textContent = 'Email *';
-                            if (labels[2]) labels[2].textContent = 'WhatsApp *';
+                            if (labels.length >= 3) {
+                                labels[0].innerHTML = 'Nome Completo <span class="field-required">*</span>';
+                                labels[1].innerHTML = 'E-mail <span class="field-required">*</span>';
+                                labels[2].innerHTML = 'WhatsApp <span class="field-required">*</span>';
+                            }
                             
-                            if (inputs[0]) inputs[0].placeholder = 'Seu nome completo';
-                            if (inputs[1]) inputs[1].placeholder = 'Seu melhor e-mail';
-                            if (inputs[2]) inputs[2].placeholder = 'Seu WhatsApp (com DDD)';
+                            if (inputs.length >= 3) {
+                                inputs[0].placeholder = 'Seu nome completo';
+                                inputs[1].placeholder = 'Seu melhor e-mail';
+                                inputs[2].placeholder = 'Seu WhatsApp (com DDD)';
+                            }
                             
-                            if (button) button.textContent = 'QUERO SER UM AGENTIC PM \u2192';
+                            if (button) {
+                                button.textContent = 'QUERO SER UM AGENTIC PM \u2192';
+                            }
                         }
-                    }, 500);
+                    }
+                    // Tenta customizar em diferentes intervalos para garantir que o embed carregou
+                    setTimeout(customizeACForm, 500);
+                    setTimeout(customizeACForm, 1500);
+                    setTimeout(customizeACForm, 3000);
                     </script>
                 </div>
             </div>
