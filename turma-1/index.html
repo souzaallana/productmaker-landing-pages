@@ -8,7 +8,58 @@
     
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EG1G4L3VS"></script>
-    <script>
+    
+                    <style id="ac-form-custom-styles">
+                    ._form_1 { visibility: hidden; opacity: 0; transition: opacity 0.3s ease; }
+                    ._form_1.customized { visibility: visible !important; opacity: 1 !important; }
+                    
+                    /* Forçar estilos globais para evitar o flash branco */
+                    ._form_1, ._form_1 * { 
+                        background-color: transparent !important; 
+                        box-shadow: none !important;
+                        border-radius: 0 !important;
+                    }
+                    
+                    ._form_1 ._form-title, ._form_1 ._form-branding, ._form_1 ._form-footer { display: none !important; }
+                    
+                    ._form_1 ._form-label { 
+                        color: rgba(255,255,255,0.7) !important; 
+                        font-size: 13px !important; 
+                        font-family: 'Inter', sans-serif !important;
+                        margin-bottom: 6px !important;
+                        display: block !important;
+                    }
+                    
+                    ._form_1 ._field-wrapper input { 
+                        background: rgba(255,255,255,0.07) !important; 
+                        border: 1px solid rgba(255,255,255,0.15) !important; 
+                        border-radius: 8px !important; 
+                        color: #ffffff !important; 
+                        font-size: 15px !important; 
+                        padding: 14px 16px !important; 
+                        width: 100% !important; 
+                        box-sizing: border-box !important;
+                        font-family: 'Inter', sans-serif !important;
+                    }
+                    
+                    ._form_1 ._field-wrapper input::placeholder { color: rgba(255,255,255,0.35) !important; }
+                    
+                    ._form_1 ._button-wrapper ._submit {
+                      background: #4ED3A9 !important;
+                      color: #19253A !important;
+                      font-weight: 700 !important;
+                      font-size: 14px !important;
+                      letter-spacing: 0.06em !important;
+                      padding: 16px 24px !important;
+                      border-radius: 8px !important;
+                      border: none !important;
+                      width: 100% !important;
+                      cursor: pointer !important;
+                      text-transform: uppercase !important;
+                      font-family: 'Inter', sans-serif !important;
+                    }
+                    </style>
+                    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -831,10 +882,66 @@
                     ._form_1 ._button-wrapper ._submit { font-family: 'Inter', sans-serif !important; }
                     ._form_1 h2, ._form_1 p { display: none !important; }
                     </style>
+                    
+                    <style id="ac-form-custom-styles">
+                    ._form_1 { visibility: hidden; opacity: 0; transition: opacity 0.3s ease; }
+                    ._form_1.customized { visibility: visible !important; opacity: 1 !important; }
+                    
+                    /* Forçar estilos globais para evitar o flash branco */
+                    ._form_1, ._form_1 * { 
+                        background-color: transparent !important; 
+                        box-shadow: none !important;
+                        border-radius: 0 !important;
+                    }
+                    
+                    ._form_1 ._form-title, ._form_1 ._form-branding, ._form_1 ._form-footer { display: none !important; }
+                    
+                    ._form_1 ._form-label { 
+                        color: rgba(255,255,255,0.7) !important; 
+                        font-size: 13px !important; 
+                        font-family: 'Inter', sans-serif !important;
+                        margin-bottom: 6px !important;
+                        display: block !important;
+                    }
+                    
+                    ._form_1 ._field-wrapper input { 
+                        background: rgba(255,255,255,0.07) !important; 
+                        border: 1px solid rgba(255,255,255,0.15) !important; 
+                        border-radius: 8px !important; 
+                        color: #ffffff !important; 
+                        font-size: 15px !important; 
+                        padding: 14px 16px !important; 
+                        width: 100% !important; 
+                        box-sizing: border-box !important;
+                        font-family: 'Inter', sans-serif !important;
+                    }
+                    
+                    ._form_1 ._field-wrapper input::placeholder { color: rgba(255,255,255,0.35) !important; }
+                    
+                    ._form_1 ._button-wrapper ._submit {
+                      background: #4ED3A9 !important;
+                      color: #19253A !important;
+                      font-weight: 700 !important;
+                      font-size: 14px !important;
+                      letter-spacing: 0.06em !important;
+                      padding: 16px 24px !important;
+                      border-radius: 8px !important;
+                      border: none !important;
+                      width: 100% !important;
+                      cursor: pointer !important;
+                      text-transform: uppercase !important;
+                      font-family: 'Inter', sans-serif !important;
+                    }
+                    </style>
                     <script>
-                                        function customizeACForm() {
+                                                            function customizeACForm() {
                         var form = document.querySelector('._form_1');
                         if (form) {
+                            // Remover estilos inline do AC que causam o fundo branco
+                            form.style.setProperty('background', 'transparent', 'important');
+                            form.style.setProperty('padding', '0', 'important');
+                            form.style.setProperty('margin', '0', 'important');
+                            
                             var labels = form.querySelectorAll('._form-label');
                             var inputs = form.querySelectorAll('._field-wrapper input');
                             var button = form.querySelector('._submit');
@@ -854,28 +961,36 @@
                             if (button) {
                                 button.textContent = 'QUERO SER UM AGENTIC PM →';
                             }
+                            
+                            // Mostrar o formulário apenas após a primeira customização
+                            form.classList.add('customized');
                         }
                     }
                     
-                    var formContainer = document.querySelector('._form_1');
-                    if (formContainer) {
-                        var observer = new MutationObserver(function(mutations) {
-                            customizeACForm();
-                        });
-                        
-                        observer.observe(formContainer, {
-                            childList: true,
-                            subtree: true,
-                            attributes: true,
-                            characterData: true
-                        });
-                    }
+                    // Iniciar observação imediatamente
+                    var observer = new MutationObserver(function(mutations) {
+                        customizeACForm();
+                    });
                     
+                    // Tentar encontrar o container repetidamente até que exista
+                    var checkExist = setInterval(function() {
+                        var formContainer = document.querySelector('._form_1');
+                        if (formContainer) {
+                            observer.observe(formContainer, {
+                                childList: true,
+                                subtree: true,
+                                attributes: true,
+                                characterData: true
+                            });
+                            customizeACForm();
+                            clearInterval(checkExist);
+                        }
+                    }, 100);
+                    
+                    // Fallbacks de tempo
                     setTimeout(customizeACForm, 500);
-                    setTimeout(customizeACForm, 1000);
                     setTimeout(customizeACForm, 1500);
-                    setTimeout(customizeACForm, 2500);
-                    setTimeout(customizeACForm, 4000);
+                    setTimeout(customizeACForm, 3000);
                     </script>
                 </div>
             </div>
@@ -1061,7 +1176,58 @@
         </div>
     </footer>
 
-    <script>
+    
+                    <style id="ac-form-custom-styles">
+                    ._form_1 { visibility: hidden; opacity: 0; transition: opacity 0.3s ease; }
+                    ._form_1.customized { visibility: visible !important; opacity: 1 !important; }
+                    
+                    /* Forçar estilos globais para evitar o flash branco */
+                    ._form_1, ._form_1 * { 
+                        background-color: transparent !important; 
+                        box-shadow: none !important;
+                        border-radius: 0 !important;
+                    }
+                    
+                    ._form_1 ._form-title, ._form_1 ._form-branding, ._form_1 ._form-footer { display: none !important; }
+                    
+                    ._form_1 ._form-label { 
+                        color: rgba(255,255,255,0.7) !important; 
+                        font-size: 13px !important; 
+                        font-family: 'Inter', sans-serif !important;
+                        margin-bottom: 6px !important;
+                        display: block !important;
+                    }
+                    
+                    ._form_1 ._field-wrapper input { 
+                        background: rgba(255,255,255,0.07) !important; 
+                        border: 1px solid rgba(255,255,255,0.15) !important; 
+                        border-radius: 8px !important; 
+                        color: #ffffff !important; 
+                        font-size: 15px !important; 
+                        padding: 14px 16px !important; 
+                        width: 100% !important; 
+                        box-sizing: border-box !important;
+                        font-family: 'Inter', sans-serif !important;
+                    }
+                    
+                    ._form_1 ._field-wrapper input::placeholder { color: rgba(255,255,255,0.35) !important; }
+                    
+                    ._form_1 ._button-wrapper ._submit {
+                      background: #4ED3A9 !important;
+                      color: #19253A !important;
+                      font-weight: 700 !important;
+                      font-size: 14px !important;
+                      letter-spacing: 0.06em !important;
+                      padding: 16px 24px !important;
+                      border-radius: 8px !important;
+                      border: none !important;
+                      width: 100% !important;
+                      cursor: pointer !important;
+                      text-transform: uppercase !important;
+                      font-family: 'Inter', sans-serif !important;
+                    }
+                    </style>
+                    <script>
         // FAQ Toggle
         document.querySelectorAll('.faq-question').forEach(q => {
             q.addEventListener('click', () => {
