@@ -1184,7 +1184,17 @@
             successObserver.disconnect();
           }
         });
-        successObserver.observe(document.querySelector('._form_1'), {childList: true, subtree: true});
+        successObserver.observe(document.body, {childList: true, subtree: true});
+        
+        // Fallback: interceptar o submit do form
+        const form = document.querySelector('._form_1 form');
+        if (form) {
+          form.addEventListener('submit', function() {
+            setTimeout(function() {
+              window.location.href = 'https://productmaker.com.br/obrigado';
+            }, 2000);
+          });
+        }
         
         observer.disconnect();
       }
