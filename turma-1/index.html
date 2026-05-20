@@ -1177,25 +1177,7 @@
       if (document.querySelector('._form_1 input')) {
         applyACStyles();
         
-        // Interceptar o submit do form para redirecionar
-        const form = document.querySelector('._form_1 form');
-        if (form) {
-          form.addEventListener('submit', function() {
-            // Monitorar a exibição da mensagem de sucesso APÓS o submit
-            var successObserver = new MutationObserver(function(mutations) {
-              if (document.querySelector('._form-thank-you') || document.querySelector('._form_1').innerText.includes('Recebido!')) {
-                window.location.href = 'https://productmaker.com.br/obrigado';
-                successObserver.disconnect();
-              }
-            });
-            successObserver.observe(document.querySelector('._form_1'), {childList: true, subtree: true});
-            
-            // Fallback caso o observer falhe
-            setTimeout(function() {
-              window.location.href = 'https://productmaker.com.br/obrigado';
-            }, 3000);
-          });
-        }
+
         
         observer.disconnect();
       }
