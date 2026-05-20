@@ -1177,16 +1177,14 @@
       if (document.querySelector('._form_1 input')) {
         applyACStyles();
         
-        // Adicionar listener para redirecionamento após submit
-        const form = document.querySelector('._form_1 form');
-        if (form) {
-          form.addEventListener('submit', function() {
-            // Pequeno delay para garantir que o AC processe o envio antes do redirect
-            setTimeout(function() {
-              window.location.href = 'https://productmaker.com.br/obrigado';
-            }, 1500);
-          });
-        }
+        // Monitorar a exibição da mensagem de sucesso do AC para redirecionar
+        var successObserver = new MutationObserver(function(mutations) {
+          if (document.querySelector('._form-thank-you') || document.body.innerText.includes('Recebido!')) {
+            window.location.href = 'https://productmaker.com.br/obrigado';
+            successObserver.disconnect();
+          }
+        });
+        successObserver.observe(document.querySelector('._form_1'), {childList: true, subtree: true});
         
         observer.disconnect();
       }
