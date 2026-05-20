@@ -1156,5 +1156,31 @@
             }
         });
     </script>
+    <script>
+    function applyACStyles() {
+      var style = document.createElement('style');
+      style.textContent = [
+        '._form_1,._form_1 ._form-content,._form_1 ._form-body{background:transparent!important;padding:0!important;border:none!important;box-shadow:none!important;}',
+        '._form_1 ._form-title,._form_1 ._form-branding{display:none!important;}',
+        '._form_1 label{color:rgba(255,255,255,0.7)!important;font-size:13px!important;font-weight:500!important;margin-bottom:6px!important;display:block!important;}',
+        '._form_1 input[type=text],._form_1 input[type=email],._form_1 input[type=tel]{background:rgba(255,255,255,0.07)!important;border:1px solid rgba(255,255,255,0.15)!important;border-radius:8px!important;color:#fff!important;font-size:15px!important;padding:14px 16px!important;width:100%!important;box-sizing:border-box!important;margin-bottom:12px!important;}',
+        '._form_1 input:focus{border-color:#4ED3A9!important;outline:none!important;}',
+        '._form_1 input::placeholder{color:rgba(255,255,255,0.35)!important;}',
+        '._form_1 ._submit,._form_1 button[type=submit]{background:#4ED3A9!important;color:#19253A!important;font-weight:800!important;font-size:14px!important;padding:16px!important;border-radius:8px!important;border:none!important;width:100%!important;cursor:pointer!important;text-transform:uppercase!important;margin-top:8px!important;}',
+        '._form_1 ._form_element{margin-bottom:12px!important;}',
+        '._form_1 p{display:none!important;}'
+      ].join('');
+      document.head.appendChild(style);
+    }
+
+    var observer = new MutationObserver(function(mutations) {
+      if (document.querySelector('._form_1 input')) {
+        applyACStyles();
+        observer.disconnect();
+      }
+    });
+    observer.observe(document.body, {childList: true, subtree: true});
+    setTimeout(applyACStyles, 2000);
+    </script>
 </body>
 </html>
