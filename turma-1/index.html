@@ -1176,6 +1176,18 @@
     var observer = new MutationObserver(function(mutations) {
       if (document.querySelector('._form_1 input')) {
         applyACStyles();
+        
+        // Adicionar listener para redirecionamento após submit
+        const form = document.querySelector('._form_1 form');
+        if (form) {
+          form.addEventListener('submit', function() {
+            // Pequeno delay para garantir que o AC processe o envio antes do redirect
+            setTimeout(function() {
+              window.location.href = 'https://productmaker.com.br/obrigado';
+            }, 1500);
+          });
+        }
+        
         observer.disconnect();
       }
     });
