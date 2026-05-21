@@ -11,8 +11,8 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag(\'js\', new Date());
-      gtag(\'config\', \'G-QH1NS1BW5F\');
+      gtag('js', new Date());
+      gtag('config', 'G-QH1NS1BW5F');
     </script>
     
     <style>
@@ -418,6 +418,53 @@
             color: #7c3aed;
         }
 
+        /* ===== SEÇÃO 5.5: MÉTODO R.E.S.T.A ===== */
+        .resta-method-section {
+            background: var(--bg-dark);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .resta-method-section h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .resta-method-section h3 {
+            font-size: 1.3rem;
+            color: #B0B0B0;
+            margin-bottom: 50px;
+        }
+
+        .resta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+
+        .resta-item {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .resta-item h4 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .resta-item p {
+            color: #B0B0B0;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
         /* ===== SEÇÃO 6: PARA QUEM É ===== */
         .target-section {
             background: var(--bg-dark);
@@ -529,7 +576,7 @@
             padding: 100px 0;
             text-align: center;
         }
-
+        
         .date-badge {
             display: inline-block;
             padding: 10px 20px;
@@ -540,18 +587,18 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             color: var(--white);
         }
-
+        
         #countdown {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-bottom: 40px;
         }
-
+        
         .countdown-item {
             text-align: center;
         }
-
+        
         .countdown-number {
             font-size: 3rem;
             font-weight: 800;
@@ -562,8 +609,485 @@
             min-width: 90px;
             border: 1px solid rgba(0, 229, 204, 0.2);
         }
-
+        
         .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-top: 8px;
+            opacity: 0.6;
+            letter-spacing: 1px;
+        }
+        
+        .price-comparison {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 60px;
+        }
+        
+        .urgency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        
+        .urgency-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        /* ===== SEÇÃO 9: BÔNUS ===== */
+        .bonus-section {
+            background: #f1f5f9;
+            color: var(--bg-dark);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .bonus-section h2 {
+            color: var(--bg-dark);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .bonus-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: left;
+            transition: all 0.3s;
+        }
+        
+        .bonus-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .bonus-value {
+            margin-top: 15px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        /* ===== SEÇÃO 10: OFERTA ===== */
+        .offer-section {
+            background: var(--bg-dark);
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .offer-box {
+            background: var(--bg-card);
+            padding: 60px;
+            border-radius: 32px;
+            border: 2px solid var(--secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .price-tag {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 30px 0;
+        }
+        
+        /* ===== SEÇÃO 11: GARANTIA ===== */
+        .guarantee-section {
+            background: #ecfdf5;
+            color: #065f46;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        /* ===== SEÇÃO 12: FAQ ===== */
+        .faq-section {
+            background: var(--white);
+            color: var(--bg-dark);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .faq-section h2 {
+            color: var(--bg-dark);
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .faq-section h2::after {
+            content: \'\';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px 0;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            display: none;
+            padding-top: 15px;
+            opacity: 0.8;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 50px 0;
+            background: #050505;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content, .instructor-content, .target-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .price-tag { font-size: 3rem; }
+            #countdown { gap: 10px; }
+            .countdown-number { min-width: 70px; font-size: 2rem; padding: 10px; }
+        }
+        /* ===== SEÇÃO 6: PARA QUEM É ===== */
+        .target-section {
+            background: var(--bg-dark);
+            padding: 100px 0;
+        }
+        
+        .target-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .target-box {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .target-box h3 {
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+        }
+        
+        .target-list {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .target-list li {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #B0B0B0;
+        }
+        
+        .target-list li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .target-box.not-for .target-list li::before {
+            content: "✗";
+            color: var(--secondary);
+        }
+        
+        /* ===== SEÇÃO 7: QUEM É A ALLANA ===== */
+        .instructor-section {
+            background: var(--white);
+            padding: 100px 0;
+            color: var(--bg-dark);
+        }
+        
+        .instructor-content {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .instructor-image {
+            width: 100%;
+            height: 380px;
+            background: linear-gradient(135deg, var(--primary) 0%, #2DD4BF 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-dark);
+            font-size: 1.2rem;
+            font-weight: 600;
+            overflow: hidden;
+        }
+        
+        .instructor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+        
+        .instructor-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            color: var(--bg-dark);
+        }
+        
+        .instructor-text p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .instructor-highlight {
+            font-style: italic;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 25px 0;
+            font-size: 1.1rem;
+        }
+        
+        /* ===== SEÇÃO 8: URGÊNCIA & EXCLUSIVIDADE ===== */
+        .urgency-section {
+            background: var(--bg-dark);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .date-badge {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+        
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .countdown-item {
+            text-align: center;
+        }
+        
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 20px;
+            border-radius: 12px;
+            min-width: 90px;
+            border: 1px solid rgba(0, 229, 204, 0.2);
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-top: 8px;
+            opacity: 0.6;
+            letter-spacing: 1px;
+        }
+        
+        .price-comparison {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 60px;
+        }
+        
+        .urgency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        
+        .urgency-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        /* ===== SEÇÃO 9: BÔNUS ===== */
+        .bonus-section {
+            background: #f1f5f9;
+            color: var(--bg-dark);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .bonus-section h2 {
+            color: var(--bg-dark);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .bonus-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: left;
+            transition: all 0.3s;
+        }
+        
+        .bonus-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .bonus-value {
+            margin-top: 15px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        /* ===== SEÇÃO 10: OFERTA ===== */
+        .offer-section {
+            background: var(--bg-dark);
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .offer-box {
+            background: var(--bg-card);
+            padding: 60px;
+            border-radius: 32px;
+            border: 2px solid var(--secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .price-tag {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 30px 0;
+        }
+        
+        /* ===== SEÇÃO 11: GARANTIA ===== */
+        .guarantee-section {
+            background: #ecfdf5;
+            color: #065f46;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        /* ===== SEÇÃO 12: FAQ ===== */
+        .faq-section {
+            background: var(--white);
+            color: var(--bg-dark);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .faq-section h2 {
+            color: var(--bg-dark);
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .faq-section h2::after {
+            content: \'\';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px 0;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            display: none;
+            padding-top: 15px;
+            opacity: 0.8;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 50px 0;
+            background: #050505;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content, .instructor-content, .target-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .price-tag { font-size: 3rem; }
+            #countdown { gap: 10px; }
+            .countdown-number { min-width: 70px; font-size: 2rem; padding: 10px; }
+        }
+    
             font-size: 0.8rem;
             text-transform: uppercase;
             margin-top: 8px;
