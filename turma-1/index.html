@@ -418,77 +418,6 @@
             color: #7c3aed;
         }
 
-        <section class="method-section">
-            <div class="container">
-                <h2 class="section-title">Método R.E.S.T.A</h2>
-                <p class="section-subtitle">O caminho completo do PM executor ao Orquestrador insubstituível.</p>
-                <div class="method-grid">
-                    <div class="method-item">
-                        <h3>R — Reagir</h3>
-                        <p>Consciência do novo mercado. Diagnóstico do seu risco atual e entendimento claro do que está mudando no papel do PM.</p>
-                    </div>
-                    <div class="method-item">
-                        <h3>E — Estender</h3>
-                        <p>Copilot Avançado. Transforma a IA em extensão poderosa do seu trabalho — o que levava horas passa a levar minutos.</p>
-                    </div>
-                    <div class="method-item">
-                        <h3>S — Sistematizar</h3>
-                        <p>AI-Native Builder. Constrói protótipos, MVPs e sistemas sem depender de código.</p>
-                    </div>
-                    <div class="method-item">
-                        <h3>T — Transformar</h3>
-                        <p>Orquestração Agêntica. Cria workflows e ecossistemas de agents autônomos com mínima intervenção humana.</p>
-                    </div>
-                    <div class="method-item">
-                        <h3>A — Aplicar</h3>
-                        <p>Produto Agentic. Leva tudo para o produto real: features agênticas, Human-in-the-Loop e fosso competitivo com IA.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <style>
-            .method-section {
-                background: var(--bg-dark);
-                padding: 100px 0;
-                text-align: center;
-            }
-            .method-section .section-title {
-                font-size: 2.5rem;
-                color: var(--white);
-                margin-bottom: 15px;
-                font-weight: 800;
-            }
-            .method-section .section-subtitle {
-                font-size: 1.2rem;
-                color: #B0B0B0;
-                margin-bottom: 50px;
-            }
-            .method-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 30px;
-                text-align: left;
-            }
-            .method-item {
-                background: var(--bg-card);
-                padding: 30px;
-                border-radius: 16px;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            }
-            .method-item h3 {
-                color: var(--primary);
-                font-size: 1.4rem;
-                margin-bottom: 10px;
-            }
-            .method-item p {
-                color: #B0B0B0;
-                font-size: 1rem;
-                line-height: 1.7;
-            }
-        </style>
-
         /* ===== SEÇÃO 6: PARA QUEM É ===== */
         .target-section {
             background: var(--bg-dark);
@@ -1346,17 +1275,7 @@
       }
     });
     observer.observe(document.body, {childList: true, subtree: true});
-        setTimeout(applyACStyles, 2000);
-
-        // Change the button text after the form loads
-        var buttonObserver = new MutationObserver(function(mutations) {
-            var submitButton = document.querySelector('._form_1 button[type="submit"]');
-            if (submitButton && submitButton.innerText === 'QUERO SER UM AGENTIC PM →') {
-                submitButton.innerText = 'QUERO MINHA VAGA DE FUNDADOR POR R$1.497 →';
-                buttonObserver.disconnect();
-            }
-        });
-        buttonObserver.observe(document.body, {childList: true, subtree: true});
+    setTimeout(applyACStyles, 2000);
     </script>
 </body>
 </html>
