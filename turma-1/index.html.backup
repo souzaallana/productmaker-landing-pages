@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Agentic PM — O Curso para PMs que Querem Ficar Acima do Algoritmo</title>
+    <link href="/favicon.png" rel="icon" type="image/png"/>
+    
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EG1G4L3VS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9EG1G4L3VS');
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --bg-dark: #0D1117;
+            --bg-card: #1A2332;
+            --primary: #00E5CC;
+            --secondary: #FF2D78;
+            --accent: #FBBF24;
+            --text: #E8E8E8;
+            --white: #FFFFFF;
+            --green: #10B981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .badge-community {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0D1117 0%, #1A0F2E 50%, #0D1117 100%);
+            padding: 140px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 229, 204, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 45, 120, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--white);
+            letter-spacing: -1px;
+        }
+        
+        .hero-subheadline {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #B0B0B0;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .contrast-box {
+            background: rgba(0, 229, 204, 0.08);
+            border-left: 3px solid var(--primary);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--white);
+            line-height: 1.7;
+        }
+        
+        .contrast-box strong {
+            color: var(--secondary);
+        }
+        
+        .social-proof {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .proof-chip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #B0B0B0;
+            background: rgba(0, 229, 204, 0.05);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 229, 204, 0.2);
+        }
+        
+        .proof-chip strong {
+            color: var(--primary);
+        }
+        
+        .lead-form {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .lead-form h3 {
+            color: var(--white);
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 1rem;
+        }
+        
+        .form-button {
+            width: 100%;
+            padding: 18px;
+            background: var(--primary);
+            color: var(--bg-dark);
+            border: none;
+            border-radius: 8px;
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-button:hover {
+            background: #00f5ff;
+            transform: scale(1.02);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 36px;
+            border-radius: 8px;
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, #2DD4BF 100%);
+            color: var(--bg-dark);
+            box-shadow: 0 4px 15px rgba(0, 229, 204, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 229, 204, 0.4);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent) 0%, #F59E0B 100%);
+            color: var(--bg-dark);
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.2);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(251, 191, 36, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(251, 191, 36, 0); }
+        }
+        
+        .pain-section {
+            background: var(--white);
+            padding: 100px 0;
+            color: #1A1A1A;
+        }
+        
+        .pain-section h2 {
+            font-size: 2.5rem;
+            color: var(--bg-dark);
+            margin-bottom: 50px;
+            font-weight: 800;
+            text-align: center;
+        }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+
+        .pain-item {
+            padding: 20px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .pain-item h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .pain-highlight {
+            background: #f1f5f9;
+            padding: 40px;
+            border-radius: 16px;
+            margin-top: 60px;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        .agitation-section {
+            background: var(--bg-dark);
+            padding: 100px 0;
+        }
+        
+        .data-box {
+            background: rgba(26, 35, 50, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 229, 204, 0.1);
+            padding: 60px;
+            border-radius: 24px;
+            text-align: left;
+        }
+        
+        .data-box h3 {
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .data-point {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+            color: #B0B0B0;
+        }
+        
+        .data-point::before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+        
+        .warning-box {
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            font-weight: 700;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .turnaround-section {
+            background: linear-gradient(135deg, #1A0F2E 0%, #0D1117 100%);
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .turnaround-section h2 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+        
+        .turnaround-highlight {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin: 40px 0;
+        }
+        
+        .modules-section {
+            background: #f8f7ff;
+            padding: 100px 0;
+            color: var(--bg-dark);
+        }
+
+        .modules-section h2 {
+            color: var(--bg-dark);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .modules-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #7c3aed;
+            border-radius: 2px;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+
+        .module-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            border-left: 3px solid #7c3aed;
+            transition: all 0.3s;
+            color: #374151;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            border-left-width: 5px;
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
+        }
+
+        .module-label {
+            color: #7c3aed;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .module-card h3 {
+            color: var(--bg-dark);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .module-card strong {
+            color: #7c3aed;
+        }
+
+        .diagnosis-section {
+            background: linear-gradient(135deg, #1A0F2E 0%, #0D1117 100%);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .diagnosis-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            font-weight: 800;
+        }
+
+        .diagnosis-section p {
+            font-size: 1.2rem;
+            color: #B0B0B0;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .target-section {
+            background: var(--bg-dark);
+            padding: 100px 0;
+        }
+        
+        .target-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .target-box {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .target-box h3 {
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+        }
+        
+        .target-list {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .target-list li {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #B0B0B0;
+        }
+        
+        .target-list li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .target-box.not-for .target-list li::before {
+            content: "✗";
+            color: var(--secondary);
+        }
+        
+        .instructor-section {
+            padding: 100px 0;
+            color: var(--bg-dark);
+            background: #f8f7ff;
+        }
+        
+        .instructor-content {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .instructor-image {
+            width: 100%;
+            height: 380px;
+            background: linear-gradient(135deg, var(--primary) 0%, #2DD4BF 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-dark);
+            font-size: 1.2rem;
+            font-weight: 600;
+            overflow: hidden;
+        }
+        
+        .instructor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .instructor-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            color: var(--bg-dark);
+        }
+        
+        .instructor-text p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .urgency-section {
+            background: var(--bg-dark);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .date-badge {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 20px;
+            border-radius: 12px;
+            min-width: 90px;
+            border: 1px solid rgba(0, 229, 204, 0.2);
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-top: 8px;
+            opacity: 0.6;
+            letter-spacing: 1px;
+        }
+
+        .price-comparison {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 60px;
+        }
+
+        .urgency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+
+        .urgency-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .bonus-section {
+            background: #f1f5f9;
+            color: var(--bg-dark);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .bonus-section h2 {
+            color: var(--bg-dark);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .bonus-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: left;
+            transition: all 0.3s;
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .bonus-value {
+            margin-top: 15px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .offer-section {
+            background: var(--bg-dark);
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .offer-box {
+            background: var(--bg-card);
+            padding: 60px;
+            border-radius: 32px;
+            border: 2px solid var(--secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .price-tag {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 30px 0;
+        }
+
+        .guarantee-section {
+            background: #ecfdf5;
+            color: #065f46;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .faq-section {
+            background: var(--white);
+            color: var(--bg-dark);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .faq-section h2 {
+            color: var(--bg-dark);
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .faq-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            display: none;
+            padding-top: 15px;
+            opacity: 0.8;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        footer {
+            padding: 50px 0;
+            background: #050505;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content, .instructor-content, .target-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .price-tag { font-size: 3rem; }
+            #countdown { gap: 10px; }
+            .countdown-number { min-width: 70px; font-size: 2rem; padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Product Maker</div>
+            <div class="badge-community">✓ Recomendado por comunidades de PMs</div>
+        </header>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="eyebrow">Agentic PM · Lançamento 2026</span>
+                    <h1>Enquanto a IA devora o PM tradicional, você vira <strong>insubstituível</strong>.</h1>
+                    <p class="hero-subheadline">Deixe de ser um executor de tarefas. Comece a orquestrar sistemas inteligentes. Ganhe 2-3x mais impacto (e valor de mercado).</p>
+                    <p>O mercado de produto está se dividindo: de um lado, PMs que apenas operam ferramentas. Do outro, o <strong>Agentic PM</strong> — o profissional que desenha, governa e escala workflows autônomos.</p>
+                    <div class="contrast-box">
+                        O PM tradicional gasta 80% do tempo em execução mecânica. O <strong>Agentic PM</strong> usa 80% do tempo em estratégia, enquanto seus agents cuidam do resto.
+                    </div>
+                    <div class="social-proof">
+                        <div class="proof-chip">✓ <strong>150+ alunos</strong></div>
+                        <div class="proof-chip">✓ <strong>300k+</strong> profissionais alcançados</div>
+                        <div class="proof-chip">✓ <strong>Garantia 30 dias</strong></div>
+                    </div>
+                </div>
+
+                <div class="lead-form">
+                    <h3>Garanta seu acesso antecipado</h3>
+                    <div class="_form_1"></div>
+                    <script src="https://diasallana1990.activehosted.com/f/embed.php?id=1" charset="utf-8"></script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pain-section">
+        <div class="container">
+            <h2>Você reconhece essa sensação?</h2>
+            <div class="pain-grid">
+                <div class="pain-item">
+                    <h4>O Medo da Substituição</h4>
+                    <p>Você vê a IA fazendo PRDs, User Stories e análises em segundos e se pergunta: "O que sobra para mim?"</p>
+                </div>
+                <div class="pain-item">
+                    <h4>O Síndrome do Executor</h4>
+                    <p>Você passa o dia facilitando reuniões e gerenciando processos que parecem cada vez mais mecânicos.</p>
+                </div>
+                <div class="pain-item">
+                    <h4>A Estagnação Salarial</h4>
+                    <p>O mercado está mudando e quem não domina a orquestração agêntica está começando a ganhar menos.</p>
+                </div>
+            </div>
+            <div class="pain-highlight" style="font-size: 1.8rem; font-weight: 700; color: var(--bg-dark); line-height: 1.4;">
+                "O paradoxo do PM atual: temos as ferramentas mais potentes da história, mas nunca nos sentimos tão ameaçados."
+            </div>
+        </div>
+    </section>
+
+    <section class="agitation-section">
+        <div class="container">
+            <div class="data-box">
+                <h3>O mercado está se reorganizando. Agora.</h3>
+                <div class="data-point">As vagas no Brasil que exigem conhecimento em IA quadruplicaram em três anos, saltando de 19 mil em 2021 para 73 mil em 2024, segundo a PwC.</div>
+                <div class="data-point">Empresas já contratam "Orchestration PM" — um cargo que não existia 2 anos atrás.</div>
+                <div class="data-point">A camada intermediária do PM tradicional está se comprimindo. Quem apenas gerencia processos está sendo absorvido.</div>
+                <div class="warning-box">
+                    AVISO: Você não será substituído amanhã. Mas será desmonetizado se continuar agindo como um executor.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="turnaround-section">
+        <div class="container">
+            <h2>Mas existe outro caminho.</h2>
+            <p>O PM que vai prosperar nos próximos anos não é o que usa IA mais rápido. É aquele que teve a coragem de redesenhar completamente o seu papel.</p>
+            <p><strong>Ele parou de competir com a IA. Ele passou a comandá-la.</strong></p>
+            <div class="turnaround-highlight">
+                Esse é o Agentic PM. O PM que resta quando a IA engole tudo que era mecânico.
+            </div>
+            <p>Ele desenha workflows inteligentes, constrói ecossistemas de agents autônomos e cria produtos agênticos que funcionam com mínima intervenção humana.</p>
+            <p style="font-size: 1.2rem; font-weight: 700; margin-top: 30px; color: var(--primary);">Quanto mais a IA avança, mais valioso ele se torna.</p>
+            <button class="btn btn-primary" onclick="window.location.href='https://pay.kiwify.com.br/NSAhP7F'" style="margin-top: 40px;" onmouseover="trackCtaClick('Turnaround CTA')">QUERO ME TORNAR UM AGENTIC PM →</button>
+        </div>
+    </section>
+
+    <section class="modules-section">
+        <div class="container">
+            <h2>O que você vai aprender</h2>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <span class="module-label">Módulo 1</span>
+                    <h3>O Fim do PM Tradicional</h3>
+                    <p>Entenda quem some e quem resta no mercado de IA. Sai com um autodiagnóstico claro.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-label">Módulo 2</span>
+                    <h3>Estágio 1: Copilot</h3>
+                    <p>IA como extensão do seu trabalho operacional. Claude, NotebookLM e browsers agênticos.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-label">Módulo 3</span>
+                    <h3>Estágio 2: AI-Native Builder</h3>
+                    <p>Protótipos, MVPs e interfaces com IA sem depender de dev.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-label">Módulo 4</span>
+                    <h3>Estágio 3: Orquestração Agêntica</h3>
+                    <p>Agents, RAG, multi-agents e orquestração real.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-label">Módulo 5</span>
+                    <h3>Implementação: Seu Sistema</h3>
+                    <p>Mapear seus processos e construir o workflow agêntico real.</p>
+                </div>
+                <div class="module-card">
+                    <span class="module-label">Módulo 6</span>
+                    <h3>A Última Camada Agêntica</h3>
+                    <p>Governança, identidade e o mapa para continuar subindo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="diagnosis-section">
+        <div class="container">
+            <h2>Descubra onde você está na Escada</h2>
+            <p>Faça o diagnóstico gratuito e descubra seu nível e arquétipo como PM Agêntico.</p>
+            <button class="btn btn-primary" onclick="window.location.href='/diagnostico'" onmouseover="trackCtaClick('Diagnosis CTA')">FAZER MEU DIAGNÓSTICO →</button>
+        </div>
+    </section>
+
+    <section class="target-section">
+        <div class="container">
+            <div class="target-grid">
+                <div class="target-box">
+                    <h3>Este curso é para você se:</h3>
+                    <ul class="target-list">
+                        <li>Você sente que está perdendo tempo com tarefas mecânicas.</li>
+                        <li>Você quer liderar a implementação de IA no seu produto.</li>
+                        <li>Você busca se tornar um profissional insubstituível.</li>
+                        <li>Você quer dominar a orquestração de agents autônomos.</li>
+                    </ul>
+                </div>
+                <div class="target-box not-for">
+                    <h3>Este curso NÃO é para você se:</h3>
+                    <ul class="target-list">
+                        <li>Você está satisfeito em ser apenas um executor de tarefas.</li>
+                        <li>Você acredita que a IA é apenas uma "moda passageira".</li>
+                        <li>Você não está disposto a redesenhar seu papel profissional.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="instructor-section">
+        <div class="container">
+            <div class="instructor-content">
+                <div class="instructor-image">
+                    <img src="souzaallana_github_i_2026-05-13_07-00-23_4945.webp" alt="Allana Dias">
+                </div>
+                <div class="instructor-text">
+                    <h2>Quem vai te guiar</h2>
+                    <p>Allana Dias é Head of Product Management & UX com mais de 15 anos de experiência. Nos últimos 3 anos, transformou seu trabalho inteiro usando IA e sistemas de agents.</p>
+                    <p>Possui mais de 300 mil impressões e 90 mil profissionais alcançados no LinkedIn apenas em 2026. Mais de 150 profissionais já aprenderam com Allana.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="urgency-section">
+        <div class="container">
+            <h2>Este é o preço de lançamento.</h2>
+            <div id="countdown">
+                <div class="countdown-item"><div class="countdown-number" id="days">00</div><div class="countdown-label">Dias</div></div>
+                <div class="countdown-item"><div class="countdown-number" id="hours">00</div><div class="countdown-label">Horas</div></div>
+                <div class="countdown-item"><div class="countdown-number" id="minutes">00</div><div class="countdown-label">Minutos</div></div>
+                <div class="countdown-item"><div class="countdown-number" id="seconds">00</div><div class="countdown-label">Segundos</div></div>
+            </div>
+            <div class="price-comparison">
+                <span style="font-size: 1.4rem; opacity: 0.6; text-decoration: line-through;">R$ 1.997</span>
+                <span style="font-size: 3rem; color: var(--primary); font-weight: 800; margin-left: 20px;">R$ 1.497</span>
+            </div>
+            <button class="btn btn-accent" onclick="window.location.href='https://pay.kiwify.com.br/NSAhP7F'" onmouseover="trackCtaClick('Urgency CTA')">QUERO GARANTIR MINHA VAGA →</button>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Como recebo o acesso? <span>▼</span></div>
+                    <div class="faq-answer">Imediatamente após a confirmação do pagamento por e-mail.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Preciso saber programar? <span>▼</span></div>
+                    <div class="faq-answer">Não. O curso foca em ferramentas no-code e low-code.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Por quanto tempo terei acesso? <span>▼</span></div>
+                    <div class="faq-answer">O acesso ao conteúdo é vitalício.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: #050505; padding: 50px 0; text-align: center; opacity: 0.6;">
+        <div class="container">
+            <p>© 2026 Product Maker. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+                q.querySelector('span').textContent = item.classList.contains('active') ? '▲' : '▼';
+            });
+        });
+
+        // Countdown Timer
+        const targetDate = new Date("June 15, 2026 23:59:00 GMT-0300").getTime();
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            if (distance < 0) {
+                clearInterval(timer);
+                return;
+            }
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        }, 1000);
+
+        // ActiveCampaign Integration
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const msg = document.getElementById('formMessage');
+            btn.disabled = true;
+            btn.innerText = 'Enviando...';
+
+            const formData = new FormData(this);
+            const data = {
+                contact: {
+                    email: formData.get('email'),
+                    firstName: formData.get('name'),
+                    fieldValues: [{ field: '2', value: formData.get('whatsapp') }]
+                }
+            };
+
+            try {
+                const response = await fetch('https://diasallana1990.api-us1.com/api/3/contacts', {
+                    method: 'POST',
+                    headers: {
+                        'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    const contactData = await response.json();
+                    const contactId = contactData.contact.id;
+
+                    await fetch('https://diasallana1990.api-us1.com/api/3/contactLists', {
+                        method: 'POST',
+                        headers: { 'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe', 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ contactList: { list: 4, contact: contactId, status: 1 } })
+                    });
+
+                    const tags = [1, 2, 3];
+                    for (const tagId of tags) {
+                        await fetch('https://diasallana1990.api-us1.com/api/3/contactTags', {
+                            method: 'POST',
+                            headers: { 'Api-Token': '1ec2116b66b6cafe2b2a51cf8a32375654ec85cc3cef90a15f1cd566435b3e13604373fe', 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ contactTag: { contact: contactId, tag: tagId } })
+                        });
+                    }
+                    
+                    msg.innerText = 'Recebido! Verifique seu email em breve.';
+                    msg.style.color = 'var(--primary)';
+                    msg.style.display = 'block';
+                    this.reset();
+                    if (typeof gtag === 'function') gtag('event', 'form_submit');
+                } else {
+                    throw new Error('Erro na submissão');
+                }
+            } catch (error) {
+                msg.innerText = 'Ocorreu um erro. Tente novamente.';
+                msg.style.color = 'var(--secondary)';
+                msg.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.innerText = 'QUERO SER UM AGENTIC PM →';
+            }
+        });
+
+        function trackCtaClick(label) {
+            if (typeof gtag === 'function') gtag('event', 'cta_click', { 'event_label': label });
+        }
+
+        let scroll50 = false, scroll90 = false;
+        window.addEventListener('scroll', function() {
+            const h = document.documentElement, b = document.body, st = 'scrollTop', sh = 'scrollHeight';
+            const percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+            if (percent >= 50 && !scroll50) {
+                if (typeof gtag === 'function') gtag('event', 'scroll_50');
+                scroll50 = true;
+            }
+            if (percent >= 90 && !scroll90) {
+                if (typeof gtag === 'function') gtag('event', 'scroll_90');
+                scroll90 = true;
+            }
+        });
+    </script>
+</body>
+</html>

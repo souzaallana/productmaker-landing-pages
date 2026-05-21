@@ -1288,6 +1288,27 @@
                     <h3>Garanta seu acesso antecipado</h3>
                     <div class="_form_1"></div>
                     <script src="https://diasallana1990.activehosted.com/f/embed.php?id=1" charset="utf-8"></script>
+                    <script>
+                        const targetNode = document.querySelector('._form_1');
+                        const config = { childList: true, subtree: true };
+                        const callback = function(mutationsList, observer) {
+                            for(let mutation of mutationsList) {
+                                if (mutation.type === 'childList') {
+                                    const submitButton = document.querySelector('._form_1 input[type="submit"], ._form_1 button[type="submit"]');
+                                    if (submitButton && submitButton.innerText !== 'QUERO MINHA VAGA DE FUNDADOR POR R$1.497 →') {
+                                        submitButton.innerText = 'QUERO MINHA VAGA DE FUNDADOR POR R$1.497 →';
+                                        observer.disconnect();
+                                    }
+                                }
+                            }
+                        };
+                        const observer = new MutationObserver(callback);
+                        if (targetNode) {
+                            observer.observe(targetNode, config);
+                        } else {
+                            console.log('ActiveCampaign form container not found, cannot attach MutationObserver.');
+                        }
+                    </script>
                     
                     <style>
                     ._form_1,._form_1 ._form-content,._form_1 ._form-body,._form_1 ._form-wrapper{background:transparent!important;padding:0!important;border:none!important;box-shadow:none!important;margin:0!important;}
@@ -1444,6 +1465,126 @@
                     <span class="module-label">Módulo 6</span>
                     <h3>A Última Camada Agêntica</h3>
                     <p><strong>Você não usa mais agents. Você os governa:</strong> Plano de 90 dias, identidade como PM Agêntico e o mapa para continuar subindo depois que o curso acabar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO 5.5: MÉTODO R.E.S.T.A ===== -->
+    <section class="resta-method-section">
+        <div class="container">
+            <h2>Método R.E.S.T.A</h2>
+            <h3>O caminho completo do PM executor ao Orquestrador insubstituível.</h3>
+            <div class="resta-grid">
+                <div class="resta-item">
+                    <h4>R — Reagir</h4>
+                    <p>Consciência do novo mercado. Diagnóstico do seu risco atual e entendimento claro do que está mudando no papel do PM.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>E — Estender</h4>
+                    <p>Copilot Avançado. Transforma a IA em extensão poderosa do seu trabalho — o que levava horas passa a levar minutos.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>S — Sistematizar</h4>
+                    <p>AI-Native Builder. Constrói protótipos, MVPs e sistemas sem depender de código.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>T — Transformar</h4>
+                    <p>Orquestração Agêntica. Cria workflows e ecossistemas de agents autônomos com mínima intervenção humana.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>A — Aplicar</h4>
+                    <p>Produto Agentic. Leva tudo para o produto real: features agênticas, Human-in-the-Loop e fosso competitivo com IA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO 5.5: MÉTODO R.E.S.T.A ===== -->
+    <section class="resta-method-section">
+        <div class="container">
+            <h2>Método R.E.S.T.A</h2>
+            <h3>O caminho completo do PM executor ao Orquestrador insubstituível.</h3>
+            <div class="resta-grid">
+                <div class="resta-item">
+                    <h4>R — Reagir</h4>
+                    <p>Consciência do novo mercado. Diagnóstico do seu risco atual e entendimento claro do que está mudando no papel do PM.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>E — Estender</h4>
+                    <p>Copilot Avançado. Transforma a IA em extensão poderosa do seu trabalho — o que levava horas passa a levar minutos.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>S — Sistematizar</h4>
+                    <p>AI-Native Builder. Constrói protótipos, MVPs e sistemas sem depender de código.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>T — Transformar</h4>
+                    <p>Orquestração Agêntica. Cria workflows e ecossistemas de agents autônomos com mínima intervenção humana.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>A — Aplicar</h4>
+                    <p>Produto Agentic. Leva tudo para o produto real: features agênticas, Human-in-the-Loop e fosso competitivo com IA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO 5.5: MÉTODO R.E.S.T.A ===== -->
+    <section class="resta-method-section">
+        <div class="container">
+            <h2>Método R.E.S.T.A</h2>
+            <h3>O caminho completo do PM executor ao Orquestrador insubstituível.</h3>
+            <div class="resta-grid">
+                <div class="resta-item">
+                    <h4>R — Reagir</h4>
+                    <p>Consciência do novo mercado. Diagnóstico do seu risco atual e entendimento claro do que está mudando no papel do PM.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>E — Estender</h4>
+                    <p>Copilot Avançado. Transforma a IA em extensão poderosa do seu trabalho — o que levava horas passa a levar minutos.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>S — Sistematizar</h4>
+                    <p>AI-Native Builder. Constrói protótipos, MVPs e sistemas sem depender de código.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>T — Transformar</h4>
+                    <p>Orquestração Agêntica. Cria workflows e ecossistemas de agents autônomos com mínima intervenção humana.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>A — Aplicar</h4>
+                    <p>Produto Agentic. Leva tudo para o produto real: features agênticas, Human-in-the-Loop e fosso competitivo com IA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO 5.5: MÉTODO R.E.S.T.A ===== -->
+    <section class="resta-method-section">
+        <div class="container">
+            <h2>Método R.E.S.T.A</h2>
+            <h3>O caminho completo do PM executor ao Orquestrador insubstituível.</h3>
+            <div class="resta-grid">
+                <div class="resta-item">
+                    <h4>R — Reagir</h4>
+                    <p>Consciência do novo mercado. Diagnóstico do seu risco atual e entendimento claro do que está mudando no papel do PM.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>E — Estender</h4>
+                    <p>Copilot Avançado. Transforma a IA em extensão poderosa do seu trabalho — o que levava horas passa a levar minutos.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>S — Sistematizar</h4>
+                    <p>AI-Native Builder. Constrói protótipos, MVPs e sistemas sem depender de código.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>T — Transformar</h4>
+                    <p>Orquestração Agêntica. Cria workflows e ecossistemas de agents autônomos com mínima intervenção humana.</p>
+                </div>
+                <div class="resta-item">
+                    <h4>A — Aplicar</h4>
+                    <p>Produto Agentic. Leva tudo para o produto real: features agênticas, Human-in-the-Loop e fosso competitivo com IA.</p>
                 </div>
             </div>
         </div>
