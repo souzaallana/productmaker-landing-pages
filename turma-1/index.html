@@ -515,6 +515,14 @@
             line-height: 1.8;
         }
         
+        .instructor-highlight {
+            font-style: italic;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 25px 0;
+            font-size: 1.1rem;
+        }
+        
         /* ===== SEÇÃO 8: URGÊNCIA & EXCLUSIVIDADE ===== */
         .urgency-section {
             background: var(--bg-dark);
@@ -797,6 +805,53 @@
         </div>
     </section>
 
+    <!-- SEÇÃO 2B: VISUALIZAÇÃO DO FUTURO -->
+    <section class="pain-section">
+        <div class="container">
+            <h2>Como é a segunda-feira de um Agentic PM.</h2>
+            <p style="font-size: 1.1rem; color: #333; margin-bottom: 40px; line-height: 1.8; text-align: center;">
+                Enquanto outros PMs chegam na semana com uma lista de tarefas para executar, o Agentic PM chega com um sistema que já trabalhou no fim de semana.
+            </p>
+            <p style="font-size: 1.1rem; color: #333; margin-bottom: 40px; line-height: 1.8; text-align: center;">
+                Seus agents sintetizaram o feedback da última sprint. Criaram as histórias para o próximo ciclo. Atualizaram o backlog com base nas decisões da semana passada.
+            </p>
+            <p style="font-size: 1.1rem; color: #333; margin-bottom: 60px; line-height: 1.8; text-align: center; font-weight: 600;">
+                Você não começa segunda executando. Você começa revisando, decidindo e direcionando.
+            </p>
+            
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 60px;">
+                <tr>
+                    <th style="background: #f1f5f9; padding: 20px; text-align: left; font-weight: 700; color: var(--bg-dark); border: 1px solid #e2e8f0;">PM Tradicional</th>
+                    <th style="background: #ecfdf5; padding: 20px; text-align: left; font-weight: 700; color: #065f46; border: 1px solid #e2e8f0;">Agentic PM</th>
+                </tr>
+                <tr>
+                    <td style="padding: 15px 20px; color: #666; border: 1px solid #e2e8f0;">Escreve PRDs</td>
+                    <td style="padding: 15px 20px; color: #065f46; border: 1px solid #e2e8f0; font-weight: 600;">Revisa PRDs gerados</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px 20px; color: #666; border: 1px solid #e2e8f0;">Facilita refinamento</td>
+                    <td style="padding: 15px 20px; color: #065f46; border: 1px solid #e2e8f0; font-weight: 600;">Define o que os agents fazem</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px 20px; color: #666; border: 1px solid #e2e8f0;">Corre atrás de dados</td>
+                    <td style="padding: 15px 20px; color: #065f46; border: 1px solid #e2e8f0; font-weight: 600;">Recebe sínteses prontas</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px 20px; color: #666; border: 1px solid #e2e8f0;">Depende de dev</td>
+                    <td style="padding: 15px 20px; color: #065f46; border: 1px solid #e2e8f0; font-weight: 600;">Prototipa sozinho</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px 20px; color: #666; border: 1px solid #e2e8f0;">Opera ferramentas</td>
+                    <td style="padding: 15px 20px; color: #065f46; border: 1px solid #e2e8f0; font-weight: 600;">Governa sistemas</td>
+                </tr>
+            </table>
+            
+            <div class="pain-highlight" style="font-size: 1.3rem; font-weight: 700; color: var(--bg-dark); line-height: 1.6;">
+                Quanto mais a IA avança, mais o PM tradicional perde espaço. E mais o Agentic PM se torna insubstituível.
+            </div>
+        </div>
+    </section>
+
     <!-- SEÇÃO 3: AGITAÇÃO -->
     <section class="agitation-section">
         <div class="container">
@@ -906,9 +961,11 @@
                 </div>
                 <div class="instructor-text">
                     <h2>Quem vai te guiar</h2>
-                    <p>Allana Dias é Head of Product Management & UX em uma plataforma B2B de commerce, com mais de 15 anos de experiência em produtos digitais.</p>
-                    <p>Nos últimos 3 anos, transformou seu trabalho inteiro usando IA — em todas as camadas, até a era agêntica — transformando todo o ecossistema de trabalho com sistemas de agents. Não ensina teoria: ensina o que faz todo dia.</p>
-                    <p>Possui mais de 300 mil impressões e 90 mil profissionais alcançados no LinkedIn apenas em 2026. Mais de 150 profissionais já aprenderam com Allana.</p>
+                    <p>Allana Dias não ensina IA como tendência. Ela trabalha dentro da transformação.</p>
+                    <p>Enquanto a maioria dos PMs ainda discutia se agents eram relevantes, Allana já operava sistemas completos no trabalho real — reuniões sintetizadas automaticamente, specs geradas por agents, histórias criadas e revisadas sem intervenção humana.</p>
+                    <p>São 15 anos em produto digital. Os últimos 3 foram inteiramente redesenhados com IA — não para fazer o mesmo mais rápido, mas para fazer coisas que antes eram impossíveis para um time do seu tamanho.</p>
+                    <p>Ela não é pesquisadora de IA. É uma pessoa de produto que documenta tudo em tempo real — e que já ajudou mais de 150 profissionais a começarem a mesma jornada.</p>
+                    <div class="instructor-highlight">Não ensino o que li. Ensino o que faço todo dia.</div>
                 </div>
             </div>
         </div>
@@ -1044,28 +1101,63 @@
     <!-- SEÇÃO 12: FAQ -->
     <section class="faq-section">
         <div class="container">
-            <h2>Perguntas Frequentes</h2>
+            <h2>Perguntas frequentes</h2>
             <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Como recebo o acesso?</span>
-                        <span>▼</span>
-                    </div>
-                    <div class="faq-answer">Imediatamente após a confirmação do pagamento, você receberá os dados de acesso por e-mail.</div>
-                </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
                         <span>Preciso saber programar?</span>
                         <span>▼</span>
                     </div>
-                    <div class="faq-answer">Não. O curso foca em ferramentas no-code e low-code que permitem que qualquer PM construa sistemas inteligentes.</div>
+                    <div class="faq-answer">Não. O curso foi desenhado para profissionais de produto — não para engenheiros. Todas as ferramentas são no-code ou low-code. Se você sabe escrever um documento de requisitos, você consegue fazer o que o curso ensina.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Por quanto tempo terei acesso?</span>
+                        <span>O curso está completo?</span>
                         <span>▼</span>
                     </div>
-                    <div class="faq-answer">O acesso ao conteúdo é vitalício. O suporte e as sessões ao vivo são garantidos por 1 ano.</div>
+                    <div class="faq-answer">O Módulo 1 está disponível imediatamente. Os demais módulos são liberados semanalmente — você acompanha a produção em tempo real e tem acesso a cada novo conteúdo antes de todo mundo. É exatamente por isso que o preço de fundador é menor.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Quanto tempo preciso por semana?</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">Entre 2 e 4 horas. O curso foi desenhado para quem tem agenda cheia — não para quem tem tempo sobrando.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Para quem é esse curso?</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">Para PMs, GPMs, Heads of Product e profissionais de produto em geral que querem deixar de executar e passar a orquestrar IA. O método funciona para qualquer setor — o que muda é a aplicação, que você personaliza no seu próprio contexto.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Quanto tempo tenho acesso?</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">1 ano de acesso completo, incluindo todos os novos módulos e atualizações lançados nesse período.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Como funciona a garantia?</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">30 dias incondicional. Se não sentir que está se tornando um profissional de produto mais valioso, devolvemos 100% sem perguntas e sem burocracia.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Por que o preço vai subir?</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">Porque você está entrando na fase fundadora — sem depoimentos consolidados, com módulos sendo produzidos em tempo real. Quem entra agora paga menos e tem acesso exclusivo que não existirá depois. Em 4 de junho o preço sobe para R$ 1.997 de forma definitiva.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Funciona para qualquer segmento?</span>
+                        <span>▼</span>
+                    </div>
+                    <div class="faq-answer">Sim. O método é agnóstico ao tipo de produto — o que importa é a sua capacidade de orquestrar sistemas de IA, não o setor onde você atua.</div>
                 </div>
             </div>
         </div>
