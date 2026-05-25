@@ -1860,16 +1860,13 @@ src="https://px.ads.linkedin.com/collect/?pid=9183666&fmt=gif" />
       document.head.appendChild(style);
     }
 
-    var observer = new MutationObserver(function(mutations) {
+    var acStylesObserver = new MutationObserver(function(mutations) {
       if (document.querySelector('._form_1 input')) {
         applyACStyles();
-        
-
-        
-        observer.disconnect();
+        acStylesObserver.disconnect();
       }
     });
-    observer.observe(document.body, {childList: true, subtree: true});
+    acStylesObserver.observe(document.body, {childList: true, subtree: true});
     setTimeout(applyACStyles, 2000);
     </script>
 </body>
